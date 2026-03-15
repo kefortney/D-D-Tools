@@ -1387,16 +1387,41 @@ function deleteMonster(id) {
 // ══════════════════════════════════════════════════════════════
 //  SAVE / LOAD CAMPAIGN (JSON)
 // ══════════════════════════════════════════════════════════════
-function saveCampaignJson() {
+let _saveFileHandle = null;
+
+async function saveCampaignJson() {
   const json = JSON.stringify(CAMPAIGN, null, 2);
-  const blob = new Blob([json], {type:'application/json'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href=url;
-  a.download = `${(CAMPAIGN.name||'campaign').replace(/[^a-z0-9]/gi,'_')}-${new Date().toISOString().slice(0,10)}.json`;
-  document.body.appendChild(a); a.click();
-  document.body.removeChild(a); URL.revokeObjectURL(url);
-  flash('infoFlash', 'Campaign saved as JSON.');
+  const suggestedName = `${(CAMPAIGN.name||'campaign').replace(/[^a-z0-9]/gi,'_')}.json`;
+
+  if (window.showSaveFilePicker) {
+    try {
+      if (!_saveFileHandle) {
+        _saveFileHandle = await window.showSaveFilePicker({
+          suggestedName,
+          types: [{ description: 'Campaign JSON', accept: {'application/json': ['.json']} }]
+        });
+      }
+      const writable = await _saveFileHandle.createWritable();
+      await writable.write(json);
+      await writable.close();
+      flash('infoFlash', 'Campaign saved.');
+    } catch(e) {
+      if (e.name === 'AbortError') return; // user cancelled picker
+      // handle became invalid (file deleted/moved) — reset and retry
+      _saveFileHandle = null;
+      saveCampaignJson();
+    }
+  } else {
+    // Fallback: trigger download (older browsers / Firefox)
+    const blob = new Blob([json], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = suggestedName;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+    flash('infoFlash', 'Campaign downloaded as JSON.');
+  }
 }
 
 function loadCampaignJson(file) {
