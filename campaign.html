@@ -219,6 +219,18 @@ body {
 
 .et-empty { color: var(--mist); font-style: italic; text-align: center; padding: 20px 0; }
 
+.et-loc-notes {
+  background: rgba(196,152,58,0.06);
+  border: 1px solid rgba(196,152,58,0.18);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: var(--paper);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: 12px;
+}
+
 /* ══════════════════════════════════════════
    LOCATIONS
 ══════════════════════════════════════════ */
@@ -898,20 +910,6 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   </section>
 
   <!-- ══════════════════════════════════════════
-       LOCATIONS
-  ══════════════════════════════════════════ -->
-  <section class="section" id="locSection" style="display:none;">
-    <h2>Locations</h2>
-    <p class="small" style="margin-bottom:10px;">Create locations to organize NPCs and monsters. Set one as <strong>active</strong> to load it into the Encounter Tracker below.</p>
-    <div class="actions">
-      <input id="newLocName" placeholder="New location name…" style="max-width:240px;">
-      <button id="addLocBtn" class="btn-secondary">+ Add Location</button>
-    </div>
-    <div id="locationList"></div>
-    <div id="locFlash" class="flash"></div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
        DICE ROLLER
   ══════════════════════════════════════════ -->
   <section class="section dice-section" id="diceSection" style="display:none;">
@@ -955,6 +953,7 @@ button:hover { border-color: var(--gold); color: var(--gold); }
         <button id="nextLocBtn" class="btn-sm">Next →</button>
       </div>
     </div>
+    <div id="etLocNotes"></div>
     <div id="encounterList"></div>
     <div id="encounterFlash" class="flash"></div>
   </section>
@@ -1005,6 +1004,20 @@ button:hover { border-color: var(--gold); color: var(--gold); }
     </div>
     <textarea id="dmNotes" style="min-height:560px;resize:vertical;border-radius:0 0 8px 8px;border-top:none;" placeholder="Free-form notes — lore, session recaps, DM secrets, plot threads, reminders…&#10;&#10;Use the toolbar above: H1/H2/H3 for headings, • for bullets, B for bold…"></textarea>
     <div id="dmNotesPreview" class="dm-preview"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       LOCATIONS
+  ══════════════════════════════════════════ -->
+  <section class="section" id="locSection" style="display:none;">
+    <h2>Locations</h2>
+    <p class="small" style="margin-bottom:10px;">Create locations to organize NPCs and monsters. Set one as <strong>active</strong> to show it in the Encounter Tracker above.</p>
+    <div class="actions">
+      <input id="newLocName" placeholder="New location name…" style="max-width:240px;">
+      <button id="addLocBtn" class="btn-secondary">+ Add Location</button>
+    </div>
+    <div id="locationList"></div>
+    <div id="locFlash" class="flash"></div>
   </section>
 
   <!-- ══════════════════════════════════════════
@@ -1288,6 +1301,14 @@ function renderEncounterTracker() {
   const aIdx = CAMPAIGN.areas.findIndex(a=>a.id===area.id);
   document.getElementById('etLocName').textContent = area.name || 'Unnamed Location';
   document.getElementById('etCounter').textContent = `${aIdx+1} / ${CAMPAIGN.areas.length}`;
+
+  // Show location notes above the entity list
+  const notesEl = document.getElementById('etLocNotes');
+  if (area.notes && area.notes.trim()) {
+    notesEl.innerHTML = `<div class="et-loc-notes">${esc(area.notes)}</div>`;
+  } else {
+    notesEl.innerHTML = '';
+  }
 
   // Build combined list: all PCs + NPCs/Monsters in this location
   const entities = [];
@@ -2464,6 +2485,8 @@ function renderAll() {
   document.getElementById('campName').value = CAMPAIGN.name || '';
   document.getElementById('campNotes').value = CAMPAIGN.notes || '';
   document.getElementById('dmNotes').value = CAMPAIGN.dmNotes || '';
+  dmPreviewOn = false; // reset so the call below always enters preview
+  toggleDmPreview();
   document.getElementById('campaignTitleDisplay') && (document.getElementById('campaignTitleDisplay').textContent = CAMPAIGN.name || '');
   populateMonsterSelect();
   populateVaultSelect();
@@ -2474,7 +2497,7 @@ function renderAll() {
   renderNpcs();
   renderMonsters();
   // Show sections
-  ['infoSection','locSection','diceSection','encounterSection','pcsSection','dmNotesSection','npcsSection','monstersSection','exportSection']
+  ['infoSection','diceSection','encounterSection','pcsSection','dmNotesSection','locSection','npcsSection','monstersSection','exportSection']
     .forEach(id => {
       const el=document.getElementById(id);
       if(el) el.style.display='';
