@@ -636,6 +636,123 @@ button:hover { border-color: var(--gold); color: var(--gold); }
 .sort-arrow { margin-left: 3px; font-size: 0.6rem; opacity: 0.8; }
 
 /* ══════════════════════════════════════════
+   DICE ROLLER
+══════════════════════════════════════════ */
+.dice-section {
+  border-color: rgba(80,60,140,0.4);
+  background: linear-gradient(160deg, rgba(15,12,25,0.92), rgba(22,18,38,0.92));
+}
+
+.dice-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.dice-title {
+  font-family: 'Cinzel', serif;
+  color: var(--paper-deep);
+  font-size: 1rem;
+  letter-spacing: 1px;
+  flex: 1;
+}
+
+.dice-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.dice-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.dice-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(80,60,140,0.5);
+  background: rgba(60,45,110,0.2);
+  color: #a090d0;
+  cursor: pointer;
+  min-width: 54px;
+  transition: all 0.12s;
+}
+.dice-btn:hover { border-color: #9070e0; color: #c0a0ff; background: rgba(80,60,140,0.4); }
+.dice-btn-d20 { border-color: rgba(196,152,58,0.5) !important; color: var(--gold) !important; background: rgba(196,152,58,0.1) !important; }
+.dice-btn-d20:hover { background: rgba(196,152,58,0.22) !important; color: var(--paper-deep) !important; }
+
+@keyframes diceRoll {
+  0%   { transform: scale(1) rotate(0deg); }
+  25%  { transform: scale(0.88) rotate(-8deg); }
+  65%  { transform: scale(1.12) rotate(5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+.dice-btn.rolling { animation: diceRoll 0.35s ease; }
+
+.dice-result-box {
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(80,60,140,0.3);
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.dice-total {
+  font-family: 'Cinzel', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.dice-total .dice-label {
+  font-size: 0.72rem;
+  color: var(--mist);
+  display: block;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.dice-breakdown {
+  color: var(--mist);
+  font-size: 0.84rem;
+  min-height: 18px;
+}
+
+.dice-history {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  max-height: 130px;
+  overflow-y: auto;
+}
+
+.dice-history-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--mist);
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.025);
+}
+.dice-history-row .dh-label { font-family: 'Cinzel', serif; font-size: 0.75rem; }
+.dice-history-row .dh-detail { color: rgba(168,182,200,0.55); font-size: 0.75rem; flex: 1; text-align: center; }
+.dice-history-row .dh-total { font-family: 'Cinzel', serif; font-weight: 700; color: var(--paper-deep); }
+
+/* ══════════════════════════════════════════
    EXPORT SUBSECTIONS
 ══════════════════════════════════════════ */
 .export-subsection {
@@ -781,6 +898,52 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   </section>
 
   <!-- ══════════════════════════════════════════
+       LOCATIONS
+  ══════════════════════════════════════════ -->
+  <section class="section" id="locSection" style="display:none;">
+    <h2>Locations</h2>
+    <p class="small" style="margin-bottom:10px;">Create locations to organize NPCs and monsters. Set one as <strong>active</strong> to load it into the Encounter Tracker below.</p>
+    <div class="actions">
+      <input id="newLocName" placeholder="New location name…" style="max-width:240px;">
+      <button id="addLocBtn" class="btn-secondary">+ Add Location</button>
+    </div>
+    <div id="locationList"></div>
+    <div id="locFlash" class="flash"></div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DICE ROLLER
+  ══════════════════════════════════════════ -->
+  <section class="section dice-section" id="diceSection" style="display:none;">
+    <div class="dice-header">
+      <span class="dice-title">🎲 Dice Roller</span>
+      <div class="dice-controls">
+        <label class="fl" style="display:inline;margin:0 4px 0 0;">Qty</label>
+        <input id="diceQty" type="number" min="1" max="20" value="1" style="width:52px;text-align:center;">
+        <label class="fl" style="display:inline;margin:0 4px;">Mod</label>
+        <input id="diceMod" type="number" value="0" style="width:52px;text-align:center;">
+        <button id="diceClearBtn" class="btn-sm" style="margin-left:6px;">Clear</button>
+      </div>
+    </div>
+    <div class="dice-btns">
+      <button class="dice-btn" data-sides="4">d4</button>
+      <button class="dice-btn" data-sides="6">d6</button>
+      <button class="dice-btn" data-sides="8">d8</button>
+      <button class="dice-btn" data-sides="10">d10</button>
+      <button class="dice-btn" data-sides="12">d12</button>
+      <button class="dice-btn dice-btn-d20" data-sides="20">d20</button>
+      <button class="dice-btn" data-sides="100">d100</button>
+    </div>
+    <div id="diceResult" style="display:none;">
+      <div class="dice-result-box">
+        <div id="diceTotalDisplay" class="dice-total"></div>
+        <div id="diceBreakdown" class="dice-breakdown"></div>
+      </div>
+      <div id="diceHistory" class="dice-history"></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        ENCOUNTER TRACKER (Active Location)
   ══════════════════════════════════════════ -->
   <section class="section encounter-section" id="encounterSection" style="display:none;">
@@ -808,20 +971,6 @@ button:hover { border-color: var(--gold); color: var(--gold); }
     </div>
     <div id="campaignPcList"></div>
     <div id="pcsFlash" class="flash"></div>
-  </section>
-
-  <!-- ══════════════════════════════════════════
-       LOCATIONS
-  ══════════════════════════════════════════ -->
-  <section class="section" id="locSection" style="display:none;">
-    <h2>Locations</h2>
-    <p class="small" style="margin-bottom:10px;">Create locations to organize NPCs and monsters. The <strong>active location</strong> appears in the Encounter Tracker above with all PCs.</p>
-    <div class="actions">
-      <input id="newLocName" placeholder="New location name…" style="max-width:240px;">
-      <button id="addLocBtn" class="btn-secondary">+ Add Location</button>
-    </div>
-    <div id="locationList"></div>
-    <div id="locFlash" class="flash"></div>
   </section>
 
   <!-- ══════════════════════════════════════════
@@ -1989,6 +2138,65 @@ function checkIncomingMonster() {
 }
 
 // ══════════════════════════════════════════════════════════════
+//  DICE ROLLER
+// ══════════════════════════════════════════════════════════════
+const diceHistory = [];
+
+function rollDice(sides) {
+  const qty  = Math.min(20, Math.max(1, intOr(document.getElementById('diceQty').value, 1)));
+  const mod  = intOr(document.getElementById('diceMod').value, 0);
+  const rolls = Array.from({length: qty}, () => Math.floor(Math.random() * sides) + 1);
+  const sum  = rolls.reduce((a, b) => a + b, 0);
+  const total = sum + mod;
+  const diceStr = `${qty}d${sides}${mod > 0 ? `+${mod}` : mod < 0 ? mod : ''}`;
+
+  // Button roll animation
+  const btn = document.querySelector(`.dice-btn[data-sides="${sides}"]`);
+  if (btn) {
+    btn.classList.remove('rolling');
+    void btn.offsetWidth;
+    btn.classList.add('rolling');
+    setTimeout(() => btn.classList.remove('rolling'), 400);
+  }
+
+  // Colour the total: nat20 green, nat1 red, otherwise gold
+  let colour = 'var(--gold)';
+  if (sides === 20 && qty === 1) {
+    if (rolls[0] === 20) colour = '#6ee08a';
+    else if (rolls[0] === 1) colour = '#e07070';
+  }
+
+  document.getElementById('diceResult').style.display = '';
+  document.getElementById('diceTotalDisplay').innerHTML =
+    `<span class="dice-label">${esc(diceStr)}</span><span style="color:${colour}">${total}</span>`;
+  document.getElementById('diceBreakdown').textContent =
+    qty > 1 || mod !== 0
+      ? `[${rolls.join(', ')}]${mod !== 0 ? (mod > 0 ? ` + ${mod}` : ` − ${Math.abs(mod)}`) : ''} = ${total}`
+      : '';
+
+  // History (keep last 8, newest first)
+  diceHistory.unshift({diceStr, total, rolls, mod});
+  if (diceHistory.length > 9) diceHistory.pop();
+  renderDiceHistory();
+}
+
+function renderDiceHistory() {
+  const el = document.getElementById('diceHistory');
+  // Skip index 0 — that's the current result shown above
+  const rows = diceHistory.slice(1).map(h => {
+    const detail = h.rolls.length > 1 || h.mod !== 0
+      ? `[${h.rolls.join(', ')}]${h.mod !== 0 ? (h.mod > 0 ? ` +${h.mod}` : ` ${h.mod}`) : ''}`
+      : '';
+    return `<div class="dice-history-row">
+      <span class="dh-label">${esc(h.diceStr)}</span>
+      <span class="dh-detail">${esc(detail)}</span>
+      <span class="dh-total">${h.total}</span>
+    </div>`;
+  }).join('');
+  el.innerHTML = rows;
+}
+
+// ══════════════════════════════════════════════════════════════
 //  ENTITY DETAIL MODAL
 // ══════════════════════════════════════════════════════════════
 function openEntityModal(kind, id) {
@@ -2149,7 +2357,7 @@ function toggleDmPreview() {
   const btn     = document.getElementById('dmPreviewToggle');
   if (dmPreviewOn) {
     preview.innerHTML  = dmRenderMd(ta.value);
-    preview.style.display = '';
+    preview.style.display = 'block';
     ta.style.display   = 'none';
     btn.classList.add('dm-active');
     btn.textContent    = 'Edit';
@@ -2165,40 +2373,87 @@ function toggleDmPreview() {
 // ══════════════════════════════════════════════════════════════
 //  DM NOTES SEARCH
 // ══════════════════════════════════════════════════════════════
-function applyDmNotesSearch(query) {
-  const clearBtn = document.getElementById('dmNotesClearSearch');
+let dmSearchMatches = [];
+let dmSearchIdx = 0;
+
+function dmSearchRun(query) {
+  const ta        = document.getElementById('dmNotes');
+  const countEl   = document.getElementById('dmSearchCount');
+  const clearBtn  = document.getElementById('dmNotesClearSearch');
+  const prevBtn   = document.getElementById('dmSearchPrev');
+  const nextBtn   = document.getElementById('dmSearchNext');
   const highlight = document.getElementById('dmNotesHighlight');
-  const ta = document.getElementById('dmNotes');
   const q = query.trim();
 
+  dmSearchMatches = [];
+  dmSearchIdx = 0;
   clearBtn.style.display = q ? '' : 'none';
 
   if (!q) {
+    countEl.textContent = '';
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
     highlight.textContent = '';
     ta.style.outline = '';
     return;
   }
 
+  // Find all match positions
   const text = ta.value;
   const lc = text.toLowerCase();
   const lq = q.toLowerCase();
-  let count = 0, pos = 0;
-  while ((pos = lc.indexOf(lq, pos)) !== -1) { count++; pos += lq.length; }
-
-  if (count === 0) {
-    highlight.textContent = `No matches for "${q}"`;
-    highlight.style.color = '#ff8673';
-    ta.style.outline = '1px solid rgba(255,100,80,0.4)';
-  } else {
-    highlight.textContent = `${count} match${count !== 1 ? 'es' : ''} for "${q}"`;
-    highlight.style.color = '#c4983a';
-    ta.style.outline = '1px solid rgba(196,152,58,0.4)';
-    // Scroll textarea to first match
-    const firstIdx = lc.indexOf(lq);
-    const linesBefore = text.substring(0, firstIdx).split('\n').length - 1;
-    const lineHeight = parseFloat(getComputedStyle(ta).lineHeight) || 20;
-    ta.scrollTop = Math.max(0, linesBefore * lineHeight - 60);
+  let pos = 0;
+  while ((pos = lc.indexOf(lq, pos)) !== -1) {
+    dmSearchMatches.push(pos);
+    pos += lq.length;
   }
+
+  if (dmSearchMatches.length === 0) {
+    countEl.textContent = 'No matches';
+    countEl.style.color = '#ff8673';
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    highlight.textContent = '';
+    ta.style.outline = '1px solid rgba(255,100,80,0.3)';
+  } else {
+    prevBtn.style.display = '';
+    nextBtn.style.display = '';
+    ta.style.outline = '1px solid rgba(196,152,58,0.35)';
+    highlight.textContent = '';
+    dmSearchJumpTo(0);
+  }
+}
+
+function dmSearchStep(dir) {
+  if (!dmSearchMatches.length) return;
+  dmSearchJumpTo((dmSearchIdx + dir + dmSearchMatches.length) % dmSearchMatches.length);
+}
+
+function dmSearchJumpTo(idx) {
+  if (!dmSearchMatches.length) return;
+  dmSearchIdx = idx;
+  const ta      = document.getElementById('dmNotes');
+  const countEl = document.getElementById('dmSearchCount');
+  const q       = document.getElementById('dmNotesSearch').value.trim();
+  const start   = dmSearchMatches[idx];
+  const end     = start + q.length;
+
+  // If in preview mode, switch to edit first
+  if (dmPreviewOn) toggleDmPreview();
+
+  ta.focus();
+  ta.setSelectionRange(start, end);
+
+  // Scroll the textarea so the selection is visible
+  // Create a mirror div to measure offset — use a simpler line-count approach
+  const textBefore = ta.value.substring(0, start);
+  const linesBefore = textBefore.split('\n').length - 1;
+  const lineHeight = parseFloat(getComputedStyle(ta).lineHeight) || 22;
+  const targetScroll = linesBefore * lineHeight - ta.clientHeight / 2;
+  ta.scrollTop = Math.max(0, targetScroll);
+
+  countEl.textContent = `${idx + 1} / ${dmSearchMatches.length}`;
+  countEl.style.color = 'var(--mist)';
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -2219,7 +2474,7 @@ function renderAll() {
   renderNpcs();
   renderMonsters();
   // Show sections
-  ['infoSection','encounterSection','pcsSection','locSection','dmNotesSection','npcsSection','monstersSection','exportSection']
+  ['infoSection','locSection','diceSection','encounterSection','pcsSection','dmNotesSection','npcsSection','monstersSection','exportSection']
     .forEach(id => {
       const el=document.getElementById(id);
       if(el) el.style.display='';
@@ -2305,6 +2560,17 @@ function setupEvents() {
     if(e.target.dataset.action==='delete-monster') deleteMonster(e.target.dataset.id);
   });
 
+  // Dice roller
+  document.getElementById('diceSection').addEventListener('click', e => {
+    const btn = e.target.closest('.dice-btn');
+    if (btn) rollDice(parseInt(btn.dataset.sides));
+  });
+  document.getElementById('diceClearBtn').addEventListener('click', () => {
+    document.getElementById('diceResult').style.display = 'none';
+    diceHistory.length = 0;
+    document.getElementById('diceHistory').innerHTML = '';
+  });
+
   // Modal close on Escape
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEntityModal(); });
 
@@ -2314,11 +2580,16 @@ function setupEvents() {
     persistCampaign();
   });
   document.getElementById('dmNotesSearch').addEventListener('input', e => {
-    applyDmNotesSearch(e.target.value);
+    dmSearchRun(e.target.value);
   });
+  document.getElementById('dmNotesSearch').addEventListener('keydown', e => {
+    if (e.key === 'Enter') { e.shiftKey ? dmSearchStep(-1) : dmSearchStep(1); }
+  });
+  document.getElementById('dmSearchPrev').addEventListener('click', () => dmSearchStep(-1));
+  document.getElementById('dmSearchNext').addEventListener('click', () => dmSearchStep(1));
   document.getElementById('dmNotesClearSearch').addEventListener('click', () => {
     document.getElementById('dmNotesSearch').value = '';
-    applyDmNotesSearch('');
+    dmSearchRun('');
   });
 
   // Export / Import
