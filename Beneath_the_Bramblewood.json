@@ -1,7 +1,7 @@
 {
   "id": "campaign-1773596982091-60376",
   "name": "Beneath the Bramblewood",
-  "notes": "",
+  "notes": "Willowmere is a small, quiet town at the edge of a forest that has forgotten how to be alive. The birds don't sing anymore. The children keep bringing home strange glowing mushrooms from the treeline. The woman who runs the tavern hasn't slept in two weeks. Nobody knows why, but everyone feels it — something is wrong in the Bramblewood, and whatever it is, it's getting closer.\nBeneath the roots of the oldest tree in the forest, a spirit named Mira has been sleeping for a very long time. She didn't mean to. She was the heart of the Bramblewood — the reason the moss grew soft and the fireflies came out in summer and the foxes knew which paths were safe. When she fell into her cursed sleep, the forest didn't die. It just slowly started forgetting what it was supposed to be.",
   "areas": [
     {
       "id": "loc-1773597063838-607",
@@ -47,7 +47,7 @@
     },
     {
       "id": "npc-profile-1773597173288-64623",
-      "name": "Old Wren",
+      "name": "Old Wren the Druid",
       "className": "Druid",
       "ancestry": "Human",
       "role": "Scholar",
@@ -58,9 +58,9 @@
       "personality": "recklessly brave",
       "motivation": "protect their family",
       "secret": "accidentally caused a past tragedy",
-      "notes": "the herb woman Lives just outside town in a cottage covered in drying flowers. Ancient, possibly. Speaks in a slow, certain way that makes everything sound important. She knows the Bramblewood better than anyone and will tell the party: \"The forest isn't angry. It's afraid. There's a difference.\" Very good at giving cryptic hints without being annoying about it.",
+      "notes": "Lives just outside town in a cottage covered in drying flowers. Ancient, possibly. Speaks in a slow, certain way that makes everything sound important. She knows the Bramblewood better than anyone and will tell the party: \"The forest isn't angry. It's afraid. There's a difference.\" Very good at giving cryptic hints without being annoying about it.",
       "createdAt": "2026-03-15T17:52:53.288Z",
-      "updatedAt": "2026-03-15T17:53:51.932Z",
+      "updatedAt": "2026-03-15T18:18:07.027Z",
       "maxHp": 37,
       "currentHp": 37,
       "initiative": 0,
@@ -71,7 +71,7 @@
     },
     {
       "id": "npc-profile-1773597157092-23375",
-      "name": "Elara Stonebend",
+      "name": "Elara Stonebend the Blacksmith",
       "className": "Fighter",
       "ancestry": "Human",
       "role": "Scholar",
@@ -82,9 +82,9 @@
       "personality": "recklessly brave",
       "motivation": "protect their family",
       "secret": "accidentally caused a past tragedy",
-      "notes": "the blacksmith Tall, no-nonsense, deeply kind. She's been finding her tools moved around the shop at night and blames ghosts, which she says with total calm like it's a minor inconvenience. Will give the party a free piece of equipment if they promise to \"sort out whatever's going on.\"",
+      "notes": "Tall, no-nonsense, deeply kind. She's been finding her tools moved around the shop at night and blames ghosts, which she says with total calm like it's a minor inconvenience. Will give the party a free piece of equipment if they promise to \"sort out whatever's going on.\"",
       "createdAt": "2026-03-15T17:52:37.092Z",
-      "updatedAt": "2026-03-15T17:54:08.930Z",
+      "updatedAt": "2026-03-15T18:17:55.284Z",
       "maxHp": 37,
       "currentHp": 37,
       "initiative": 0,
@@ -106,11 +106,11 @@
       "personality": "recklessly brave",
       "motivation": "protect their family",
       "secret": "accidentally caused a past tragedy",
-      "notes": "Tavernkeeper of The Drowsy Badger\nage 7, local kid\nThe unofficial town greeter. Pip will immediately try to befriend the players, show them his collection of \"magic rocks\" (they are regular rocks), and knows a secret path into the Bramblewood that he is absolutely not supposed to use. Very brave. Very small.",
+      "notes": "age 7, local kid The unofficial town greeter. Pip will immediately try to befriend the players, show them his collection of \"magic rocks\" (they are regular rocks), and knows a secret path into the Bramblewood that he is absolutely not supposed to use. Very brave. Very small.",
       "createdAt": "2026-03-15T17:52:05.805Z",
-      "updatedAt": "2026-03-15T17:54:03.869Z",
-      "maxHp": 37,
-      "currentHp": 37,
+      "updatedAt": "2026-03-15T18:17:23.169Z",
+      "maxHp": 18,
+      "currentHp": 18,
       "initiative": 0,
       "attack": "",
       "status": "",
@@ -119,7 +119,7 @@
     },
     {
       "id": "npc-profile-1773597104090-14107",
-      "name": "Marta Copperkettle",
+      "name": "Marta Copperkettle, Tavernkeeper of The Drowsy Badger",
       "className": "Cleric",
       "ancestry": "Human",
       "role": "Scholar",
@@ -130,9 +130,9 @@
       "personality": "recklessly brave",
       "motivation": "protect their family",
       "secret": "accidentally caused a past tragedy",
-      "notes": "Tavernkeeper of The Drowsy Badger\nA stout, rosy-cheeked woman with flour perpetually in her hair (she also does the baking). Marta knows every piece of gossip in Willowmere and will trade information for compliments about her meat pies. She has a loud laugh, calls everyone \"sweetheart,\" and secretly hasn't slept in two weeks because she keeps hearing humming from under the tavern floor.",
+      "notes": "A stout, rosy-cheeked woman with flour perpetually in her hair (she also does the baking). Marta knows every piece of gossip in Willowmere and will trade information for compliments about her meat pies. She has a loud laugh, calls everyone \"sweetheart,\" and secretly hasn't slept in two weeks because she keeps hearing humming from under the tavern floor.",
       "createdAt": "2026-03-15T17:51:44.090Z",
-      "updatedAt": "2026-03-15T17:54:05.615Z",
+      "updatedAt": "2026-03-15T18:17:39.594Z",
       "maxHp": 37,
       "currentHp": 37,
       "initiative": 0,
@@ -307,6 +307,6 @@
     }
   ],
   "createdAt": "2026-03-15T17:49:42.091Z",
-  "updatedAt": "2026-03-15T18:05:34.962Z",
-  "activeAreaId": "loc-1773597303823-29772"
+  "updatedAt": "2026-03-15T18:19:01.121Z",
+  "activeAreaId": "loc-1773597063838-607"
 }
