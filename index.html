@@ -374,10 +374,6 @@ function render() {
 document.getElementById('createBtn').addEventListener('click', createCampaign);
 document.getElementById('newCampaignName').addEventListener('keydown', e => { if (e.key==='Enter') createCampaign(); });
 
-if (localStorage.getItem(SK.activeCampaign)) {
-  document.getElementById('campaignNavLink').style.display = '';
-}
-
 render();
 </script>
 </body>
