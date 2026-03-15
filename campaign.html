@@ -500,6 +500,131 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   .stat-grid-6 { grid-template-columns: repeat(3, minmax(48px, 1fr)); }
   .initiative-table th:nth-child(5), .initiative-table td:nth-child(5) { display: none; }
 }
+
+/* ══════════════════════════════════════════
+   ENTITY DETAIL MODAL
+══════════════════════════════════════════ */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: linear-gradient(160deg, #151c24, #0d1219);
+  border: 1px solid var(--gold-dim);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 520px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: 1px solid rgba(220,199,154,0.2);
+  color: var(--mist);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 0.82rem;
+}
+.modal-close:hover { border-color: var(--gold); color: var(--gold); }
+
+.modal-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem;
+  color: var(--paper-deep);
+  margin-bottom: 4px;
+  padding-right: 56px;
+}
+
+.modal-subtitle {
+  color: var(--mist);
+  font-size: 0.84rem;
+  margin-bottom: 16px;
+}
+
+.modal-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.modal-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(220,199,154,0.14);
+  border-radius: 8px;
+  padding: 6px 14px;
+  min-width: 56px;
+}
+
+.modal-stat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+  color: var(--mist);
+  text-transform: uppercase;
+}
+
+.modal-stat-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--paper-deep);
+}
+
+.modal-section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 1.5px;
+  color: var(--mist);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.modal-text-block {
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(220,199,154,0.1);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: var(--paper);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  min-height: 48px;
+  margin-bottom: 12px;
+}
+
+.et-name-link {
+  background: none;
+  border: none;
+  color: var(--paper-deep);
+  font-family: 'Cinzel', serif;
+  font-size: 0.88rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  text-decoration: underline;
+  text-decoration-color: rgba(196,152,58,0.35);
+  text-underline-offset: 2px;
+}
+.et-name-link:hover { color: var(--gold); border-color: transparent; text-decoration-color: var(--gold); }
 </style>
 </head>
 <body>
@@ -646,6 +771,22 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   </section>
 
 </div><!-- /shell -->
+
+<!-- ══ ENTITY DETAIL MODAL ══ -->
+<div class="modal-overlay" id="entityModal" onclick="if(event.target===this)closeEntityModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeEntityModal()">✕ Close</button>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-subtitle" id="modalSubtitle"></div>
+    <div class="modal-stats" id="modalStats"></div>
+    <div id="modalAttackBlock" style="display:none;">
+      <div class="modal-section-label" id="modalAttackLabel">Attack</div>
+      <div class="modal-text-block" id="modalAttackText"></div>
+    </div>
+    <div class="modal-section-label">Notes</div>
+    <div class="modal-text-block" id="modalNotes"></div>
+  </div>
+</div>
 
 <script>
 // ══════════════════════════════════════════════════════════════
@@ -835,7 +976,7 @@ function renderEncounterTracker() {
         <input type="number" data-et-field="initiative" data-et-kind="${kind}" data-et-id="${esc(entity.id)}"
           value="${esc(entity.initiative||0)}" title="Initiative roll">
       </td>
-      <td class="et-name-cell">${esc(name)}</td>
+      <td class="et-name-cell">${kind!=='pc' ? `<button class="et-name-link" onclick="openEntityModal('${kind}','${esc(entity.id)}')">${esc(name)}</button>` : esc(name)}</td>
       <td>${typeHtml}</td>
       <td class="et-ac-cell">${esc(entity.ac||'—')}</td>
       <td class="et-hp-cell">
@@ -917,7 +1058,7 @@ function renderLocations() {
       <div class="location-body" id="lbody-${esc(area.id)}" style="display:none;">
         <label class="fl">Location Notes</label>
         <textarea data-loc-field="notes" data-loc-id="${esc(area.id)}"
-          placeholder="Description, traps, lore, read-aloud text…" style="margin-bottom:0;">${esc(area.notes||'')}</textarea>
+          placeholder="Description, traps, lore, read-aloud text…" style="margin-bottom:0;min-height:160px;">${esc(area.notes||'')}</textarea>
       </div>
     </div>`;
   }).join('');
@@ -1647,6 +1788,62 @@ function checkIncomingMonster() {
 }
 
 // ══════════════════════════════════════════════════════════════
+//  ENTITY DETAIL MODAL
+// ══════════════════════════════════════════════════════════════
+function openEntityModal(kind, id) {
+  const entity = kind === 'npc' ? findById(CAMPAIGN.npcs, id) : findById(CAMPAIGN.monsters, id);
+  if (!entity) return;
+
+  if (kind === 'npc') {
+    document.getElementById('modalTitle').textContent = entity.name || 'Unnamed NPC';
+    document.getElementById('modalSubtitle').textContent =
+      [entity.className, entity.alignment].filter(Boolean).join(' · ') || 'NPC';
+    document.getElementById('modalStats').innerHTML = [
+      { label: 'AC',      value: entity.ac ?? '—' },
+      { label: 'Max HP',  value: entity.maxHp ?? '—' },
+      { label: 'Cur HP',  value: entity.currentHp ?? '—' },
+      { label: 'Init',    value: entity.initiative ?? 0 },
+      { label: 'Speed',   value: entity.speed ? entity.speed + ' ft' : '—' },
+    ].map(s => `<div class="modal-stat"><span class="modal-stat-label">${esc(s.label)}</span><span class="modal-stat-value">${esc(String(s.value))}</span></div>`).join('');
+    const attackBlock = document.getElementById('modalAttackBlock');
+    if (entity.attack) {
+      attackBlock.style.display = '';
+      document.getElementById('modalAttackLabel').textContent = 'Attack';
+      document.getElementById('modalAttackText').textContent = entity.attack;
+    } else {
+      attackBlock.style.display = 'none';
+    }
+  } else {
+    const name = entity.customName || entity.sourceName || 'Unnamed Monster';
+    document.getElementById('modalTitle').textContent = name;
+    document.getElementById('modalSubtitle').textContent =
+      [entity.type, entity.cr ? 'CR ' + entity.cr : ''].filter(Boolean).join(' · ') || 'Monster';
+    document.getElementById('modalStats').innerHTML = [
+      { label: 'AC',      value: entity.ac ?? '—' },
+      { label: 'Max HP',  value: entity.hpRolled ?? '—' },
+      { label: 'Cur HP',  value: entity.currentHp ?? '—' },
+      { label: 'Init',    value: entity.initiative ?? 0 },
+      { label: 'Count',   value: entity.count ?? 1 },
+    ].map(s => `<div class="modal-stat"><span class="modal-stat-label">${esc(s.label)}</span><span class="modal-stat-value">${esc(String(s.value))}</span></div>`).join('');
+    const attackBlock = document.getElementById('modalAttackBlock');
+    if (entity.hpRef) {
+      attackBlock.style.display = '';
+      document.getElementById('modalAttackLabel').textContent = 'HP Reference';
+      document.getElementById('modalAttackText').textContent = entity.hpRef;
+    } else {
+      attackBlock.style.display = 'none';
+    }
+  }
+
+  document.getElementById('modalNotes').textContent = entity.notes || '(no notes)';
+  document.getElementById('entityModal').classList.add('open');
+}
+
+function closeEntityModal() {
+  document.getElementById('entityModal').classList.remove('open');
+}
+
+// ══════════════════════════════════════════════════════════════
 //  RENDER ALL
 // ══════════════════════════════════════════════════════════════
 function renderAll() {
@@ -1748,6 +1945,9 @@ function setupEvents() {
   document.getElementById('campaignMonsterList').addEventListener('click', e => {
     if(e.target.dataset.action==='delete-monster') deleteMonster(e.target.dataset.id);
   });
+
+  // Modal close on Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeEntityModal(); });
 
   // Export / Import
   document.getElementById('exportSummaryBtn').addEventListener('click', exportSummary);
