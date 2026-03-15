@@ -25,6 +25,7 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
 body {
   min-height: 100vh;
@@ -82,7 +83,53 @@ body {
 .site-nav a.campaign-link { color: var(--paper-deep); }
 .site-nav a.campaign-link:hover { color: var(--gold); }
 
-.shell { max-width: 1200px; margin: 0 auto; padding: 20px 24px; }
+/* Layout wrapper: sidebar + content */
+.layout-wrapper {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1420px;
+  margin: 0 auto;
+}
+
+.section-nav {
+  width: 172px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 49px;
+  max-height: calc(100vh - 49px);
+  overflow-y: auto;
+  padding: 18px 8px 20px 14px;
+  display: none; /* shown when campaign loads */
+}
+
+.snav-heading {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: rgba(168,182,200,0.45);
+  text-transform: uppercase;
+  padding: 0 4px;
+  margin-bottom: 6px;
+}
+
+.snav-link {
+  display: block;
+  color: var(--mist);
+  text-decoration: none;
+  font-size: 0.82rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  margin-bottom: 1px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.snav-link:hover { color: var(--gold); background: rgba(196,152,58,0.06); }
+.snav-link.snav-active { color: var(--gold); border-left-color: var(--gold); background: rgba(196,152,58,0.08); }
+
+.shell { flex: 1; min-width: 0; max-width: 1200px; padding: 20px 24px; }
 
 /* ══════════════════════════════════════════
    SECTIONS
@@ -507,10 +554,27 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   margin-bottom: 8px;
 }
 
+@media (max-width: 960px) {
+  .section-nav { display: none !important; }
+  .layout-wrapper { display: block; }
+}
+
 @media (max-width: 760px) {
   .shell { padding: 12px 14px; }
   .stat-grid-6 { grid-template-columns: repeat(3, minmax(48px, 1fr)); }
   .initiative-table th:nth-child(5), .initiative-table td:nth-child(5) { display: none; }
+  /* PC / NPC / Monster card mobile */
+  .row { grid-template-columns: 1fr 1fr; }
+  .row-compact { gap: 6px; }
+  .pc-card, .npc-card, .monster-card { padding: 10px; }
+  .card-head { flex-wrap: wrap; }
+  .stat-chip input { width: 54px !important; }
+  /* Initiative table: hide status on small screens */
+  .initiative-table th:nth-child(6), .initiative-table td:nth-child(6) { display: none; }
+  /* Dice roller */
+  .dice-btn { padding: 8px 12px; min-width: 46px; font-size: 0.88rem; }
+  /* Sidebar */
+  .section-nav { display: none !important; }
 }
 
 /* ══════════════════════════════════════════
@@ -890,6 +954,21 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   }
 </script>
 
+<div class="layout-wrapper">
+
+<nav class="section-nav" id="sectionNav">
+  <div class="snav-heading">Navigation</div>
+  <a class="snav-link" href="#infoSection">📋 Campaign</a>
+  <a class="snav-link" href="#diceSection">🎲 Dice Roller</a>
+  <a class="snav-link" href="#encounterSection">⚔ Active Location</a>
+  <a class="snav-link" href="#pcsSection">👥 Characters</a>
+  <a class="snav-link" href="#dmNotesSection">📝 DM Notes</a>
+  <a class="snav-link" href="#locSection">📍 Locations</a>
+  <a class="snav-link" href="#npcsSection">🧑 NPCs</a>
+  <a class="snav-link" href="#monstersSection">🐉 Monsters</a>
+  <a class="snav-link" href="#exportSection">💾 Campaign Data</a>
+</nav>
+
 <div class="shell">
 
   <!-- ══ NO CAMPAIGN LOADED ══ -->
@@ -907,7 +986,23 @@ button:hover { border-color: var(--gold); color: var(--gold); }
       <div><label class="fl">Campaign Name</label><input id="campName" placeholder="Campaign name"></div>
     </div>
     <label class="fl">Campaign Notes</label>
-    <textarea id="campNotes" style="min-height:72px;" placeholder="World notes, session summaries, story threads…"></textarea>
+    <div class="dm-toolbar">
+      <button type="button" class="dm-tb-btn" onclick="dmInsertPrefix('# ','campNotes')" title="Heading 1">H1</button>
+      <button type="button" class="dm-tb-btn" onclick="dmInsertPrefix('## ','campNotes')" title="Heading 2">H2</button>
+      <button type="button" class="dm-tb-btn" onclick="dmInsertPrefix('### ','campNotes')" title="Heading 3">H3</button>
+      <span class="dm-tb-sep"></span>
+      <button type="button" class="dm-tb-btn" onclick="dmInsertPrefix('- ','campNotes')" title="Bullet list">•</button>
+      <button type="button" class="dm-tb-btn" onclick="dmInsertPrefix('1. ','campNotes')" title="Numbered list">1.</button>
+      <span class="dm-tb-sep"></span>
+      <button type="button" class="dm-tb-btn" onclick="dmWrap('**','campNotes')" title="Bold"><strong>B</strong></button>
+      <button type="button" class="dm-tb-btn" onclick="dmWrap('*','campNotes')" title="Italic"><em>I</em></button>
+      <span class="dm-tb-sep"></span>
+      <button type="button" class="dm-tb-btn" onclick="dmInsertHr('campNotes')" title="Horizontal rule">―</button>
+      <span style="flex:1;"></span>
+      <button type="button" class="dm-tb-btn" id="campPreviewToggle" onclick="toggleCampPreview()">Preview</button>
+    </div>
+    <textarea id="campNotes" style="min-height:160px;resize:vertical;border-radius:0 0 8px 8px;border-top:none;" placeholder="World notes, session summaries, story threads…"></textarea>
+    <div id="campNotesPreview" class="dm-preview" style="min-height:160px;"></div>
   </section>
 
   <!-- ══════════════════════════════════════════
@@ -1090,6 +1185,8 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   </section>
 
 </div><!-- /shell -->
+
+</div><!-- /layout-wrapper -->
 
 <!-- ══ ENTITY DETAIL MODAL ══ -->
 <div class="modal-overlay" id="entityModal" onclick="if(event.target===this)closeEntityModal()">
@@ -2177,7 +2274,7 @@ function checkIncomingLocation() {
     persistCampaign();
     renderLocations();
     renderEncounterTracker();
-    flash('infoFlash', `Location "${data.name}" added from Location Creator.`);
+    flash('locFlash', `Location "${data.name}" added from Location Creator.`);
   } catch { /* ignore */ }
 }
 
@@ -2299,13 +2396,15 @@ function closeEntityModal() {
 // ══════════════════════════════════════════════════════════════
 //  DM NOTES TOOLBAR
 // ══════════════════════════════════════════════════════════════
-function dmSave() {
-  CAMPAIGN.dmNotes = document.getElementById('dmNotes').value;
+function dmSave(taId = 'dmNotes') {
+  const value = document.getElementById(taId).value;
+  if (taId === 'campNotes') CAMPAIGN.notes = value;
+  else CAMPAIGN.dmNotes = value;
   persistCampaign();
 }
 
-function dmInsertPrefix(prefix) {
-  const ta = document.getElementById('dmNotes');
+function dmInsertPrefix(prefix, taId = 'dmNotes') {
+  const ta = document.getElementById(taId);
   const start = ta.selectionStart;
   const end   = ta.selectionEnd;
   const text  = ta.value;
@@ -2333,11 +2432,11 @@ function dmInsertPrefix(prefix) {
   ta.value = newText;
   ta.setSelectionRange(start + cursorDelta, end + cursorDelta);
   ta.focus();
-  dmSave();
+  dmSave(taId);
 }
 
-function dmWrap(marker) {
-  const ta = document.getElementById('dmNotes');
+function dmWrap(marker, taId = 'dmNotes') {
+  const ta = document.getElementById(taId);
   const start = ta.selectionStart;
   const end   = ta.selectionEnd;
   const text  = ta.value;
@@ -2353,18 +2452,18 @@ function dmWrap(marker) {
     ta.setSelectionRange(start + marker.length, end + marker.length);
   }
   ta.focus();
-  dmSave();
+  dmSave(taId);
 }
 
-function dmInsertHr() {
-  const ta = document.getElementById('dmNotes');
+function dmInsertHr(taId = 'dmNotes') {
+  const ta = document.getElementById(taId);
   const pos  = ta.selectionStart;
   const text = ta.value;
   const ins  = '\n---\n';
   ta.value   = text.substring(0, pos) + ins + text.substring(pos);
   ta.setSelectionRange(pos + ins.length, pos + ins.length);
   ta.focus();
-  dmSave();
+  dmSave(taId);
 }
 
 // Simple markdown → HTML renderer for preview
@@ -2391,6 +2490,28 @@ function dmRenderMd(raw) {
   if (inUl) html += '</ul>';
   if (inOl) html += '</ol>';
   return html;
+}
+
+// Campaign Notes preview
+let campNotesPreviewOn = false;
+function toggleCampPreview() {
+  campNotesPreviewOn = !campNotesPreviewOn;
+  const ta      = document.getElementById('campNotes');
+  const preview = document.getElementById('campNotesPreview');
+  const btn     = document.getElementById('campPreviewToggle');
+  if (campNotesPreviewOn) {
+    preview.innerHTML     = dmRenderMd(ta.value);
+    preview.style.display = 'block';
+    ta.style.display      = 'none';
+    btn.classList.add('dm-active');
+    btn.textContent = 'Edit';
+  } else {
+    preview.style.display = 'none';
+    ta.style.display      = '';
+    ta.focus();
+    btn.classList.remove('dm-active');
+    btn.textContent = 'Preview';
+  }
 }
 
 let dmPreviewOn = false;
@@ -2508,7 +2629,13 @@ function renderAll() {
   document.getElementById('campName').value = CAMPAIGN.name || '';
   document.getElementById('campNotes').value = CAMPAIGN.notes || '';
   document.getElementById('dmNotes').value = CAMPAIGN.dmNotes || '';
-  dmPreviewOn = false; // reset so the call below always enters preview
+  // Show sidebar
+  document.getElementById('sectionNav').style.display = '';
+  // Reset camp notes preview on new campaign load
+  campNotesPreviewOn = false;
+  toggleCampPreview();
+  // Reset dm notes preview
+  dmPreviewOn = false;
   toggleDmPreview();
   document.getElementById('campaignTitleDisplay') && (document.getElementById('campaignTitleDisplay').textContent = CAMPAIGN.name || '');
   populateMonsterSelect();
@@ -2537,7 +2664,11 @@ function setupEvents() {
     document.getElementById('campTitleH2').textContent = CAMPAIGN.name||'Campaign';
     document.title = (CAMPAIGN.name||'Campaign') + ' — D&D Hub';
   });
-  document.getElementById('campNotes').addEventListener('input', e => { CAMPAIGN.notes=e.target.value; persistCampaign(); });
+  document.getElementById('campNotes').addEventListener('input', e => {
+    CAMPAIGN.notes = e.target.value;
+    persistCampaign();
+    if (campNotesPreviewOn) document.getElementById('campNotesPreview').innerHTML = dmRenderMd(e.target.value);
+  });
   document.getElementById('saveCampaignBtn').addEventListener('click', saveCampaignJson);
   document.getElementById('loadJsonInput').addEventListener('change', e => {
     const f=e.target.files&&e.target.files[0]; if(f) loadCampaignJson(f); e.target.value='';
@@ -2651,6 +2782,29 @@ function setupEvents() {
 // ══════════════════════════════════════════════════════════════
 //  INIT
 // ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════
+//  SIDEBAR SCROLL HIGHLIGHT
+// ══════════════════════════════════════════════════════════════
+function setupSidebarHighlight() {
+  const sectionIds = ['infoSection','diceSection','encounterSection','pcsSection',
+    'dmNotesSection','locSection','npcsSection','monstersSection','exportSection'];
+
+  function updateActive() {
+    let current = sectionIds[0];
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el || el.style.display === 'none') continue;
+      if (el.getBoundingClientRect().top <= 80) current = id;
+    }
+    document.querySelectorAll('.snav-link').forEach(a => {
+      a.classList.toggle('snav-active', a.getAttribute('href') === '#' + current);
+    });
+  }
+
+  window.addEventListener('scroll', updateActive, { passive: true });
+  updateActive();
+}
+
 window.addEventListener('DOMContentLoaded', () => {
   const id = localStorage.getItem(SK.activeCampaign);
   if (!id) { document.getElementById('noCampaign').style.display=''; return; }
@@ -2663,6 +2817,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   setupEvents();
   renderAll();
+  setupSidebarHighlight();
   checkIncomingMonster();
   checkIncomingLocation();
 });
