@@ -176,7 +176,9 @@ button:hover {
     <h1>NPC Creator</h1>
     <nav class="nav-links">
       <a href="index.html">Hub</a>
+      <a id="campaignNavLink" href="campaign.html" style="display:none;">Campaign</a>
       <a href="dnd5e_character_generator.html">Character Generator</a>
+      <a href="npc_creator.html">NPC Creator</a>
       <a href="monster_manual.html">Monster Manual</a>
       <a href="spellbook.html">Spellbook</a>
     </nav>
@@ -445,6 +447,9 @@ window.addEventListener('DOMContentLoaded', () => {
   populateSelect('npcRole', ROLES);
   wireEvents();
   generateFullNpc();
+  if (localStorage.getItem('dndToolsActiveCampaignId')) {
+    document.getElementById('campaignNavLink').style.display = '';
+  }
 });
 </script>
 </body>

@@ -694,9 +694,11 @@ body::before {
     </div>
     <nav class="world-nav">
       <a href="index.html">Hub</a>
+      <a id="campaignNavLink" href="campaign.html" style="display:none;">Campaign</a>
       <a href="dnd5e_character_generator.html">Characters</a>
       <a href="npc_creator.html">NPC Creator</a>
       <a href="monster_manual.html">Monsters</a>
+      <a href="spellbook.html">Spellbook</a>
     </nav>
     <div class="search-wrap">
       <span class="search-icon">✦</span>
@@ -1501,6 +1503,10 @@ function rollSpellDmg(event, name) {
 // ===== INIT =====
 window.onload = () => {
   filterSpells();
+  if (localStorage.getItem('dndToolsActiveCampaignId')) {
+    const link = document.getElementById('campaignNavLink');
+    if (link) link.style.display = '';
+  }
 };
 </script>
 </body>

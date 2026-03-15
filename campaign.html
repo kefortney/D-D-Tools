@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campaign Editor — D&D Hub</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Serif+Text:ital@0;1&family=Source+Sans+3:wght@400;600;700&display=swap');
+
+:root {
+  --obsidian: #101317;
+  --mist: #a8b6c8;
+  --paper: #efe5cf;
+  --paper-deep: #dcc79a;
+  --ember: #a33a2b;
+  --forest: #2e5a3b;
+  --gold: #c4983a;
+  --shadow: rgba(0,0,0,0.35);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(164,58,43,0.2), transparent 55%),
+    radial-gradient(900px 600px at 100% 100%, rgba(46,90,59,0.2), transparent 50%),
+    linear-gradient(135deg, #0b0f14 0%, #151c24 55%, #101317 100%);
+  color: var(--paper);
+  font-family: 'Source Sans 3', sans-serif;
+  line-height: 1.4;
+  padding: 24px;
+}
+
+.shell { max-width: 1200px; margin: 0 auto; }
+
+/* ── Top bar ── */
+.topbar {
+  background: rgba(16,19,23,0.85);
+  border: 1px solid rgba(196,152,58,0.35);
+  border-radius: 12px;
+  padding: 14px 20px;
+  box-shadow: 0 16px 36px var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.brand { display: flex; flex-direction: column; gap: 2px; }
+.brand-name { font-family: 'Cinzel', serif; font-size: 0.8rem; color: var(--mist); letter-spacing: 1px; }
+#campaignTitleDisplay {
+  font-family: 'DM Serif Text', serif;
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+.nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.nav-links a {
+  color: var(--paper);
+  text-decoration: none;
+  padding: 7px 12px;
+  border: 1px solid rgba(220,199,154,0.25);
+  border-radius: 8px;
+  font-size: 0.88rem;
+  background: rgba(255,255,255,0.03);
+}
+.nav-links a:hover { border-color: var(--gold); color: var(--gold); }
+.nav-links a.active { border-color: var(--gold); color: var(--gold); }
+
+/* ── Sections ── */
+.section {
+  background: linear-gradient(160deg, rgba(12,16,22,0.85), rgba(22,30,40,0.85));
+  border: 1px solid rgba(220,199,154,0.2);
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  margin-bottom: 16px;
+}
+
+.section > h2 {
+  font-family: 'DM Serif Text', serif;
+  color: var(--paper-deep);
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.section-sub {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(220,199,154,0.12);
+}
+
+.section-sub:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+.section-sub h3 {
+  font-family: 'Cinzel', serif;
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+/* ── Areas ── */
+.area-block {
+  border: 1px solid rgba(100,80,180,0.35);
+  border-radius: 10px;
+  background: rgba(80,60,140,0.08);
+  margin-bottom: 12px;
+}
+
+.area-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.area-header:hover { background: rgba(255,255,255,0.03); border-radius: 10px 10px 0 0; }
+
+.area-toggle {
+  font-size: 0.7rem;
+  color: var(--mist);
+  width: 14px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.area-name-input {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: var(--paper-deep);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  padding: 2px 4px;
+  flex: 1;
+  min-width: 0;
+}
+.area-name-input:focus { outline: none; border-bottom-color: rgba(196,152,58,0.5); }
+
+.area-count { font-size: 0.75rem; color: var(--mist); white-space: nowrap; }
+
+.area-body {
+  padding: 0 12px 12px;
+}
+
+.area-notes-row {
+  margin-bottom: 10px;
+}
+
+.area-cards { display: grid; gap: 8px; }
+
+.unassigned-block {
+  border: 1px dashed rgba(220,199,154,0.2);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+.unassigned-block h4 {
+  font-family: 'Cinzel', serif;
+  color: var(--mist);
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+/* ── Cards ── */
+.pc-card, .npc-card, .monster-card {
+  border: 1px solid rgba(220,199,154,0.22);
+  border-radius: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,0.03);
+}
+
+.npc-card { border-color: rgba(46,90,59,0.45); }
+.monster-card { border-color: rgba(139,26,26,0.4); }
+
+.card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.card-title {
+  font-family: 'Cinzel', serif;
+  color: var(--paper-deep);
+  font-size: 0.92rem;
+}
+
+.card-badge {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: rgba(196,152,58,0.15);
+  border: 1px solid rgba(196,152,58,0.3);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+}
+.card-badge.npc { background: rgba(46,90,59,0.2); border-color: rgba(46,90,59,0.4); color: #70c890; }
+.card-badge.monster { background: rgba(139,26,26,0.2); border-color: rgba(139,26,26,0.4); color: #e07070; }
+
+/* ── Form elements ── */
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid rgba(220,199,154,0.25);
+  background: rgba(0,0,0,0.22);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.92rem;
+  font-family: 'Source Sans 3', sans-serif;
+}
+input:focus, textarea:focus, select:focus { outline: none; border-color: rgba(196,152,58,0.5); }
+select option { background: #1a2027; }
+textarea { min-height: 62px; resize: vertical; }
+
+label.fl {
+  font-size: 0.74rem;
+  color: var(--mist);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(50px, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.stat-grid label { font-size: 0.72rem; color: var(--mist); display: block; margin-bottom: 2px; }
+.stat-grid input { padding: 6px; text-align: center; }
+
+button {
+  border: 1px solid rgba(220,199,154,0.35);
+  background: rgba(255,255,255,0.04);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+button:hover { border-color: var(--gold); color: var(--gold); }
+
+.btn-primary { background: linear-gradient(135deg, #8d3125, #a33a2b); border-color: #a33a2b; }
+.btn-primary:hover { color: var(--paper); }
+.btn-secondary { background: linear-gradient(135deg, #20402a, #2e5a3b); border-color: #2e5a3b; }
+.btn-secondary:hover { color: var(--paper); }
+.btn-danger { background: rgba(100,20,20,0.3); border-color: rgba(160,40,40,0.5); }
+.btn-danger:hover { border-color: #e05050; color: #e05050; }
+.btn-like {
+  border: 1px solid rgba(220,199,154,0.35);
+  background: rgba(255,255,255,0.04);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+.btn-like:hover { border-color: var(--gold); color: var(--gold); }
+
+.select-inline { flex: 1; min-width: 150px; max-width: 280px; }
+.hidden-file { display: none; }
+
+.small { color: var(--mist); font-size: 0.85rem; }
+
+.empty {
+  color: var(--mist);
+  font-style: italic;
+  border: 1px dashed rgba(220,199,154,0.2);
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.flash {
+  min-height: 20px;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+@media (max-width: 760px) {
+  body { padding: 12px; }
+  .stat-grid { grid-template-columns: repeat(3, minmax(50px, 1fr)); }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-name">Campaign</span>
+      <span id="campaignTitleDisplay">Loading…</span>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html">← All Campaigns</a>
+      <a href="dnd5e_character_generator.html">Character Generator</a>
+      <a href="npc_creator.html">NPC Creator</a>
+      <a href="monster_manual.html">Monster Manual</a>
+      <a href="spellbook.html">Spellbook</a>
+    </nav>
+  </header>
+
+  <div id="noCampaign" class="section" style="display:none;">
+    <p>No campaign loaded. <a href="index.html" style="color:var(--gold);">Return to Hub</a> and open one.</p>
+  </div>
+
+  <!-- ═══ CAMPAIGN INFO ═══ -->
+  <section class="section" id="infoSection" style="display:none;">
+    <h2>Campaign Details</h2>
+    <div class="input-row">
+      <div><label class="fl">Campaign Name</label><input id="campName" placeholder="Name"></div>
+    </div>
+    <label class="fl">Campaign Notes</label>
+    <textarea id="campNotes" placeholder="Story notes, world details, session summaries…"></textarea>
+    <div id="infoFlash" class="flash"></div>
+  </section>
+
+  <!-- ═══ PLAYER CHARACTERS ═══ -->
+  <section class="section" id="pcsSection" style="display:none;">
+    <h2>Player Characters</h2>
+    <div class="actions">
+      <button id="addBlankPcBtn" class="btn-primary">+ Blank Character</button>
+      <select id="vaultPcSelect" class="select-inline"><option value="">— Add from Vault —</option></select>
+      <button id="addFromVaultBtn">Add from Vault</button>
+    </div>
+    <div id="campaignPcList"></div>
+    <div id="pcsFlash" class="flash"></div>
+  </section>
+
+  <!-- ═══ AREAS ═══ -->
+  <section class="section" id="areasSection" style="display:none;">
+    <h2>Map Areas &amp; Locations</h2>
+    <p class="small" style="margin-bottom:10px;">Create areas to organize NPCs and monsters by location. Assign each NPC or monster to an area from their card.</p>
+    <div class="actions">
+      <input id="newAreaName" placeholder="New area name…" style="max-width:240px;">
+      <button id="addAreaBtn" class="btn-secondary">+ Add Area</button>
+    </div>
+    <div id="areaList"></div>
+    <div id="areasFlash" class="flash"></div>
+  </section>
+
+  <!-- ═══ NPCs ═══ -->
+  <section class="section" id="npcsSection" style="display:none;">
+    <h2>NPCs</h2>
+    <div class="actions">
+      <button id="addBlankNpcBtn" class="btn-secondary">+ Blank NPC</button>
+      <select id="registryNpcSelect" class="select-inline"><option value="">— Add from Registry —</option></select>
+      <button id="addFromRegistryBtn">Add from Registry</button>
+    </div>
+    <div id="campaignNpcList"></div>
+    <div id="npcsFlash" class="flash"></div>
+  </section>
+
+  <!-- ═══ MONSTERS ═══ -->
+  <section class="section" id="monstersSection" style="display:none;">
+    <h2>Monsters</h2>
+    <div class="actions">
+      <select id="monsterSelect" class="select-inline"></select>
+      <button id="addMonsterBtn">Add Monster</button>
+      <button id="addCustomMonsterBtn">+ Custom Monster</button>
+    </div>
+    <div id="campaignMonsterList"></div>
+    <div id="monstersFlash" class="flash"></div>
+  </section>
+
+  <!-- ═══ EXPORT / IMPORT ═══ -->
+  <section class="section" id="exportSection" style="display:none;">
+    <h2>Export &amp; Import</h2>
+    <p class="small" style="margin-bottom:10px;">Download campaign contents as CSV. Import previously exported CSVs to restore data.</p>
+    <div class="actions">
+      <button id="exportSummaryBtn" class="btn-secondary">Campaign Summary</button>
+      <button id="exportPcsBtn" class="btn-secondary">Characters CSV</button>
+      <button id="exportNpcsBtn" class="btn-secondary">NPCs CSV</button>
+      <button id="exportMonstersBtn" class="btn-secondary">Monsters CSV</button>
+      <button id="exportAreasBtn" class="btn-secondary">Areas CSV</button>
+    </div>
+    <div class="actions" style="margin-top:6px;">
+      <label class="btn-like" for="csvInput">Import CSV</label>
+      <input class="hidden-file" id="csvInput" type="file" accept=".csv,text/csv">
+    </div>
+    <div id="exportFlash" class="flash"></div>
+  </section>
+
+</div><!-- /shell -->
+
+<script>
+// ═══════════════════ STORAGE ═══════════════════
+const SK = {
+  campaigns: 'dndToolsCampaigns',
+  activeCampaign: 'dndToolsActiveCampaignId',
+  pcs: 'dndToolsPlayerCharacters',
+  npcProfiles: 'dndToolsNpcProfiles',
+  addMonster: 'dndToolsAddMonsterToCampaign'
+};
+
+function safeRead(key) {
+  try { const v = JSON.parse(localStorage.getItem(key)||'null'); return Array.isArray(v)?v:[]; }
+  catch { return []; }
+}
+function safeWrite(key, v) { localStorage.setItem(key, JSON.stringify(v)); }
+function uid(p) { return `${p}-${Date.now()}-${Math.floor(Math.random()*100000)}`; }
+function nowIso() { return new Date().toISOString(); }
+function numberOr(v, fb=0) { const n=parseInt(v,10); return Number.isFinite(n)?n:fb; }
+function escapeHtml(v) {
+  return String(v==null?'':v)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+function showFlash(id, msg, err) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = msg;
+  el.style.color = err ? '#ff8673' : '#c4983a';
+  clearTimeout(el._t);
+  el._t = setTimeout(() => { el.textContent=''; }, 4000);
+}
+
+// ═══════════════════ CAMPAIGN LOAD / SAVE ═══════════════════
+let CAMPAIGN = null;
+
+function loadCampaigns() { return safeRead(SK.campaigns); }
+function saveCampaigns(list) { safeWrite(SK.campaigns, list); }
+
+function loadActiveCampaign() {
+  const id = localStorage.getItem(SK.activeCampaign);
+  if (!id) return null;
+  return loadCampaigns().find(c => c.id === id) || null;
+}
+
+function persistCampaign() {
+  if (!CAMPAIGN) return;
+  CAMPAIGN.updatedAt = nowIso();
+  const list = loadCampaigns();
+  const idx = list.findIndex(c => c.id === CAMPAIGN.id);
+  if (idx !== -1) list[idx] = CAMPAIGN;
+  else list.push(CAMPAIGN);
+  saveCampaigns(list);
+}
+
+// Ensure required arrays exist (backwards compat)
+function normalizeCampaign(c) {
+  c.areas = c.areas || [];
+  c.pcs = c.pcs || [];
+  c.npcs = c.npcs || [];
+  c.monsters = c.monsters || [];
+  return c;
+}
+
+// ═══════════════════ MONSTER REFERENCE LIST ═══════════════════
+const MONSTER_REF = [
+  {name:'Rat',cr:'1/8',type:'Beast',ac:10,hp:'1 (1d4−1)'},
+  {name:'Bat',cr:'0',type:'Beast',ac:12,hp:'1 (1d4−1)'},
+  {name:'Cat',cr:'0',type:'Beast',ac:12,hp:'2 (1d4)'},
+  {name:'Poisonous Snake',cr:'1/8',type:'Beast',ac:13,hp:'2 (1d4)'},
+  {name:'Kobold',cr:'1/8',type:'Humanoid',ac:12,hp:'5 (2d6−2)'},
+  {name:'Bandit',cr:'1/8',type:'Humanoid',ac:12,hp:'11 (2d8+2)'},
+  {name:'Skeleton',cr:'1/4',type:'Undead',ac:13,hp:'13 (2d8+4)'},
+  {name:'Zombie',cr:'1/4',type:'Undead',ac:8,hp:'22 (3d8+9)'},
+  {name:'Goblin',cr:'1/4',type:'Humanoid',ac:15,hp:'7 (2d6)'},
+  {name:'Hobgoblin',cr:'1/2',type:'Humanoid',ac:18,hp:'11 (2d8+2)'},
+  {name:'Orc',cr:'1/2',type:'Humanoid',ac:13,hp:'15 (2d8+6)'},
+  {name:'Scout',cr:'1/2',type:'Humanoid',ac:13,hp:'16 (3d8+3)'},
+  {name:'Shadow',cr:'1/2',type:'Undead',ac:12,hp:'16 (3d8+3)'},
+  {name:'Worg',cr:'1/2',type:'Monstrosity',ac:13,hp:'26 (4d10+4)'},
+  {name:'Lizardfolk',cr:'1/2',type:'Humanoid',ac:15,hp:'22 (4d8+4)'},
+  {name:'Ghoul',cr:'1',type:'Undead',ac:12,hp:'22 (5d8)'},
+  {name:'Giant Spider',cr:'1',type:'Beast',ac:14,hp:'26 (4d10+4)'},
+  {name:'Dire Wolf',cr:'1',type:'Beast',ac:14,hp:'37 (5d10+10)'},
+  {name:'Bugbear',cr:'1',type:'Humanoid',ac:16,hp:'27 (5d8+5)'},
+  {name:'Specter',cr:'1',type:'Undead',ac:12,hp:'22 (5d8)'},
+  {name:'Harpy',cr:'1',type:'Monstrosity',ac:11,hp:'38 (7d8+7)'},
+  {name:'Tiger',cr:'1',type:'Beast',ac:12,hp:'37 (5d10+10)'},
+  {name:'Giant Octopus',cr:'1',type:'Beast',ac:11,hp:'52 (8d10+8)'},
+  {name:'Ogre',cr:'2',type:'Giant',ac:11,hp:'59 (7d10+21)'},
+  {name:'Ochre Jelly',cr:'2',type:'Ooze',ac:8,hp:'45 (6d10+12)'},
+  {name:'Ghast',cr:'2',type:'Undead',ac:13,hp:'36 (8d8)'},
+  {name:'Manticore',cr:'3',type:'Monstrosity',ac:14,hp:'68 (8d10+24)'},
+  {name:'Green Hag',cr:'3',type:'Fey',ac:17,hp:'82 (11d8+33)'},
+  {name:'Werewolf',cr:'3',type:'Humanoid',ac:11,hp:'58 (9d8+18)'},
+  {name:'Banshee',cr:'4',type:'Undead',ac:12,hp:'58 (13d8)'},
+  {name:'Troll',cr:'5',type:'Giant',ac:15,hp:'84 (8d10+40)'},
+  {name:'Aboleth',cr:'10',type:'Aberration',ac:17,hp:'135 (18d10+36)'},
+];
+
+// ═══════════════════ AREA SELECTOR HTML ═══════════════════
+function areaSelectHtml(selectedAreaId, dataAttr) {
+  const opts = `<option value="" ${!selectedAreaId?'selected':''}>— Unassigned —</option>` +
+    (CAMPAIGN.areas||[]).map(a =>
+      `<option value="${escapeHtml(a.id)}" ${a.id===selectedAreaId?'selected':''}>${escapeHtml(a.name||'Unnamed Area')}</option>`
+    ).join('');
+  return `<select ${dataAttr} style="font-size:0.82rem;">${opts}</select>`;
+}
+
+// ═══════════════════ RENDER AREAS ═══════════════════
+function renderAreas() {
+  const wrap = document.getElementById('areaList');
+  if (!CAMPAIGN.areas.length) {
+    wrap.innerHTML = '<div class="empty">No areas yet. Add areas above to organize NPCs and monsters by location.</div>';
+    return;
+  }
+  wrap.innerHTML = CAMPAIGN.areas.map(area => {
+    const npcCount = CAMPAIGN.npcs.filter(n => n.areaId === area.id).length;
+    const monCount = CAMPAIGN.monsters.filter(m => m.areaId === area.id).length;
+    return `
+    <div class="area-block" data-area-id="${escapeHtml(area.id)}">
+      <div class="area-header" onclick="toggleArea('${escapeHtml(area.id)}')">
+        <span class="area-toggle" id="toggle-${escapeHtml(area.id)}">▶</span>
+        <input class="area-name-input" data-area-field="name" data-area-id="${escapeHtml(area.id)}"
+          value="${escapeHtml(area.name||'')}" placeholder="Area name"
+          onclick="event.stopPropagation()">
+        <span class="area-count">${npcCount} NPC${npcCount!==1?'s':''} · ${monCount} monster${monCount!==1?'s':''}</span>
+        <button data-action="delete-area" data-area-id="${escapeHtml(area.id)}"
+          onclick="event.stopPropagation()" style="padding:4px 8px;font-size:0.8rem;">Remove</button>
+      </div>
+      <div class="area-body" id="body-${escapeHtml(area.id)}" style="display:none;">
+        <div class="area-notes-row">
+          <label class="fl">Area Notes</label>
+          <textarea data-area-field="notes" data-area-id="${escapeHtml(area.id)}"
+            placeholder="Description, key locations, secrets…">${escapeHtml(area.notes||'')}</textarea>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function toggleArea(areaId) {
+  const body = document.getElementById(`body-${areaId}`);
+  const tog = document.getElementById(`toggle-${areaId}`);
+  if (!body) return;
+  const open = body.style.display === 'none';
+  body.style.display = open ? '' : 'none';
+  if (tog) tog.textContent = open ? '▼' : '▶';
+}
+
+// ═══════════════════ RENDER NPCs (grouped by area) ═══════════════════
+function renderCampaignNpcs() {
+  const wrap = document.getElementById('campaignNpcList');
+  if (!CAMPAIGN.npcs.length) {
+    wrap.innerHTML = '<div class="empty">No NPCs in this campaign yet.</div>';
+    return;
+  }
+
+  let html = '';
+
+  // Per area
+  for (const area of CAMPAIGN.areas) {
+    const npcs = CAMPAIGN.npcs.filter(n => n.areaId === area.id);
+    if (!npcs.length) continue;
+    html += `<div class="area-block" style="margin-bottom:12px;">
+      <div class="area-header" style="cursor:default;">
+        <span style="font-family:'Cinzel',serif;font-size:0.85rem;color:#a8b0d8;">📍 ${escapeHtml(area.name||'Unnamed Area')}</span>
+      </div>
+      <div class="area-cards" style="padding:0 12px 12px;">
+        ${npcs.map(npc => npcCardHtml(npc)).join('')}
+      </div>
+    </div>`;
+  }
+
+  // Unassigned
+  const unassigned = CAMPAIGN.npcs.filter(n => !n.areaId);
+  if (unassigned.length) {
+    html += `<div class="unassigned-block">
+      <h4>UNASSIGNED</h4>
+      <div class="area-cards">${unassigned.map(npc => npcCardHtml(npc)).join('')}</div>
+    </div>`;
+  }
+
+  wrap.innerHTML = html || '<div class="empty">No NPCs in this campaign yet.</div>';
+}
+
+function npcCardHtml(npc) {
+  return `
+  <article class="npc-card" data-npc-id="${escapeHtml(npc.id)}">
+    <div class="card-head">
+      <div class="card-title">${escapeHtml(npc.name||'Unnamed NPC')}</div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span class="card-badge npc">NPC</span>
+        <button data-action="delete-npc" data-id="${escapeHtml(npc.id)}">Remove</button>
+      </div>
+    </div>
+    <div class="input-row">
+      <div><label class="fl">Name</label><input data-npc-field="name" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.name||'')}" placeholder="Name"></div>
+      <div><label class="fl">Class / Role</label><input data-npc-field="className" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.className||'')}" placeholder="Class or Role"></div>
+      <div><label class="fl">Ancestry</label><input data-npc-field="ancestry" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.ancestry||'')}" placeholder="Ancestry"></div>
+      <div><label class="fl">Alignment</label><input data-npc-field="alignment" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.alignment||'')}" placeholder="Alignment"></div>
+    </div>
+    <div class="input-row">
+      <div><label class="fl">AC</label><input data-npc-field="ac" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.ac||10)}" type="number"></div>
+      <div><label class="fl">HP</label><input data-npc-field="hp" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.hp||8)}" type="number"></div>
+      <div><label class="fl">Speed</label><input data-npc-field="speed" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.speed||30)}" type="number"></div>
+      <div><label class="fl">Role Detail</label><input data-npc-field="role" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.role||'')}" placeholder="e.g. Innkeeper"></div>
+    </div>
+    <div class="input-row">
+      <div><label class="fl">Personality / Motivation</label><input data-npc-field="personality" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.personality||'')}" placeholder="Personality"></div>
+      <div><label class="fl">Secret</label><input data-npc-field="secret" data-id="${escapeHtml(npc.id)}" value="${escapeHtml(npc.secret||'')}" placeholder="Hidden truth"></div>
+      <div><label class="fl">Area</label>${areaSelectHtml(npc.areaId||'', `data-npc-field="areaId" data-id="${escapeHtml(npc.id)}"`)}</div>
+    </div>
+    <label class="fl">Notes</label>
+    <textarea data-npc-field="notes" data-id="${escapeHtml(npc.id)}" placeholder="Plot hooks, voice notes, faction ties…">${escapeHtml(npc.notes||'')}</textarea>
+  </article>`;
+}
+
+// ═══════════════════ RENDER MONSTERS (grouped by area) ═══════════════════
+function renderCampaignMonsters() {
+  const wrap = document.getElementById('campaignMonsterList');
+  if (!CAMPAIGN.monsters.length) {
+    wrap.innerHTML = '<div class="empty">No monsters in this campaign yet.</div>';
+    return;
+  }
+
+  let html = '';
+
+  for (const area of CAMPAIGN.areas) {
+    const mons = CAMPAIGN.monsters.filter(m => m.areaId === area.id);
+    if (!mons.length) continue;
+    html += `<div class="area-block" style="margin-bottom:12px;">
+      <div class="area-header" style="cursor:default;">
+        <span style="font-family:'Cinzel',serif;font-size:0.85rem;color:#c88080;">⚔ ${escapeHtml(area.name||'Unnamed Area')}</span>
+      </div>
+      <div class="area-cards" style="padding:0 12px 12px;">
+        ${mons.map(mon => monsterCardHtml(mon)).join('')}
+      </div>
+    </div>`;
+  }
+
+  const unassigned = CAMPAIGN.monsters.filter(m => !m.areaId);
+  if (unassigned.length) {
+    html += `<div class="unassigned-block">
+      <h4>UNASSIGNED</h4>
+      <div class="area-cards">${unassigned.map(mon => monsterCardHtml(mon)).join('')}</div>
+    </div>`;
+  }
+
+  wrap.innerHTML = html || '<div class="empty">No monsters in this campaign yet.</div>';
+}
+
+function monsterCardHtml(mon) {
+  return `
+  <article class="monster-card" data-mon-id="${escapeHtml(mon.id)}">
+    <div class="card-head">
+      <div class="card-title">${escapeHtml(mon.customName||mon.sourceName||'Unnamed Monster')}</div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <span class="card-badge monster">CR ${escapeHtml(mon.cr||'?')}</span>
+        <button data-action="delete-monster" data-id="${escapeHtml(mon.id)}">Remove</button>
+      </div>
+    </div>
+    <div class="input-row">
+      <div><label class="fl">Display Name</label><input data-mon-field="customName" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.customName||mon.sourceName||'')}" placeholder="Custom name"></div>
+      <div><label class="fl">Source Name</label><input data-mon-field="sourceName" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.sourceName||'')}" placeholder="Original name"></div>
+      <div><label class="fl">Type</label><input data-mon-field="type" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.type||'')}" placeholder="Type"></div>
+      <div><label class="fl">CR</label><input data-mon-field="cr" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.cr||'')}" placeholder="CR"></div>
+    </div>
+    <div class="input-row">
+      <div><label class="fl">AC</label><input data-mon-field="ac" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.ac||'')}" type="number"></div>
+      <div><label class="fl">HP</label><input data-mon-field="hp" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.hp||'')}" placeholder="e.g. 22 (5d8)"></div>
+      <div><label class="fl">Count</label><input data-mon-field="count" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.count||1)}" type="number" min="1"></div>
+      <div><label class="fl">Status</label><input data-mon-field="status" data-id="${escapeHtml(mon.id)}" value="${escapeHtml(mon.status||'')}" placeholder="Alive, Defeated…"></div>
+    </div>
+    <div class="input-row" style="grid-template-columns:1fr;">
+      <div><label class="fl">Area</label>${areaSelectHtml(mon.areaId||'', `data-mon-field="areaId" data-id="${escapeHtml(mon.id)}"`)}</div>
+    </div>
+    <label class="fl">Notes</label>
+    <textarea data-mon-field="notes" data-id="${escapeHtml(mon.id)}" placeholder="Combat notes, lair details…">${escapeHtml(mon.notes||'')}</textarea>
+  </article>`;
+}
+
+// ═══════════════════ RENDER CHARACTERS ═══════════════════
+function renderCampaignPcs() {
+  const wrap = document.getElementById('campaignPcList');
+  if (!CAMPAIGN.pcs.length) {
+    wrap.innerHTML = '<div class="empty">No characters in this campaign yet.</div>';
+    return;
+  }
+  wrap.innerHTML = CAMPAIGN.pcs.map((pc, idx) => `
+    <article class="pc-card" style="margin-bottom:10px;" data-pc-id="${escapeHtml(pc.id)}">
+      <div class="card-head">
+        <div class="card-title">${escapeHtml(pc.name||`Character ${idx+1}`)}</div>
+        <div style="display:flex;gap:6px;align-items:center;">
+          <span class="card-badge">PC</span>
+          <button data-action="delete-pc" data-id="${escapeHtml(pc.id)}">Remove</button>
+        </div>
+      </div>
+      <div class="input-row">
+        <div><label class="fl">Name</label><input data-pc-field="name" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.name||'')}" placeholder="Name"></div>
+        <div><label class="fl">Class</label><input data-pc-field="className" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.className||'')}" placeholder="Class"></div>
+        <div><label class="fl">Race</label><input data-pc-field="race" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.race||'')}" placeholder="Race"></div>
+        <div><label class="fl">Level</label><input data-pc-field="level" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.level||1)}" type="number" min="1" max="20"></div>
+        <div><label class="fl">Background</label><input data-pc-field="background" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.background||'')}" placeholder="Background"></div>
+        <div><label class="fl">Alignment</label><input data-pc-field="alignment" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.alignment||'')}" placeholder="Alignment"></div>
+      </div>
+      <div class="stat-grid">
+        ${['STR','DEX','CON','INT','WIS','CHA'].map(s =>
+          `<div><label>${s}</label><input data-pc-field="${s}" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc[s]||10)}" type="number"></div>`
+        ).join('')}
+      </div>
+      <div class="input-row" style="margin-top:4px;">
+        <div><label class="fl">HP</label><input data-pc-field="hp" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.hp||'')}" type="number"></div>
+        <div><label class="fl">AC</label><input data-pc-field="ac" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.ac||'')}" type="number"></div>
+        <div><label class="fl">Initiative</label><input data-pc-field="initiative" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.initiative||0)}" type="number"></div>
+        <div><label class="fl">Speed</label><input data-pc-field="speed" data-id="${escapeHtml(pc.id)}" value="${escapeHtml(pc.speed||30)}" type="number"></div>
+      </div>
+      <label class="fl">Notes</label>
+      <textarea data-pc-field="notes" data-id="${escapeHtml(pc.id)}" placeholder="Inventory, conditions, backstory…">${escapeHtml(pc.notes||'')}</textarea>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════ POPULATE SELECTS ═══════════════════
+function populateMonsterSelect() {
+  const sel = document.getElementById('monsterSelect');
+  sel.innerHTML = `<option value="">— Select monster —</option>` +
+    MONSTER_REF.map(m => `<option value="${escapeHtml(m.name)}">${escapeHtml(m.name)} (CR ${m.cr}, ${m.type})</option>`).join('');
+}
+
+function populateVaultSelect() {
+  const vault = safeRead(SK.pcs);
+  const existing = new Set(CAMPAIGN.pcs.map(p => p.id));
+  const available = vault.filter(p => !existing.has(p.id));
+  const sel = document.getElementById('vaultPcSelect');
+  sel.innerHTML = available.length
+    ? `<option value="">— Add from Vault —</option>` + available.map(p => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.name||'Unnamed')} (${escapeHtml(p.className||'?')})</option>`).join('')
+    : `<option value="">— No new vault characters —</option>`;
+}
+
+function populateRegistrySelect() {
+  const reg = safeRead(SK.npcProfiles);
+  const existing = new Set(CAMPAIGN.npcs.map(n => n.id));
+  const available = reg.filter(n => !existing.has(n.id));
+  const sel = document.getElementById('registryNpcSelect');
+  sel.innerHTML = available.length
+    ? `<option value="">— Add from Registry —</option>` + available.map(n => `<option value="${escapeHtml(n.id)}">${escapeHtml(n.name||'Unnamed')} (${escapeHtml(n.className||'?')})</option>`).join('')
+    : `<option value="">— No new registry NPCs —</option>`;
+}
+
+// ═══════════════════ UPDATE HELPERS ═══════════════════
+function findById(arr, id) { return arr.find(x => x.id === id); }
+
+function updatePcField(id, field, value) {
+  const pc = findById(CAMPAIGN.pcs, id);
+  if (!pc) return;
+  const nums = ['level','STR','DEX','CON','INT','WIS','CHA','hp','ac','initiative','speed'];
+  pc[field] = nums.includes(field) ? numberOr(value,0) : value;
+  pc.updatedAt = nowIso();
+  persistCampaign();
+  if (field === 'name') {
+    const card = document.querySelector(`[data-pc-id="${id}"]`);
+    if (card) { const t = card.querySelector('.card-title'); if (t) t.textContent = value||'—'; }
+  }
+}
+
+function updateNpcField(id, field, value) {
+  const npc = findById(CAMPAIGN.npcs, id);
+  if (!npc) return;
+  const nums = ['ac','hp','speed'];
+  npc[field] = nums.includes(field) ? numberOr(value,0) : value;
+  npc.updatedAt = nowIso();
+  persistCampaign();
+  if (field === 'areaId') { renderCampaignNpcs(); return; }
+  if (field === 'name') {
+    const card = document.querySelector(`[data-npc-id="${id}"]`);
+    if (card) { const t = card.querySelector('.card-title'); if (t) t.textContent = value||'—'; }
+  }
+}
+
+function updateMonsterField(id, field, value) {
+  const mon = findById(CAMPAIGN.monsters, id);
+  if (!mon) return;
+  const nums = ['ac','count'];
+  mon[field] = nums.includes(field) ? numberOr(value,0) : value;
+  mon.updatedAt = nowIso();
+  persistCampaign();
+  if (field === 'areaId') { renderCampaignMonsters(); return; }
+  if (field === 'customName' || field === 'sourceName') {
+    const card = document.querySelector(`[data-mon-id="${id}"]`);
+    if (card) { const t = card.querySelector('.card-title'); if (t) t.textContent = mon.customName||mon.sourceName||'—'; }
+  }
+}
+
+function updateAreaField(areaId, field, value) {
+  const area = findById(CAMPAIGN.areas, areaId);
+  if (!area) return;
+  area[field] = value;
+  persistCampaign();
+  if (field === 'name') {
+    // re-render NPC/monster lists so area header updates
+    renderCampaignNpcs();
+    renderCampaignMonsters();
+    // update count in area list header without full re-render
+    renderAreas();
+  }
+}
+
+// ═══════════════════ ADD ENTITIES ═══════════════════
+function addBlankPc() {
+  CAMPAIGN.pcs.push({
+    id:uid('cpc'), name:'New Character', className:'Fighter', race:'Human',
+    background:'', alignment:'', level:1,
+    STR:10, DEX:10, CON:10, INT:10, WIS:10, CHA:10,
+    hp:10, ac:10, initiative:0, speed:30, notes:'',
+    createdAt:nowIso(), updatedAt:nowIso()
+  });
+  persistCampaign();
+  renderCampaignPcs();
+  populateVaultSelect();
+}
+
+function addFromVault() {
+  const id = document.getElementById('vaultPcSelect').value;
+  if (!id) return;
+  const pc = safeRead(SK.pcs).find(p => p.id === id);
+  if (!pc) return;
+  CAMPAIGN.pcs.push({...pc, addedAt:nowIso()});
+  persistCampaign();
+  renderCampaignPcs();
+  populateVaultSelect();
+  showFlash('pcsFlash', `${pc.name} added.`);
+}
+
+function deletePc(id) {
+  CAMPAIGN.pcs = CAMPAIGN.pcs.filter(p => p.id !== id);
+  persistCampaign();
+  renderCampaignPcs();
+  populateVaultSelect();
+}
+
+function addBlankNpc() {
+  CAMPAIGN.npcs.push({
+    id:uid('cnpc'), name:'New NPC', className:'', ancestry:'Human',
+    role:'', alignment:'True Neutral', ac:12, hp:10, speed:30,
+    personality:'', motivation:'', secret:'', notes:'', areaId:'',
+    createdAt:nowIso(), updatedAt:nowIso()
+  });
+  persistCampaign();
+  renderCampaignNpcs();
+  populateRegistrySelect();
+}
+
+function addFromRegistry() {
+  const id = document.getElementById('registryNpcSelect').value;
+  if (!id) return;
+  const npc = safeRead(SK.npcProfiles).find(n => n.id === id);
+  if (!npc) return;
+  CAMPAIGN.npcs.push({...npc, areaId:'', addedAt:nowIso()});
+  persistCampaign();
+  renderCampaignNpcs();
+  populateRegistrySelect();
+  showFlash('npcsFlash', `${npc.name} added.`);
+}
+
+function deleteNpc(id) {
+  CAMPAIGN.npcs = CAMPAIGN.npcs.filter(n => n.id !== id);
+  persistCampaign();
+  renderCampaignNpcs();
+  populateRegistrySelect();
+  renderAreas(); // update counts
+}
+
+function addMonsterFromSelect() {
+  const name = document.getElementById('monsterSelect').value;
+  if (!name) return;
+  const ref = MONSTER_REF.find(m => m.name === name);
+  CAMPAIGN.monsters.push({
+    id:uid('cmon'), customName:'', sourceName:ref?ref.name:name,
+    type:ref?ref.type:'', cr:ref?ref.cr:'', ac:ref?ref.ac:10,
+    hp:ref?ref.hp:'', count:1, status:'', notes:'', areaId:'',
+    addedAt:nowIso(), updatedAt:nowIso()
+  });
+  persistCampaign();
+  renderCampaignMonsters();
+  showFlash('monstersFlash', `${name} added.`);
+}
+
+function addCustomMonster() {
+  CAMPAIGN.monsters.push({
+    id:uid('cmon'), customName:'Custom Monster', sourceName:'',
+    type:'', cr:'', ac:10, hp:'', count:1, status:'', notes:'', areaId:'',
+    addedAt:nowIso(), updatedAt:nowIso()
+  });
+  persistCampaign();
+  renderCampaignMonsters();
+}
+
+function deleteMonster(id) {
+  CAMPAIGN.monsters = CAMPAIGN.monsters.filter(m => m.id !== id);
+  persistCampaign();
+  renderCampaignMonsters();
+  renderAreas(); // update counts
+}
+
+function addArea() {
+  const inp = document.getElementById('newAreaName');
+  const name = inp.value.trim();
+  if (!name) { showFlash('areasFlash', 'Enter an area name.', true); return; }
+  CAMPAIGN.areas.push({ id:uid('area'), name, notes:'' });
+  persistCampaign();
+  inp.value = '';
+  renderAreas();
+  renderCampaignNpcs();
+  renderCampaignMonsters();
+}
+
+function deleteArea(areaId) {
+  const area = findById(CAMPAIGN.areas, areaId);
+  if (!area) return;
+  if (!confirm(`Remove area "${area.name}"? NPCs and monsters assigned to it will become unassigned.`)) return;
+  CAMPAIGN.areas = CAMPAIGN.areas.filter(a => a.id !== areaId);
+  // unassign entities
+  CAMPAIGN.npcs.forEach(n => { if (n.areaId === areaId) n.areaId = ''; });
+  CAMPAIGN.monsters.forEach(m => { if (m.areaId === areaId) m.areaId = ''; });
+  persistCampaign();
+  renderAreas();
+  renderCampaignNpcs();
+  renderCampaignMonsters();
+}
+
+// ═══════════════════ INCOMING MONSTER FROM MANUAL ═══════════════════
+function checkIncomingMonster() {
+  try {
+    const raw = localStorage.getItem(SK.addMonster);
+    if (!raw) return;
+    localStorage.removeItem(SK.addMonster);
+    const mon = JSON.parse(raw);
+    if (!mon || !mon.name) return;
+    CAMPAIGN.monsters.push({
+      id:uid('cmon'), customName:'', sourceName:mon.name,
+      type:mon.type||'', cr:mon.cr!==undefined?String(mon.cr):'',
+      ac:mon.ac||10, hp:mon.hp||'', count:1, status:'', notes:'', areaId:'',
+      addedAt:nowIso(), updatedAt:nowIso()
+    });
+    persistCampaign();
+    renderCampaignMonsters();
+    showFlash('monstersFlash', `${mon.name} added from Monster Manual.`);
+  } catch { /* ignore */ }
+}
+
+// ═══════════════════ CSV HELPERS ═══════════════════
+function csvEsc(v) { const s=v==null?'':String(v); return /[",\n]/.test(s)?`"${s.replace(/"/g,'""')}"`:''+s; }
+function toCsv(rows) { return rows.map(r=>r.map(csvEsc).join(',')).join('\n'); }
+
+function downloadCsv(content, filename) {
+  const blob = new Blob([content], {type:'text/csv;charset=utf-8;'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href=url; a.download=filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a); URL.revokeObjectURL(url);
+}
+
+function exportSummary() {
+  const d = new Date().toISOString().slice(0,10);
+  const rows = [
+    ['field','value'],
+    ['name', CAMPAIGN.name],
+    ['notes', CAMPAIGN.notes||''],
+    ['characters', CAMPAIGN.pcs.length],
+    ['npcs', CAMPAIGN.npcs.length],
+    ['monsters', CAMPAIGN.monsters.length],
+    ['areas', CAMPAIGN.areas.length],
+    ['createdAt', CAMPAIGN.createdAt||''],
+    ['updatedAt', CAMPAIGN.updatedAt||''],
+  ];
+  downloadCsv(toCsv(rows), `${CAMPAIGN.name}-summary-${d}.csv`);
+  showFlash('exportFlash', 'Summary exported.');
+}
+
+function exportPcs() {
+  const d = new Date().toISOString().slice(0,10);
+  const hdrs = ['id','name','className','race','background','alignment','level',
+    'STR','DEX','CON','INT','WIS','CHA','hp','ac','initiative','speed','notes','createdAt','updatedAt'];
+  const rows = [hdrs, ...CAMPAIGN.pcs.map(pc => [
+    pc.id, pc.name, pc.className, pc.race, pc.background, pc.alignment, pc.level,
+    pc.STR, pc.DEX, pc.CON, pc.INT, pc.WIS, pc.CHA, pc.hp, pc.ac, pc.initiative, pc.speed,
+    pc.notes||'', pc.createdAt||'', pc.updatedAt||''
+  ])];
+  downloadCsv(toCsv(rows), `${CAMPAIGN.name}-characters-${d}.csv`);
+  showFlash('exportFlash', 'Characters CSV exported.');
+}
+
+function exportNpcs() {
+  const d = new Date().toISOString().slice(0,10);
+  const areaName = id => { const a = findById(CAMPAIGN.areas, id); return a ? a.name : ''; };
+  const hdrs = ['id','name','className','ancestry','role','alignment','ac','hp','speed',
+    'personality','motivation','secret','notes','areaId','areaName','createdAt','updatedAt'];
+  const rows = [hdrs, ...CAMPAIGN.npcs.map(n => [
+    n.id, n.name, n.className||'', n.ancestry||'', n.role||'', n.alignment||'',
+    n.ac||'', n.hp||'', n.speed||'', n.personality||'', n.motivation||'', n.secret||'',
+    n.notes||'', n.areaId||'', areaName(n.areaId||''),
+    n.createdAt||'', n.updatedAt||''
+  ])];
+  downloadCsv(toCsv(rows), `${CAMPAIGN.name}-npcs-${d}.csv`);
+  showFlash('exportFlash', 'NPCs CSV exported.');
+}
+
+function exportMonsters() {
+  const d = new Date().toISOString().slice(0,10);
+  const areaName = id => { const a = findById(CAMPAIGN.areas, id); return a ? a.name : ''; };
+  const hdrs = ['id','customName','sourceName','type','cr','ac','hp','count','status',
+    'notes','areaId','areaName','addedAt','updatedAt'];
+  const rows = [hdrs, ...CAMPAIGN.monsters.map(m => [
+    m.id, m.customName||'', m.sourceName||'', m.type||'', m.cr||'', m.ac||'', m.hp||'',
+    m.count||1, m.status||'', m.notes||'', m.areaId||'', areaName(m.areaId||''),
+    m.addedAt||'', m.updatedAt||''
+  ])];
+  downloadCsv(toCsv(rows), `${CAMPAIGN.name}-monsters-${d}.csv`);
+  showFlash('exportFlash', 'Monsters CSV exported.');
+}
+
+function exportAreas() {
+  const d = new Date().toISOString().slice(0,10);
+  const hdrs = ['id','name','notes','npcCount','monsterCount'];
+  const rows = [hdrs, ...CAMPAIGN.areas.map(a => [
+    a.id, a.name, a.notes||'',
+    CAMPAIGN.npcs.filter(n=>n.areaId===a.id).length,
+    CAMPAIGN.monsters.filter(m=>m.areaId===a.id).length,
+  ])];
+  downloadCsv(toCsv(rows), `${CAMPAIGN.name}-areas-${d}.csv`);
+  showFlash('exportFlash', 'Areas CSV exported.');
+}
+
+// ═══════════════════ CSV IMPORT ═══════════════════
+function parseCsv(text) {
+  const rows=[];let row=[],cell='',inQ=false;
+  for(let i=0;i<text.length;i++){
+    const c=text[i],nx=text[i+1];
+    if(c==='"'){if(inQ&&nx==='"'){cell+='"';i++;}else inQ=!inQ;}
+    else if(c===','&&!inQ){row.push(cell);cell='';}
+    else if((c==='\n'||c==='\r')&&!inQ){if(c==='\r'&&nx==='\n')i++;row.push(cell);if(row.some(v=>v.length>0))rows.push(row);row=[];cell='';}
+    else cell+=c;
+  }
+  if(cell.length>0||row.length>0){row.push(cell);if(row.some(v=>v.length>0))rows.push(row);}
+  return rows;
+}
+
+function importCsv(file) {
+  const reader = new FileReader();
+  reader.onload = () => {
+    try {
+      const rows = parseCsv(String(reader.result||''));
+      if (rows.length < 2) { showFlash('exportFlash','CSV has no data rows.',true); return; }
+      const hdrs = rows[0];
+      const get = (row, key) => { const i=hdrs.indexOf(key); return i===-1?'':(row[i]||''); };
+
+      if (hdrs.includes('sourceName')) {
+        for (let r=1;r<rows.length;r++) {
+          const row=rows[r];
+          CAMPAIGN.monsters.push({
+            id:get(row,'id')||uid('cmon'), customName:get(row,'customName'),
+            sourceName:get(row,'sourceName'), type:get(row,'type'), cr:get(row,'cr'),
+            ac:numberOr(get(row,'ac'),10), hp:get(row,'hp'),
+            count:numberOr(get(row,'count'),1), status:get(row,'status'),
+            notes:get(row,'notes'), areaId:get(row,'areaId')||'',
+            addedAt:get(row,'addedAt')||nowIso(), updatedAt:get(row,'updatedAt')||nowIso()
+          });
+        }
+        persistCampaign(); renderCampaignMonsters();
+        showFlash('exportFlash','Monsters imported.');
+      } else if (hdrs.includes('personality')||hdrs.includes('ancestry')) {
+        for (let r=1;r<rows.length;r++) {
+          const row=rows[r];
+          CAMPAIGN.npcs.push({
+            id:get(row,'id')||uid('cnpc'), name:get(row,'name'),
+            className:get(row,'className'), ancestry:get(row,'ancestry'),
+            role:get(row,'role'), alignment:get(row,'alignment'),
+            ac:numberOr(get(row,'ac'),10), hp:numberOr(get(row,'hp'),8),
+            speed:numberOr(get(row,'speed'),30), personality:get(row,'personality'),
+            motivation:get(row,'motivation'), secret:get(row,'secret'),
+            notes:get(row,'notes'), areaId:get(row,'areaId')||'',
+            createdAt:get(row,'createdAt')||nowIso(), updatedAt:get(row,'updatedAt')||nowIso()
+          });
+        }
+        persistCampaign(); renderCampaignNpcs(); populateRegistrySelect();
+        showFlash('exportFlash','NPCs imported.');
+      } else if (hdrs.includes('STR')||hdrs.includes('className')) {
+        for (let r=1;r<rows.length;r++) {
+          const row=rows[r];
+          CAMPAIGN.pcs.push({
+            id:get(row,'id')||uid('cpc'), name:get(row,'name'),
+            className:get(row,'className'), race:get(row,'race'),
+            background:get(row,'background'), alignment:get(row,'alignment'),
+            level:numberOr(get(row,'level'),1),
+            STR:numberOr(get(row,'STR'),10), DEX:numberOr(get(row,'DEX'),10),
+            CON:numberOr(get(row,'CON'),10), INT:numberOr(get(row,'INT'),10),
+            WIS:numberOr(get(row,'WIS'),10), CHA:numberOr(get(row,'CHA'),10),
+            hp:numberOr(get(row,'hp'),8), ac:numberOr(get(row,'ac'),10),
+            initiative:numberOr(get(row,'initiative'),0), speed:numberOr(get(row,'speed'),30),
+            notes:get(row,'notes'), createdAt:get(row,'createdAt')||nowIso(), updatedAt:get(row,'updatedAt')||nowIso()
+          });
+        }
+        persistCampaign(); renderCampaignPcs(); populateVaultSelect();
+        showFlash('exportFlash','Characters imported.');
+      } else {
+        showFlash('exportFlash','Unrecognized CSV format.',true);
+      }
+    } catch { showFlash('exportFlash','Import failed.',true); }
+  };
+  reader.readAsText(file);
+}
+
+// ═══════════════════ EVENT WIRING ═══════════════════
+function setupEvents() {
+  // Campaign info
+  document.getElementById('campName').addEventListener('input', e => {
+    CAMPAIGN.name = e.target.value;
+    persistCampaign();
+    document.getElementById('campaignTitleDisplay').textContent = CAMPAIGN.name || 'Untitled Campaign';
+  });
+  document.getElementById('campNotes').addEventListener('input', e => {
+    CAMPAIGN.notes = e.target.value; persistCampaign();
+  });
+
+  // PCs
+  document.getElementById('addBlankPcBtn').addEventListener('click', addBlankPc);
+  document.getElementById('addFromVaultBtn').addEventListener('click', addFromVault);
+  document.getElementById('campaignPcList').addEventListener('input', e => {
+    const t=e.target; const id=t.dataset.id; const field=t.dataset.pcField;
+    if(id&&field) updatePcField(id, field, t.value);
+  });
+  document.getElementById('campaignPcList').addEventListener('click', e => {
+    if(e.target.dataset.action==='delete-pc') deletePc(e.target.dataset.id);
+  });
+
+  // Areas
+  document.getElementById('addAreaBtn').addEventListener('click', addArea);
+  document.getElementById('newAreaName').addEventListener('keydown', e => { if(e.key==='Enter') addArea(); });
+  document.getElementById('areaList').addEventListener('input', e => {
+    const t=e.target; const areaId=t.dataset.areaId; const field=t.dataset.areaField;
+    if(areaId&&field) updateAreaField(areaId, field, t.value);
+  });
+  document.getElementById('areaList').addEventListener('click', e => {
+    if(e.target.dataset.action==='delete-area') deleteArea(e.target.dataset.areaId);
+  });
+
+  // NPCs
+  document.getElementById('addBlankNpcBtn').addEventListener('click', addBlankNpc);
+  document.getElementById('addFromRegistryBtn').addEventListener('click', addFromRegistry);
+  document.getElementById('campaignNpcList').addEventListener('input', e => {
+    const t=e.target; const id=t.dataset.id; const field=t.dataset.npcField;
+    if(id&&field) updateNpcField(id, field, t.value);
+  });
+  document.getElementById('campaignNpcList').addEventListener('change', e => {
+    const t=e.target; const id=t.dataset.id; const field=t.dataset.npcField;
+    if(id&&field==='areaId') updateNpcField(id, field, t.value);
+  });
+  document.getElementById('campaignNpcList').addEventListener('click', e => {
+    if(e.target.dataset.action==='delete-npc') deleteNpc(e.target.dataset.id);
+  });
+
+  // Monsters
+  document.getElementById('addMonsterBtn').addEventListener('click', addMonsterFromSelect);
+  document.getElementById('addCustomMonsterBtn').addEventListener('click', addCustomMonster);
+  document.getElementById('campaignMonsterList').addEventListener('input', e => {
+    const t=e.target; const id=t.dataset.id; const field=t.dataset.monField;
+    if(id&&field) updateMonsterField(id, field, t.value);
+  });
+  document.getElementById('campaignMonsterList').addEventListener('change', e => {
+    const t=e.target; const id=t.dataset.id; const field=t.dataset.monField;
+    if(id&&field==='areaId') updateMonsterField(id, field, t.value);
+  });
+  document.getElementById('campaignMonsterList').addEventListener('click', e => {
+    if(e.target.dataset.action==='delete-monster') deleteMonster(e.target.dataset.id);
+  });
+
+  // Export / Import
+  document.getElementById('exportSummaryBtn').addEventListener('click', exportSummary);
+  document.getElementById('exportPcsBtn').addEventListener('click', exportPcs);
+  document.getElementById('exportNpcsBtn').addEventListener('click', exportNpcs);
+  document.getElementById('exportMonstersBtn').addEventListener('click', exportMonsters);
+  document.getElementById('exportAreasBtn').addEventListener('click', exportAreas);
+  document.getElementById('csvInput').addEventListener('change', e => {
+    const f=e.target.files&&e.target.files[0];
+    if(f) importCsv(f);
+    e.target.value='';
+  });
+}
+
+// ═══════════════════ INIT ═══════════════════
+function showAll() {
+  ['infoSection','pcsSection','areasSection','npcsSection','monstersSection','exportSection']
+    .forEach(id => { document.getElementById(id).style.display=''; });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  CAMPAIGN = loadActiveCampaign();
+
+  if (!CAMPAIGN) {
+    document.getElementById('noCampaign').style.display = '';
+    return;
+  }
+
+  normalizeCampaign(CAMPAIGN);
+  document.getElementById('campaignTitleDisplay').textContent = CAMPAIGN.name || 'Untitled Campaign';
+  document.title = `${CAMPAIGN.name} — D&D Hub`;
+
+  showAll();
+  setupEvents();
+
+  document.getElementById('campName').value = CAMPAIGN.name || '';
+  document.getElementById('campNotes').value = CAMPAIGN.notes || '';
+
+  populateMonsterSelect();
+  populateVaultSelect();
+  populateRegistrySelect();
+
+  renderCampaignPcs();
+  renderAreas();
+  renderCampaignNpcs();
+  renderCampaignMonsters();
+
+  checkIncomingMonster();
+});
+
+window.addEventListener('storage', e => {
+  if (e.key === SK.addMonster) checkIncomingMonster();
+});
+</script>
+</body>
+</html>

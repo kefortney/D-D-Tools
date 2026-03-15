@@ -10,14 +10,13 @@
 :root {
   --obsidian: #101317;
   --ink: #1a2027;
-  --steel: #2b3642;
   --mist: #a8b6c8;
   --paper: #efe5cf;
   --paper-deep: #dcc79a;
   --ember: #a33a2b;
   --forest: #2e5a3b;
   --gold: #c4983a;
-  --shadow: rgba(0, 0, 0, 0.35);
+  --shadow: rgba(0,0,0,0.35);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -34,14 +33,11 @@ body {
   padding: 24px;
 }
 
-.shell {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+.shell { max-width: 1100px; margin: 0 auto; }
 
 .topbar {
-  background: rgba(16, 19, 23, 0.85);
-  border: 1px solid rgba(196, 152, 58, 0.35);
+  background: rgba(16,19,23,0.85);
+  border: 1px solid rgba(196,152,58,0.35);
   border-radius: 12px;
   padding: 16px 20px;
   box-shadow: 0 16px 36px var(--shadow);
@@ -50,76 +46,165 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  margin-bottom: 18px;
-}
-
-.brand {
-  font-family: 'Cinzel', serif;
-  letter-spacing: 1.5px;
+  margin-bottom: 24px;
 }
 
 .brand h1 {
-  font-size: 1.1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 1.2rem;
   color: var(--gold);
+  letter-spacing: 1.5px;
 }
+.brand p { color: var(--mist); font-size: 0.9rem; margin-top: 2px; }
 
-.brand p {
-  color: var(--mist);
-  font-size: 0.9rem;
-}
-
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
+.nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
 .nav-links a {
   color: var(--paper);
   text-decoration: none;
-  padding: 8px 12px;
-  border: 1px solid rgba(220, 199, 154, 0.25);
+  padding: 7px 12px;
+  border: 1px solid rgba(220,199,154,0.25);
   border-radius: 8px;
-  font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.03);
+  font-size: 0.88rem;
+  background: rgba(255,255,255,0.03);
 }
-
-.nav-links a:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.grid {
-  display: grid;
-  gap: 16px;
-}
+.nav-links a:hover { border-color: var(--gold); color: var(--gold); }
 
 .section {
   background: linear-gradient(160deg, rgba(12,16,22,0.85), rgba(22,30,40,0.85));
-  border: 1px solid rgba(220, 199, 154, 0.2);
+  border: 1px solid rgba(220,199,154,0.2);
   border-radius: 14px;
-  padding: 18px;
+  padding: 20px;
   box-shadow: 0 10px 28px rgba(0,0,0,0.25);
+  margin-bottom: 18px;
 }
 
 .section h2 {
   font-family: 'DM Serif Text', serif;
   color: var(--paper-deep);
-  margin-bottom: 10px;
   font-size: 1.35rem;
+  margin-bottom: 14px;
 }
 
-.section h3 {
-  font-family: 'Cinzel', serif;
-  color: var(--gold);
-  margin-bottom: 8px;
+.create-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+input, textarea {
+  border: 1px solid rgba(220,199,154,0.25);
+  background: rgba(0,0,0,0.22);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 9px 12px;
   font-size: 0.95rem;
-  letter-spacing: 1px;
+  font-family: 'Source Sans 3', sans-serif;
+}
+input:focus, textarea:focus { outline: none; border-color: rgba(196,152,58,0.5); }
+
+button {
+  border: 1px solid rgba(220,199,154,0.35);
+  background: rgba(255,255,255,0.04);
+  color: var(--paper);
+  border-radius: 8px;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+button:hover { border-color: var(--gold); color: var(--gold); }
+
+.btn-primary {
+  background: linear-gradient(135deg, #8d3125, #a33a2b);
+  border-color: #a33a2b;
+}
+.btn-primary:hover { color: var(--paper); }
+
+.btn-open {
+  background: linear-gradient(135deg, #20402a, #2e5a3b);
+  border-color: #2e5a3b;
+}
+.btn-open:hover { color: var(--paper); }
+
+.btn-danger { background: rgba(100,20,20,0.3); border-color: rgba(160,40,40,0.5); }
+.btn-danger:hover { border-color: #e05050; color: #e05050; }
+
+.campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.campaign-card {
+  border: 1px solid rgba(196,152,58,0.3);
+  border-radius: 12px;
+  padding: 16px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campaign-card:hover { border-color: var(--gold); }
+
+.campaign-card-title {
+  font-family: 'Cinzel', serif;
+  color: var(--paper-deep);
+  font-size: 1.05rem;
+}
+
+.campaign-card-meta {
+  color: var(--mist);
+  font-size: 0.82rem;
+}
+
+.campaign-card-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: rgba(196,152,58,0.12);
+  border: 1px solid rgba(196,152,58,0.25);
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+}
+
+.campaign-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.empty {
+  color: var(--mist);
+  font-style: italic;
+  border: 1px dashed rgba(220,199,154,0.25);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.flash {
+  min-height: 20px;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: var(--gold);
 }
 
 .tools {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 10px;
 }
 
@@ -128,164 +213,25 @@ body {
   text-decoration: none;
   color: inherit;
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(196, 152, 58, 0.35);
+  border: 1px solid rgba(196,152,58,0.3);
   border-radius: 10px;
   padding: 12px;
 }
-
-.tool-card:hover {
-  border-color: var(--gold);
-  transform: translateY(-1px);
-}
-
-.tool-card strong {
-  color: var(--paper-deep);
-  font-family: 'Cinzel', serif;
-}
-
-.actions {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 8px 0 12px;
-}
-
-button, .btn-like {
-  border: 1px solid rgba(220, 199, 154, 0.35);
-  background: rgba(255,255,255,0.04);
-  color: var(--paper);
-  border-radius: 8px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-family: 'Source Sans 3', sans-serif;
-  font-weight: 600;
-}
-
-button:hover, .btn-like:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, #8d3125, #a33a2b);
-  border-color: #a33a2b;
-}
-
-.btn-primary:hover {
-  color: var(--paper);
-}
-
-.btn-secondary {
-  background: linear-gradient(135deg, #20402a, #2e5a3b);
-  border-color: #2e5a3b;
-}
-
-.btn-secondary:hover {
-  color: var(--paper);
-}
-
-.hidden-file {
-  display: none;
-}
-
-.input-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-input, textarea, select {
-  width: 100%;
-  border: 1px solid rgba(220, 199, 154, 0.25);
-  background: rgba(0, 0, 0, 0.22);
-  color: var(--paper);
-  border-radius: 8px;
-  padding: 8px;
-  font-size: 0.95rem;
-}
-
-textarea { min-height: 74px; resize: vertical; }
-
-.small {
-  color: var(--mist);
-  font-size: 0.85rem;
-}
-
-.cards {
-  display: grid;
-  gap: 10px;
-}
-
-.pc-card, .npc-card {
-  border: 1px solid rgba(220, 199, 154, 0.22);
-  border-radius: 10px;
-  padding: 10px;
-  background: rgba(255,255,255,0.03);
-}
-
-.card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-.card-title {
-  font-family: 'Cinzel', serif;
-  color: var(--paper-deep);
-  font-size: 0.95rem;
-}
-
-.stat-grid {
-  display: grid;
-  grid-template-columns: repeat(6, minmax(52px, 1fr));
-  gap: 6px;
-}
-
-.stat-grid label {
-  font-size: 0.72rem;
-  color: var(--mist);
-  display: block;
-  margin-bottom: 2px;
-}
-
-.stat-grid input {
-  padding: 6px;
-  text-align: center;
-}
-
-.empty {
-  color: var(--mist);
-  font-style: italic;
-  border: 1px dashed rgba(220, 199, 154, 0.25);
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.flash {
-  min-height: 20px;
-  margin-top: 6px;
-  font-size: 0.9rem;
-  color: var(--gold);
-}
-
-@media (max-width: 760px) {
-  body { padding: 12px; }
-  .stat-grid { grid-template-columns: repeat(3, minmax(52px, 1fr)); }
-}
+.tool-card:hover { border-color: var(--gold); transform: translateY(-1px); }
+.tool-card strong { color: var(--paper-deep); font-family: 'Cinzel', serif; display: block; margin-bottom: 4px; }
+.tool-card p { color: var(--mist); font-size: 0.85rem; }
 </style>
 </head>
 <body>
 <div class="shell">
   <header class="topbar">
     <div class="brand">
-      <h1>Campaign Command Hub</h1>
-      <p>Save heroes, manage NPC records, and export your campaign data</p>
+      <h1>D&amp;D Campaign Hub</h1>
+      <p>Select a campaign to manage, or create a new one</p>
     </div>
     <nav class="nav-links">
       <a href="index.html">Hub</a>
+      <a id="campaignNavLink" href="campaign.html" style="display:none;">Current Campaign</a>
       <a href="dnd5e_character_generator.html">Character Generator</a>
       <a href="npc_creator.html">NPC Creator</a>
       <a href="monster_manual.html">Monster Manual</a>
@@ -293,634 +239,148 @@ textarea { min-height: 74px; resize: vertical; }
     </nav>
   </header>
 
-  <div class="grid">
-    <section class="section">
-      <h2>Adventure Tools</h2>
-      <div class="tools">
-        <a class="tool-card" href="dnd5e_character_generator.html">
-          <strong>Character Generator</strong>
-          <p>Build or randomize player characters, then save them back here.</p>
-        </a>
-        <a class="tool-card" href="npc_creator.html">
-          <strong>NPC Creator</strong>
-          <p>Generate NPC names and details, then add them to your registry.</p>
-        </a>
-        <a class="tool-card" href="monster_manual.html">
-          <strong>Monster Manual</strong>
-          <p>Search creatures by type, CR, and environment.</p>
-        </a>
-        <a class="tool-card" href="spellbook.html">
-          <strong>Spellbook</strong>
-          <p>Filter spells by level, school, and class.</p>
-        </a>
-      </div>
-    </section>
+  <!-- Create Campaign -->
+  <section class="section">
+    <h2>Campaigns</h2>
+    <div class="create-row">
+      <input id="newCampaignName" placeholder="New campaign name..." style="flex:1;min-width:180px;max-width:320px;">
+      <button id="createBtn" class="btn-primary">+ Create Campaign</button>
+    </div>
+    <div id="flash" class="flash"></div>
+    <div id="campaignGrid" class="campaign-grid"></div>
+    <div id="noCampaigns" class="empty" style="display:none;">
+      No campaigns yet. Enter a name above and click Create to get started.
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Campaign Data</h2>
-      <p class="small">Export or import saved campaign records as CSV.</p>
-      <div class="actions">
-        <button id="exportPcsCsvBtn" class="btn-secondary">Export PCs CSV</button>
-        <button id="exportNpcsCsvBtn" class="btn-secondary">Export NPCs CSV</button>
-        <label class="btn-like" for="csvInput">Import CSV</label>
-        <input class="hidden-file" id="csvInput" type="file" accept=".csv,text/csv">
-      </div>
-      <div id="campaignFlash" class="flash"></div>
-    </section>
-
-    <section class="section">
-      <h2>Player Character Vault</h2>
-      <p class="small">Characters saved from the generator appear here. You can edit anything manually.</p>
-      <div class="actions">
-        <button id="addBlankPcBtn" class="btn-primary">Add Blank Character</button>
-      </div>
-      <div id="pcList" class="cards"></div>
-    </section>
-
-    <section class="section">
-      <h2>NPC Notes (Name, Class, Notes)</h2>
-      <div class="input-row">
-        <input id="npcName" type="text" placeholder="NPC name">
-        <input id="npcClass" type="text" placeholder="Class / Role">
-      </div>
-      <textarea id="npcNotes" placeholder="Notes, plot hooks, secrets..."></textarea>
-      <div class="actions">
-        <button id="addNpcNoteBtn" class="btn-primary">Add NPC Note</button>
-      </div>
-      <div id="npcNoteList" class="cards"></div>
-    </section>
-
-    <section class="section">
-      <h2>Generated NPC Registry</h2>
-      <p class="small">Saved from the NPC Creator page.</p>
-      <div id="npcProfileList" class="cards"></div>
-    </section>
-  </div>
+  <!-- Adventure Tools -->
+  <section class="section">
+    <h2>Adventure Tools</h2>
+    <div class="tools">
+      <a class="tool-card" href="dnd5e_character_generator.html">
+        <strong>Character Generator</strong>
+        <p>Build or randomize player characters, then save them to a campaign.</p>
+      </a>
+      <a class="tool-card" href="npc_creator.html">
+        <strong>NPC Creator</strong>
+        <p>Generate NPC names, stats, and personality details.</p>
+      </a>
+      <a class="tool-card" href="monster_manual.html">
+        <strong>Monster Manual</strong>
+        <p>Browse creatures by type and CR. Add any monster to your campaign.</p>
+      </a>
+      <a class="tool-card" href="spellbook.html">
+        <strong>Spellbook</strong>
+        <p>Filter spells by level, school, and class.</p>
+      </a>
+    </div>
+  </section>
 </div>
 
 <script>
-const STORAGE_KEYS = {
-  pcs: 'dndToolsPlayerCharacters',
-  npcNotes: 'dndToolsNpcNotes',
-  npcProfiles: 'dndToolsNpcProfiles',
-  selectedPc: 'dndToolsSelectedCharacter'
+const SK = {
+  campaigns: 'dndToolsCampaigns',
+  activeCampaign: 'dndToolsActiveCampaignId'
 };
 
 function safeRead(key) {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(key) || '[]');
-    return Array.isArray(parsed) ? parsed : [];
-  } catch (err) {
-    return [];
-  }
+  try { const v = JSON.parse(localStorage.getItem(key) || 'null'); return Array.isArray(v) ? v : []; }
+  catch { return []; }
+}
+function safeWrite(key, v) { localStorage.setItem(key, JSON.stringify(v)); }
+function uid(p) { return `${p}-${Date.now()}-${Math.floor(Math.random()*100000)}`; }
+function nowIso() { return new Date().toISOString(); }
+function escapeHtml(v) {
+  return String(v==null?'':v).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
-function safeWrite(key, value) {
-  localStorage.setItem(key, JSON.stringify(value));
+function showFlash(msg, err) {
+  const el = document.getElementById('flash');
+  el.textContent = msg;
+  el.style.color = err ? '#ff8673' : '#c4983a';
 }
 
-function uid(prefix) {
-  return `${prefix}-${Date.now()}-${Math.floor(Math.random() * 100000)}`;
+function loadCampaigns() { return safeRead(SK.campaigns); }
+function saveCampaigns(list) { safeWrite(SK.campaigns, list); }
+
+function openCampaign(id) {
+  localStorage.setItem(SK.activeCampaign, id);
+  window.location.href = 'campaign.html';
 }
 
-function numberOr(value, fallback = 0) {
-  const n = parseInt(value, 10);
-  return Number.isFinite(n) ? n : fallback;
+function deleteCampaign(id) {
+  const campaigns = loadCampaigns();
+  const camp = campaigns.find(c => c.id === id);
+  if (!camp) return;
+  if (!confirm(`Delete "${camp.name}"? This cannot be undone.`)) return;
+  saveCampaigns(campaigns.filter(c => c.id !== id));
+  render();
 }
 
-function nowIso() {
-  return new Date().toISOString();
-}
-
-function normalizeNameClass(name, className) {
-  return `${String(name || '').trim().toLowerCase()}::${String(className || '').trim().toLowerCase()}`;
-}
-
-function showFlash(message, type) {
-  const flash = document.getElementById('campaignFlash');
-  flash.textContent = message;
-  flash.style.color = type === 'error' ? '#ff8673' : '#c4983a';
-}
-
-function loadState() {
-  return {
-    pcs: safeRead(STORAGE_KEYS.pcs),
-    npcNotes: safeRead(STORAGE_KEYS.npcNotes),
-    npcProfiles: safeRead(STORAGE_KEYS.npcProfiles)
+function createCampaign() {
+  const inp = document.getElementById('newCampaignName');
+  const name = inp.value.trim();
+  if (!name) { showFlash('Enter a campaign name.', true); return; }
+  const camp = {
+    id: uid('campaign'),
+    name,
+    notes: '',
+    areas: [],
+    pcs: [],
+    npcs: [],
+    monsters: [],
+    createdAt: nowIso(),
+    updatedAt: nowIso()
   };
+  const list = loadCampaigns();
+  list.push(camp);
+  saveCampaigns(list);
+  inp.value = '';
+  showFlash(`"${name}" created.`);
+  render();
 }
 
-function saveState(state) {
-  safeWrite(STORAGE_KEYS.pcs, state.pcs);
-  safeWrite(STORAGE_KEYS.npcNotes, state.npcNotes);
-  safeWrite(STORAGE_KEYS.npcProfiles, state.npcProfiles);
-}
+function render() {
+  const campaigns = loadCampaigns();
+  const grid = document.getElementById('campaignGrid');
+  const noCamp = document.getElementById('noCampaigns');
 
-function escapeHtml(value) {
-  return String(value || '')
-    .replace(/&/g, '&amp;')
-    .replace(/</g, '&lt;')
-    .replace(/>/g, '&gt;')
-    .replace(/"/g, '&quot;')
-    .replace(/'/g, '&#39;');
-}
-
-function renderAll() {
-  const state = loadState();
-  renderPcs(state);
-  renderNpcNotes(state);
-  renderNpcProfiles(state);
-}
-
-function renderPcs(state) {
-  const wrap = document.getElementById('pcList');
-  if (!state.pcs.length) {
-    wrap.innerHTML = '<div class="empty">No player characters saved yet. Use Character Generator or add a blank one.</div>';
+  if (!campaigns.length) {
+    grid.innerHTML = '';
+    noCamp.style.display = '';
     return;
   }
+  noCamp.style.display = 'none';
 
-  wrap.innerHTML = state.pcs.map((pc, idx) => {
+  grid.innerHTML = campaigns.map(c => {
+    const date = c.updatedAt ? new Date(c.updatedAt).toLocaleDateString() : '—';
     return `
-      <article class="pc-card" data-idx="${idx}">
-        <div class="card-head">
-          <div class="card-title">${escapeHtml(pc.name || `Character ${idx + 1}`)}</div>
-          <div style="display:flex;gap:6px;">
-            <button data-action="load-pc" data-idx="${idx}">Load In Generator</button>
-            <button data-action="delete-pc" data-idx="${idx}">Remove</button>
-          </div>
-        </div>
-        <div class="input-row">
-          <input data-field="name" data-idx="${idx}" value="${escapeHtml(pc.name || '')}" placeholder="Name">
-          <input data-field="className" data-idx="${idx}" value="${escapeHtml(pc.className || '')}" placeholder="Class">
-          <input data-field="race" data-idx="${idx}" value="${escapeHtml(pc.race || '')}" placeholder="Race">
-          <input data-field="level" data-idx="${idx}" value="${escapeHtml(pc.level || 1)}" placeholder="Level">
-          <input data-field="background" data-idx="${idx}" value="${escapeHtml(pc.background || '')}" placeholder="Background">
-          <input data-field="alignment" data-idx="${idx}" value="${escapeHtml(pc.alignment || '')}" placeholder="Alignment">
-        </div>
-        <div class="stat-grid">
-          ${['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map(stat => `
-            <div>
-              <label>${stat}</label>
-              <input data-field="${stat}" data-idx="${idx}" value="${escapeHtml(pc[stat] || 10)}">
-            </div>
-          `).join('')}
-        </div>
-        <div class="input-row" style="margin-top:8px;">
-          <input data-field="hp" data-idx="${idx}" value="${escapeHtml(pc.hp || '')}" placeholder="HP">
-          <input data-field="ac" data-idx="${idx}" value="${escapeHtml(pc.ac || '')}" placeholder="AC">
-          <input data-field="initiative" data-idx="${idx}" value="${escapeHtml(pc.initiative || '')}" placeholder="Initiative">
-          <input data-field="speed" data-idx="${idx}" value="${escapeHtml(pc.speed || '')}" placeholder="Speed">
-        </div>
-        <textarea data-field="notes" data-idx="${idx}" placeholder="Character notes">${escapeHtml(pc.notes || '')}</textarea>
-      </article>
-    `;
+    <div class="campaign-card">
+      <div class="campaign-card-title">${escapeHtml(c.name)}</div>
+      <div class="campaign-card-meta">Last updated: ${date}</div>
+      <div class="campaign-card-stats">
+        <span class="stat-pill">${(c.pcs||[]).length} Characters</span>
+        <span class="stat-pill">${(c.npcs||[]).length} NPCs</span>
+        <span class="stat-pill">${(c.monsters||[]).length} Monsters</span>
+        <span class="stat-pill">${(c.areas||[]).length} Areas</span>
+      </div>
+      ${c.notes ? `<div class="campaign-card-meta" style="font-style:italic;">${escapeHtml(c.notes.slice(0,80))}${c.notes.length>80?'…':''}</div>` : ''}
+      <div class="campaign-card-actions">
+        <button class="btn-open" onclick="openCampaign('${c.id}')">Open Campaign</button>
+        <button class="btn-danger" onclick="deleteCampaign('${c.id}')">Delete</button>
+      </div>
+    </div>`;
   }).join('');
 }
 
-function renderNpcNotes(state) {
-  const wrap = document.getElementById('npcNoteList');
-  if (!state.npcNotes.length) {
-    wrap.innerHTML = '<div class="empty">No NPC notes yet.</div>';
-    return;
-  }
+document.getElementById('createBtn').addEventListener('click', createCampaign);
+document.getElementById('newCampaignName').addEventListener('keydown', e => { if (e.key==='Enter') createCampaign(); });
 
-  wrap.innerHTML = state.npcNotes.map((npc, idx) => `
-    <article class="npc-card" data-note-idx="${idx}">
-      <div class="card-head">
-        <div class="card-title">${escapeHtml(npc.name || `NPC ${idx + 1}`)}</div>
-        <button data-action="delete-npc-note" data-idx="${idx}">Remove</button>
-      </div>
-      <div class="input-row">
-        <input data-note-field="name" data-idx="${idx}" value="${escapeHtml(npc.name || '')}" placeholder="Name">
-        <input data-note-field="className" data-idx="${idx}" value="${escapeHtml(npc.className || '')}" placeholder="Class / Role">
-      </div>
-      <textarea data-note-field="notes" data-idx="${idx}" placeholder="Notes">${escapeHtml(npc.notes || '')}</textarea>
-    </article>
-  `).join('');
+if (localStorage.getItem(SK.activeCampaign)) {
+  document.getElementById('campaignNavLink').style.display = '';
 }
 
-function renderNpcProfiles(state) {
-  const wrap = document.getElementById('npcProfileList');
-  if (!state.npcProfiles.length) {
-    wrap.innerHTML = '<div class="empty">No generated NPC profiles yet. Create one from the NPC Creator page.</div>';
-    return;
-  }
-
-  wrap.innerHTML = state.npcProfiles.map((npc, idx) => `
-    <article class="npc-card">
-      <div class="card-head">
-        <div class="card-title">${escapeHtml(npc.name || `Generated NPC ${idx + 1}`)}</div>
-        <button data-action="delete-npc-profile" data-idx="${idx}">Remove</button>
-      </div>
-      <div class="small">${escapeHtml(npc.className || 'Unknown Class')} | ${escapeHtml(npc.ancestry || 'Unknown Ancestry')} | ${escapeHtml(npc.role || 'Unknown Role')}</div>
-      <div class="small" style="margin-top:4px;">AC ${escapeHtml(npc.ac || '10')} | HP ${escapeHtml(npc.hp || '8')} | Speed ${escapeHtml(npc.speed || '30')}</div>
-      <textarea data-profile-field="notes" data-idx="${idx}" placeholder="Notes">${escapeHtml(npc.notes || '')}</textarea>
-    </article>
-  `).join('');
-}
-
-function addBlankPc() {
-  const state = loadState();
-  state.pcs.unshift({
-    id: uid('pc'),
-    name: 'New Character',
-    className: 'Fighter',
-    race: 'Human',
-    background: '',
-    alignment: '',
-    level: 1,
-    STR: 10, DEX: 10, CON: 10, INT: 10, WIS: 10, CHA: 10,
-    hp: 10,
-    ac: 10,
-    initiative: 0,
-    speed: 30,
-    notes: '',
-    createdAt: nowIso(),
-    updatedAt: nowIso()
-  });
-  saveState(state);
-  renderAll();
-}
-
-function addNpcNote() {
-  const name = document.getElementById('npcName').value.trim();
-  const className = document.getElementById('npcClass').value.trim();
-  const notes = document.getElementById('npcNotes').value.trim();
-
-  if (!name) {
-    showFlash('NPC note requires a name.', 'error');
-    return;
-  }
-
-  const state = loadState();
-  const duplicateIdx = state.npcNotes.findIndex((entry) =>
-    normalizeNameClass(entry.name, entry.className) === normalizeNameClass(name, className)
-  );
-
-  if (duplicateIdx !== -1) {
-    state.npcNotes[duplicateIdx] = {
-      ...state.npcNotes[duplicateIdx],
-      name,
-      className,
-      notes,
-      updatedAt: nowIso()
-    };
-    saveState(state);
-    document.getElementById('npcName').value = '';
-    document.getElementById('npcClass').value = '';
-    document.getElementById('npcNotes').value = '';
-    showFlash('Duplicate NPC note found. Updated existing entry.', 'ok');
-    renderAll();
-    return;
-  }
-
-  state.npcNotes.unshift({
-    id: uid('npc-note'),
-    name,
-    className,
-    notes,
-    createdAt: nowIso(),
-    updatedAt: nowIso()
-  });
-  saveState(state);
-  document.getElementById('npcName').value = '';
-  document.getElementById('npcClass').value = '';
-  document.getElementById('npcNotes').value = '';
-  showFlash('NPC note saved.', 'ok');
-  renderAll();
-}
-
-function updatePcField(idx, field, value) {
-  const state = loadState();
-  const pc = state.pcs[idx];
-  if (!pc) return;
-  if (['level', 'STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA', 'hp', 'ac', 'initiative', 'speed'].includes(field)) {
-    pc[field] = numberOr(value, pc[field] || 0);
-  } else {
-    pc[field] = value;
-  }
-  pc.updatedAt = nowIso();
-  saveState(state);
-}
-
-function updateNpcNoteField(idx, field, value) {
-  const state = loadState();
-  const note = state.npcNotes[idx];
-  if (!note) return;
-  note[field] = value;
-  note.updatedAt = nowIso();
-  saveState(state);
-}
-
-function updateNpcProfileField(idx, field, value) {
-  const state = loadState();
-  const profile = state.npcProfiles[idx];
-  if (!profile) return;
-  profile[field] = value;
-  profile.updatedAt = nowIso();
-  saveState(state);
-}
-
-function deletePc(idx) {
-  const state = loadState();
-  state.pcs.splice(idx, 1);
-  saveState(state);
-  renderAll();
-}
-
-function deleteNpcNote(idx) {
-  const state = loadState();
-  state.npcNotes.splice(idx, 1);
-  saveState(state);
-  renderAll();
-}
-
-function deleteNpcProfile(idx) {
-  const state = loadState();
-  state.npcProfiles.splice(idx, 1);
-  saveState(state);
-  renderAll();
-}
-
-function queuePcForGenerator(idx) {
-  const state = loadState();
-  const pc = state.pcs[idx];
-  if (!pc) return;
-  localStorage.setItem(STORAGE_KEYS.selectedPc, JSON.stringify(pc));
-  window.location.href = 'dnd5e_character_generator.html';
-}
-
-function csvEscape(value) {
-  const stringValue = value == null ? '' : String(value);
-  if (/[",\n]/.test(stringValue)) {
-    return `"${stringValue.replace(/"/g, '""')}"`;
-  }
-  return stringValue;
-}
-
-function exportRowsAsCsv(rows, filePrefix) {
-  const csv = rows.map(row => row.map(csvEscape).join(',')).join('\n');
-  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `${filePrefix}-${new Date().toISOString().slice(0,10)}.csv`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
-}
-
-function exportPcsCsv() {
-  const state = loadState();
-  const headers = [
-    'recordType','id','name','className','race','background','alignment','level',
-    'STR','DEX','CON','INT','WIS','CHA','hp','ac','initiative','speed',
-    'notes','ancestry','role','personality','motivation','secret','createdAt','updatedAt'
-  ];
-
-  const rows = [headers];
-
-  state.pcs.forEach(pc => {
-    rows.push([
-      'pc', pc.id, pc.name, pc.className, pc.race, pc.background, pc.alignment, pc.level,
-      pc.STR, pc.DEX, pc.CON, pc.INT, pc.WIS, pc.CHA, pc.hp, pc.ac, pc.initiative, pc.speed,
-      pc.notes || '', '', '', '', '', '', pc.createdAt || '', pc.updatedAt || ''
-    ]);
-  });
-
-  exportRowsAsCsv(rows, 'campaign-pcs');
-  showFlash('PC CSV exported.', 'ok');
-}
-
-function exportNpcsCsv() {
-  const state = loadState();
-  const headers = [
-    'recordType','id','name','className','race','background','alignment','level',
-    'STR','DEX','CON','INT','WIS','CHA','hp','ac','initiative','speed',
-    'notes','ancestry','role','personality','motivation','secret','createdAt','updatedAt'
-  ];
-
-  const rows = [headers];
-
-  state.npcNotes.forEach(npc => {
-    rows.push([
-      'npc_note', npc.id, npc.name, npc.className, '', '', '', '',
-      '', '', '', '', '', '', '', '', '', '',
-      npc.notes || '', '', '', '', '', '', npc.createdAt || '', npc.updatedAt || ''
-    ]);
-  });
-
-  state.npcProfiles.forEach(npc => {
-    rows.push([
-      'npc_profile', npc.id, npc.name, npc.className, '', '', npc.alignment || '', '',
-      '', '', '', '', '', '', npc.hp || '', npc.ac || '', '', npc.speed || '',
-      npc.notes || '', npc.ancestry || '', npc.role || '', npc.personality || '', npc.motivation || '', npc.secret || '',
-      npc.createdAt || '', npc.updatedAt || ''
-    ]);
-  });
-
-  exportRowsAsCsv(rows, 'campaign-npcs');
-  showFlash('NPC CSV exported.', 'ok');
-}
-
-function parseCsv(text) {
-  const rows = [];
-  let row = [];
-  let cell = '';
-  let inQuotes = false;
-
-  for (let i = 0; i < text.length; i++) {
-    const c = text[i];
-    const next = text[i + 1];
-
-    if (c === '"') {
-      if (inQuotes && next === '"') {
-        cell += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-    } else if (c === ',' && !inQuotes) {
-      row.push(cell);
-      cell = '';
-    } else if ((c === '\n' || c === '\r') && !inQuotes) {
-      if (c === '\r' && next === '\n') i++;
-      row.push(cell);
-      if (row.some(v => v.length > 0)) rows.push(row);
-      row = [];
-      cell = '';
-    } else {
-      cell += c;
-    }
-  }
-
-  if (cell.length > 0 || row.length > 0) {
-    row.push(cell);
-    if (row.some(v => v.length > 0)) rows.push(row);
-  }
-
-  return rows;
-}
-
-function importCsv(file) {
-  const reader = new FileReader();
-  reader.onload = () => {
-    try {
-      const text = String(reader.result || '');
-      const rows = parseCsv(text);
-      if (rows.length < 2) {
-        showFlash('CSV has no data rows.', 'error');
-        return;
-      }
-
-      const headers = rows[0];
-      const indexOf = name => headers.indexOf(name);
-      const requiredRecordType = indexOf('recordType');
-      if (requiredRecordType === -1) {
-        showFlash('CSV missing recordType header.', 'error');
-        return;
-      }
-
-      const nextState = { pcs: [], npcNotes: [], npcProfiles: [] };
-
-      for (let r = 1; r < rows.length; r++) {
-        const row = rows[r];
-        const get = key => {
-          const idx = indexOf(key);
-          return idx === -1 ? '' : (row[idx] || '');
-        };
-
-        const recordType = get('recordType').trim();
-        if (!recordType) continue;
-
-        if (recordType === 'pc') {
-          nextState.pcs.push({
-            id: get('id') || uid('pc'),
-            name: get('name'),
-            className: get('className'),
-            race: get('race'),
-            background: get('background'),
-            alignment: get('alignment'),
-            level: numberOr(get('level'), 1),
-            STR: numberOr(get('STR'), 10),
-            DEX: numberOr(get('DEX'), 10),
-            CON: numberOr(get('CON'), 10),
-            INT: numberOr(get('INT'), 10),
-            WIS: numberOr(get('WIS'), 10),
-            CHA: numberOr(get('CHA'), 10),
-            hp: numberOr(get('hp'), 8),
-            ac: numberOr(get('ac'), 10),
-            initiative: numberOr(get('initiative'), 0),
-            speed: numberOr(get('speed'), 30),
-            notes: get('notes'),
-            createdAt: get('createdAt') || nowIso(),
-            updatedAt: get('updatedAt') || nowIso()
-          });
-        } else if (recordType === 'npc_note') {
-          nextState.npcNotes.push({
-            id: get('id') || uid('npc-note'),
-            name: get('name'),
-            className: get('className'),
-            notes: get('notes'),
-            createdAt: get('createdAt') || nowIso(),
-            updatedAt: get('updatedAt') || nowIso()
-          });
-        } else if (recordType === 'npc_profile') {
-          nextState.npcProfiles.push({
-            id: get('id') || uid('npc-profile'),
-            name: get('name'),
-            className: get('className'),
-            alignment: get('alignment'),
-            hp: numberOr(get('hp'), 8),
-            ac: numberOr(get('ac'), 10),
-            speed: numberOr(get('speed'), 30),
-            notes: get('notes'),
-            ancestry: get('ancestry'),
-            role: get('role'),
-            personality: get('personality'),
-            motivation: get('motivation'),
-            secret: get('secret'),
-            createdAt: get('createdAt') || nowIso(),
-            updatedAt: get('updatedAt') || nowIso()
-          });
-        }
-      }
-
-      saveState(nextState);
-      renderAll();
-      showFlash('CSV imported and loaded.', 'ok');
-    } catch (err) {
-      showFlash('Import failed. Please verify CSV format.', 'error');
-    }
-  };
-  reader.readAsText(file);
-}
-
-function setupEvents() {
-  document.getElementById('addBlankPcBtn').addEventListener('click', addBlankPc);
-  document.getElementById('addNpcNoteBtn').addEventListener('click', addNpcNote);
-  document.getElementById('exportPcsCsvBtn').addEventListener('click', exportPcsCsv);
-  document.getElementById('exportNpcsCsvBtn').addEventListener('click', exportNpcsCsv);
-
-  document.getElementById('csvInput').addEventListener('change', (event) => {
-    const file = event.target.files && event.target.files[0];
-    if (file) importCsv(file);
-    event.target.value = '';
-  });
-
-  document.getElementById('pcList').addEventListener('input', (event) => {
-    const target = event.target;
-    const idx = Number(target.dataset.idx);
-    const field = target.dataset.field;
-    if (Number.isInteger(idx) && field) updatePcField(idx, field, target.value);
-  });
-
-  document.getElementById('pcList').addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.dataset.action === 'load-pc') {
-      queuePcForGenerator(Number(target.dataset.idx));
-      return;
-    }
-    if (target.dataset.action === 'delete-pc') {
-      deletePc(Number(target.dataset.idx));
-    }
-  });
-
-  document.getElementById('npcNoteList').addEventListener('input', (event) => {
-    const target = event.target;
-    const idx = Number(target.dataset.idx);
-    const field = target.dataset.noteField;
-    if (Number.isInteger(idx) && field) updateNpcNoteField(idx, field, target.value);
-  });
-
-  document.getElementById('npcNoteList').addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.dataset.action === 'delete-npc-note') {
-      deleteNpcNote(Number(target.dataset.idx));
-    }
-  });
-
-  document.getElementById('npcProfileList').addEventListener('input', (event) => {
-    const target = event.target;
-    const idx = Number(target.dataset.idx);
-    const field = target.dataset.profileField;
-    if (Number.isInteger(idx) && field) updateNpcProfileField(idx, field, target.value);
-  });
-
-  document.getElementById('npcProfileList').addEventListener('click', (event) => {
-    const target = event.target;
-    if (target.dataset.action === 'delete-npc-profile') {
-      deleteNpcProfile(Number(target.dataset.idx));
-    }
-  });
-}
-
-window.addEventListener('storage', renderAll);
-window.addEventListener('DOMContentLoaded', () => {
-  setupEvents();
-  renderAll();
-});
+render();
 </script>
 </body>
 </html>
