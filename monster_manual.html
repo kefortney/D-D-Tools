@@ -676,6 +676,12 @@ select.cr-select {
   letter-spacing: 1px;
   margin-top: 8px;
 }
+.xp-chip {
+  font-size: 0.72rem;
+  color: var(--gold);
+  opacity: 0.75;
+  white-space: nowrap;
+}
 </style>
 </head>
 <body>
@@ -689,11 +695,10 @@ select.cr-select {
       <a href="index.html">Hub</a>
       <a id="campaignNavLink" href="campaign.html" style="display:none;">Campaign</a>
       <a href="character_creator.html">Character Creator</a>
-      <a href="location_creator.html">Map Creator</a>
+      <a href="vault.html">Vault</a>
       <a href="atlas.html">Atlas</a>
       <a href="monster_manual.html" class="active">Monster Manual</a>
       <a href="spellbook.html">Spellbook</a>
-      <a href="vault.html">Vault</a>
     </nav>
     <script>if (localStorage.getItem('dndToolsActiveCampaignId')) document.getElementById('campaignNavLink').style.display = '';</script>
     <div class="search-wrap">
@@ -713,15 +718,44 @@ select.cr-select {
           <option value="3">3</option>
           <option value="4">4</option>
           <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
           <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="30">30</option>
         </select>
       </div>
       <button class="filter-btn" onclick="filterType(this,'all')" data-type="all">All Types</button>
+      <button class="filter-btn" onclick="filterType(this,'Aberration')">Aberrations</button>
       <button class="filter-btn" onclick="filterType(this,'Beast')">Beasts</button>
-      <button class="filter-btn" onclick="filterType(this,'Undead')">Undead</button>
-      <button class="filter-btn" onclick="filterType(this,'Humanoid')">Humanoids</button>
+      <button class="filter-btn" onclick="filterType(this,'Celestial')">Celestials</button>
+      <button class="filter-btn" onclick="filterType(this,'Construct')">Constructs</button>
+      <button class="filter-btn" onclick="filterType(this,'Dragon')">Dragons</button>
+      <button class="filter-btn" onclick="filterType(this,'Elemental')">Elementals</button>
+      <button class="filter-btn" onclick="filterType(this,'Fey')">Fey</button>
       <button class="filter-btn" onclick="filterType(this,'Fiend')">Fiends</button>
+      <button class="filter-btn" onclick="filterType(this,'Giant')">Giants</button>
+      <button class="filter-btn" onclick="filterType(this,'Humanoid')">Humanoids</button>
       <button class="filter-btn" onclick="filterType(this,'Monstrosity')">Monstrosities</button>
+      <button class="filter-btn" onclick="filterType(this,'Ooze')">Oozes</button>
+      <button class="filter-btn" onclick="filterType(this,'Plant')">Plants</button>
+      <button class="filter-btn" onclick="filterType(this,'Undead')">Undead</button>
     </div>
   </div>
 </header>
@@ -773,8 +807,19 @@ function crColor(cr) {
   return '#ff4040';
 }
 function crXP(cr) {
-  const t={0:10,'1/8':25,'1/4':50,'1/2':100,1:200,2:450,3:700,4:1100,5:1800};
-  return t[cr]||'—';
+  const t={
+    '0':10,'⅛':25,'¼':50,'½':100,
+    '1':200,'2':450,'3':700,'4':1100,'5':1800,'6':2300,'7':2900,'8':3900,
+    '9':5000,'10':5900,'11':7200,'12':8400,'13':10000,'14':11500,'15':13000,
+    '16':15000,'17':18000,'18':20000,'19':22000,'20':25000,
+    '21':33000,'22':41000,'23':50000,'24':62000,'25':75000,
+    '26':90000,'27':105000,'28':120000,'29':135000,'30':155000
+  };
+  return t[String(cr)] ?? null;
+}
+function crXPFmt(cr) {
+  const v = crXP(cr);
+  return v != null ? v.toLocaleString() + ' XP' : '—';
 }
 function crDisplay(cr) {
   if(cr===0.125) return '⅛';
@@ -1489,6 +1534,7 @@ function renderList() {
     return `<div class="monster-list-item ${active}" onclick="selectMonster('${m.name}')">
       <span class="monster-list-name">${m.name}</span>
       <span class="cr-chip" style="background:${col}22;color:${col};border:1px solid ${col}55;">CR ${crDisplay(m.cr)}</span>
+      <span class="xp-chip">${crXPFmt(crDisplay(m.cr))}</span>
     </div>`;
   }).join('');
 }
@@ -1544,15 +1590,32 @@ function buildSheet(m) {
       <div class="trait-desc">${r.desc}</div>
     </div>`).join('');
 
-  // Resistances
+  const legActHtml = (m.legendaryActions||[]).map(a => `
+    <div class="trait-item">
+      <div class="trait-name">★ ${a.name}.</div>
+      <div class="trait-desc">${a.desc}</div>
+    </div>`).join('');
+
+  // Resistances — handle both {immunities,resistances,vulnerabilities} and {immune,resist,vulnerable,conditionImmune}
   let resHtml = '';
   if(m.resistances) {
     const r = m.resistances;
+    const immune = r.immune || r.immunities || [];
+    const resist = r.resist || r.resistances || [];
+    const vuln   = r.vulnerable || r.vulnerabilities || [];
+    const condImm = r.conditionImmune || r.conditionImmunities || [];
     const parts = [];
-    if(r.immunities?.length)    parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">IMMUNE</span><div class="res-grid">${r.immunities.map(x=>`<span class="res-tag res-immune">${x}</span>`).join('')}</div></div>`);
-    if(r.resistances?.length)   parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">RESISTANT</span><div class="res-grid">${r.resistances.map(x=>`<span class="res-tag res-resistant">${x}</span>`).join('')}</div></div>`);
-    if(r.vulnerabilities?.length) parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">VULNERABLE</span><div class="res-grid">${r.vulnerabilities.map(x=>`<span class="res-tag res-vulnerable">${x}</span>`).join('')}</div></div>`);
+    if(immune.length)   parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">IMMUNE</span><div class="res-grid">${immune.map(x=>`<span class="res-tag res-immune">${x}</span>`).join('')}</div></div>`);
+    if(resist.length)   parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">RESISTANT</span><div class="res-grid">${resist.map(x=>`<span class="res-tag res-resistant">${x}</span>`).join('')}</div></div>`);
+    if(vuln.length)     parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">VULNERABLE</span><div class="res-grid">${vuln.map(x=>`<span class="res-tag res-vulnerable">${x}</span>`).join('')}</div></div>`);
+    if(condImm.length)  parts.push(`<div><span style="font-family:'Cinzel',serif;font-size:0.65em;color:var(--text3);letter-spacing:1px;display:block;margin-bottom:4px;">CONDITION IMMUNE</span><div class="res-grid">${condImm.map(x=>`<span class="res-tag res-immune">${x}</span>`).join('')}</div></div>`);
     if(parts.length) resHtml = `<div class="divider"></div><div class="section-label">Damage Modifiers</div><div style="display:flex;flex-direction:column;gap:10px;">${parts.join('')}</div>`;
+  }
+
+  // Saving throws
+  let savesHtml = '';
+  if(m.saves && Object.keys(m.saves).length) {
+    savesHtml = Object.entries(m.saves).map(([k,v])=>`<span style="font-size:0.88em;">${k} ${v}</span>`).join(' &nbsp;·&nbsp; ');
   }
 
   // Skills
@@ -1562,6 +1625,7 @@ function buildSheet(m) {
   }
 
   const crCol = crColor(m.cr);
+  const legendaryBadge = m.legendary ? `<span class="pill" style="color:#c8960c;border-color:#c8960c55;background:rgba(200,150,12,0.1);">Legendary</span>` : '';
 
   return `
   <div class="monster-sheet">
@@ -1572,10 +1636,11 @@ function buildSheet(m) {
         <span class="pill pill-cr" style="color:${crCol};border-color:${crCol}55;">CR ${crDisplay(m.cr)}</span>
         <span class="pill pill-ac">AC ${m.ac}</span>
         <span class="pill pill-hp">HP ${m.hp}</span>
-        <span class="pill pill-spd">Speed ${m.speed}</span>
+        <span class="pill pill-spd">Speed ${m.speed||'30 ft.'}</span>
         <span class="pill pill-type">${m.type}</span>
+        ${legendaryBadge}
       </div>
-      <div class="xp-banner">☆ ${crXP(crDisplay(m.cr))} XP &nbsp;·&nbsp; Environment: ${m.env||'Varied'}</div>
+      <div class="xp-banner">☆ ${crXPFmt(crDisplay(m.cr))} &nbsp;·&nbsp; Environment: ${m.env||'Varied'}</div>
     </div>
 
     <div class="sheet-body">
@@ -1587,12 +1652,16 @@ function buildSheet(m) {
       <div class="combat-grid">
         <div class="info-block">
           <div class="info-block-label">Senses</div>
-          <div class="info-block-value annotation">${m.senses}</div>
+          <div class="info-block-value annotation">${m.senses||'Passive Perception 10'}</div>
         </div>
         <div class="info-block">
           <div class="info-block-label">Languages</div>
-          <div class="info-block-value annotation">${m.langs}</div>
+          <div class="info-block-value annotation">${m.langs||'—'}</div>
         </div>
+        ${savesHtml ? `<div class="info-block">
+          <div class="info-block-label">Saving Throws</div>
+          <div class="info-block-value annotation">${savesHtml}</div>
+        </div>` : ''}
         ${skillsHtml ? `<div class="info-block">
           <div class="info-block-label">Skills</div>
           <div class="info-block-value annotation">${skillsHtml}</div>
@@ -1605,13 +1674,13 @@ function buildSheet(m) {
 
       <div class="divider"></div>
       <div class="section-label">Actions</div>
-      ${actionsHtml}
+      ${actionsHtml || '<div class="trait-desc" style="color:var(--text2);">No actions recorded.</div>'}
 
       ${reactionsHtml ? `<div class="divider"></div><div class="section-label">Reactions</div>${reactionsHtml}` : ''}
 
-      <div class="divider"></div>
-      <div class="section-label">Field Notes</div>
-      <div class="lore-box">${m.lore}</div>
+      ${legActHtml ? `<div class="divider"></div><div class="section-label">Legendary Actions</div>${legActHtml}` : ''}
+
+      ${m.lore ? `<div class="divider"></div><div class="section-label">Field Notes</div><div class="lore-box">${m.lore}</div>` : ''}
     </div>
   </div>`;
 }
@@ -1650,6 +1719,7 @@ function saveSelectedToVault() {
       name:  selectedMonster.name,
       type:  selectedMonster.type,
       cr:    selectedMonster.cr,
+      xp:    crXP(crDisplay(selectedMonster.cr)),
       ac:    selectedMonster.ac,
       hp:    selectedMonster.hp,
       count: 1,
@@ -1674,6 +1744,7 @@ function addSelectedToCampaign() {
     name: selectedMonster.name,
     type: selectedMonster.type,
     cr: selectedMonster.cr,
+    xp: crXP(crDisplay(selectedMonster.cr)),
     ac: selectedMonster.ac,
     hp: selectedMonster.hp
   };

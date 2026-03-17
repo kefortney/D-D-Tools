@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D&D Location Creator</title>
+<title>D&D Encounter Creator</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Spectral:wght@400;600;700&family=Source+Sans+3:wght@400;600;700&display=swap');
 
@@ -263,10 +263,10 @@ button:hover { border-color: var(--accent-2); color: var(--accent-2); }
   <a href="campaign.html" id="campaignNavLink" style="display:none;">Campaign</a>
   <a href="character_creator.html">Character Creator</a>
   <a href="location_creator.html" class="active">Map Creator</a>
+  <a href="vault.html">Vault</a>
   <a href="atlas.html">Atlas</a>
   <a href="monster_manual.html">Monster Manual</a>
   <a href="spellbook.html">Spellbook</a>
-  <a href="vault.html">Vault</a>
 </nav>
 <script>if (localStorage.getItem('dndToolsActiveCampaignId')) document.getElementById('campaignNavLink').style.display = '';</script>
 <div class="shell">
@@ -274,7 +274,7 @@ button:hover { border-color: var(--accent-2); color: var(--accent-2); }
   <!-- Tabs -->
   <div style="display:flex;gap:6px;margin-bottom:14px;">
     <button id="tabLocBtn" onclick="setCreatorTab('location')"
-      style="padding:6px 16px;border-radius:20px;border:1px solid rgba(196,152,58,0.4);background:rgba(196,152,58,0.12);color:#c4983a;font-weight:600;cursor:pointer;font-size:0.88rem;">Location</button>
+      style="padding:6px 16px;border-radius:20px;border:1px solid rgba(196,152,58,0.4);background:rgba(196,152,58,0.12);color:#c4983a;font-weight:600;cursor:pointer;font-size:0.88rem;">Encounter</button>
     <button id="tabRegBtn" onclick="setCreatorTab('region')"
       style="padding:6px 16px;border-radius:20px;border:1px solid rgba(46,90,59,0.4);background:transparent;color:#a8b6c8;font-weight:600;cursor:pointer;font-size:0.88rem;">Region</button>
   </div>
@@ -318,7 +318,7 @@ button:hover { border-color: var(--accent-2); color: var(--accent-2); }
 
   <!-- Location Builder -->
   <section class="card" id="locationBuilderCard">
-    <h2>Location Builder</h2>
+    <h2>Encounter Builder</h2>
 
     <div class="row">
       <div>
@@ -373,19 +373,19 @@ button:hover { border-color: var(--accent-2); color: var(--accent-2); }
 
     <div class="row-2">
       <div>
-        <label for="locDescription">Description</label>
-        <textarea id="locDescription" class="tall" placeholder="What does this place look, smell, and sound like?"></textarea>
+        <label for="locDescription">Setting Description</label>
+        <textarea id="locDescription" class="tall" placeholder="Read-aloud text — what the players see, smell, and hear when they arrive…"></textarea>
       </div>
       <div>
-        <label for="locFeatures">Notable Features</label>
-        <textarea id="locFeatures" class="tall" placeholder="Key landmarks, rooms, objects, or points of interest…"></textarea>
+        <label for="locFeatures">Environment &amp; Hazards</label>
+        <textarea id="locFeatures" class="tall" placeholder="Cover, exits, terrain, traps, lighting, difficult terrain…"></textarea>
       </div>
     </div>
 
     <div class="row-2">
       <div>
-        <label for="locEncounters">Encounters / Hazards</label>
-        <textarea id="locEncounters" class="short" placeholder="Wandering monsters, traps, environmental dangers…"></textarea>
+        <label for="locEncounters">Encounter Setup</label>
+        <textarea id="locEncounters" class="short" placeholder="Who is here, disposition, what triggers the encounter…"></textarea>
       </div>
       <div>
         <label for="locLore">Lore &amp; History</label>
@@ -393,25 +393,33 @@ button:hover { border-color: var(--accent-2); color: var(--accent-2); }
       </div>
     </div>
 
-    <label for="locNotes">DM Notes</label>
-    <textarea id="locNotes" class="short" placeholder="Private reminders, plot hooks, quest ties, secret doors…"></textarea>
+    <div class="row-2" style="margin-bottom:8px;">
+      <div>
+        <label for="locOutcome">Outcome / Reward</label>
+        <textarea id="locOutcome" class="short" placeholder="Loot, XP, information gained, quest hooks, consequences…"></textarea>
+      </div>
+      <div>
+        <label for="locNotes">DM Notes</label>
+        <textarea id="locNotes" class="short" placeholder="Private reminders, plot hooks, secret doors, contingencies…"></textarea>
+      </div>
+    </div>
 
     <div class="actions">
       <button id="genNameBtn">Generate Name</button>
       <button id="genDetailsBtn">Generate Details</button>
-      <button id="genAllBtn" class="btn-main">Generate Full Location</button>
+      <button id="genAllBtn" class="btn-main">Generate Full Encounter</button>
       <button id="saveToMapBtn" class="btn-main">Save to Map</button>
       <button id="addCampaignBtn" class="btn-campaign">+ Add to Campaign</button>
       <a href="atlas.html" style="padding:8px 13px;border:1px solid rgba(196,152,58,0.4);border-radius:8px;color:#c4983a;text-decoration:none;font-weight:600;font-size:0.88rem;white-space:nowrap;">View Atlas →</a>
     </div>
 
-    <div id="preview" class="preview">Generate or fill in details to preview the location.</div>
+    <div id="preview" class="preview">Generate or fill in details to preview the encounter.</div>
     <div id="flash" class="flash"></div>
   </section><!-- /locationBuilderCard -->
 
   <!-- Registry -->
   <section class="card">
-    <h2>Location Registry</h2>
+    <h2>Encounter Registry</h2>
     <div id="registryList"></div>
   </section>
 
@@ -425,9 +433,13 @@ const MAP_KEY = 'dndToolsMap';
 function safeReadMap() {
   try {
     const v = JSON.parse(localStorage.getItem(MAP_KEY)||'null');
-    if (v && typeof v === 'object' && !Array.isArray(v)) return v;
-    return { regions:[], locations:[] };
-  } catch { return { regions:[], locations:[] }; }
+    if (v && typeof v === 'object' && !Array.isArray(v)) {
+      if (!v.encounters && v.locations) v.encounters = v.locations;
+      if (!v.encounters) v.encounters = [];
+      return v;
+    }
+    return { regions:[], encounters:[] };
+  } catch { return { regions:[], encounters:[] }; }
 }
 function safeWriteMap(v) { localStorage.setItem(MAP_KEY, JSON.stringify(v)); }
 function uidMap(p) { return `${p}-${Date.now()}-${Math.floor(Math.random()*100000)}`; }
@@ -479,27 +491,28 @@ function saveLocationToMap() {
   const loc = locationFromInputs();
   if (!loc.name) { showFlash('Enter a name before saving to Map.', true); return; }
   const mapData = safeReadMap();
-  const existing = mapData.locations.findIndex(l => l.name.toLowerCase()===loc.name.toLowerCase());
+  const existing = mapData.encounters.findIndex(l => l.name.toLowerCase()===loc.name.toLowerCase());
   const now = new Date().toISOString();
   const entry = {
-    id:              existing !== -1 ? mapData.locations[existing].id : uidMap('loc'),
+    id:              existing !== -1 ? mapData.encounters[existing].id : uidMap('loc'),
     name:            loc.name,
     type:            loc.type,
     region:          loc.region,
     atmosphere:      loc.atmosphere,
     description:     loc.description,
     notableFeatures: loc.features,
-    encounters:      loc.encounters,
+    encounterSetup:  loc.encounters,
+    outcome:         loc.outcome,
     lore:            loc.lore,
     notes:           loc.notes,
-    createdAt:       existing !== -1 ? mapData.locations[existing].createdAt : now,
+    createdAt:       existing !== -1 ? mapData.encounters[existing].createdAt : now,
     updatedAt:       now,
   };
   if (existing !== -1) {
-    mapData.locations[existing] = entry;
+    mapData.encounters[existing] = entry;
     showFlash(`"${loc.name}" updated in Map.`);
   } else {
-    mapData.locations.unshift(entry);
+    mapData.encounters.unshift(entry);
     showFlash(`"${loc.name}" saved to Map.`);
   }
   safeWriteMap(mapData);
@@ -661,22 +674,24 @@ function generateFull() {
 
 // ── Preview ───────────────────────────────────────────────────
 function updatePreview() {
-  const name      = document.getElementById('locName').value.trim() || 'Unnamed Location';
+  const name      = document.getElementById('locName').value.trim() || 'Unnamed Encounter';
   const type      = document.getElementById('locType').value;
   const region    = document.getElementById('locRegion').value.trim();
   const atmo      = document.getElementById('locAtmosphere').value;
   const desc      = document.getElementById('locDescription').value.trim();
   const features  = document.getElementById('locFeatures').value.trim();
   const encounters= document.getElementById('locEncounters').value.trim();
+  const outcome   = document.getElementById('locOutcome').value.trim();
   const lore      = document.getElementById('locLore').value.trim();
 
   let html = `<strong>${escHtml(name)}</strong>`;
   html += ` &nbsp;<span class="loc-type">${escHtml(type)}</span>`;
   if (region) html += ` &nbsp;<span style="color:#a8b6c8;font-size:0.82rem;">— ${escHtml(region)}</span>`;
   html += `<br><span style="color:#8fc6a8;font-size:0.82rem;">Atmosphere: ${escHtml(atmo)}</span>`;
-  if (desc)      html += `<div class="loc-section">Description</div>${escHtml(desc)}`;
-  if (features)  html += `<div class="loc-section">Notable Features</div>${escHtml(features)}`;
-  if (encounters)html += `<div class="loc-section">Encounters / Hazards</div>${escHtml(encounters)}`;
+  if (desc)      html += `<div class="loc-section">Setting Description</div>${escHtml(desc)}`;
+  if (features)  html += `<div class="loc-section">Environment &amp; Hazards</div>${escHtml(features)}`;
+  if (encounters)html += `<div class="loc-section">Encounter Setup</div>${escHtml(encounters)}`;
+  if (outcome)   html += `<div class="loc-section">Outcome / Reward</div>${escHtml(outcome)}`;
   if (lore)      html += `<div class="loc-section">Lore &amp; History</div>${escHtml(lore)}`;
 
   document.getElementById('preview').innerHTML = html;
@@ -693,6 +708,7 @@ function locationFromInputs(existingId) {
     description: document.getElementById('locDescription').value.trim(),
     features:    document.getElementById('locFeatures').value.trim(),
     encounters:  document.getElementById('locEncounters').value.trim(),
+    outcome:     document.getElementById('locOutcome').value.trim(),
     lore:        document.getElementById('locLore').value.trim(),
     notes:       document.getElementById('locNotes').value.trim(),
     createdAt:   new Date().toISOString(),
@@ -716,8 +732,9 @@ function addToCampaign() {
   if (loc.region)      parts.push(`Region: ${loc.region}`);
   if (loc.atmosphere)  parts.push(`Atmosphere: ${loc.atmosphere}`);
   if (loc.description) parts.push(`\n${loc.description}`);
-  if (loc.features)    parts.push(`\nNotable Features:\n${loc.features}`);
-  if (loc.encounters)  parts.push(`\nEncounters / Hazards:\n${loc.encounters}`);
+  if (loc.features)    parts.push(`\nEnvironment & Hazards:\n${loc.features}`);
+  if (loc.encounters)  parts.push(`\nEncounter Setup:\n${loc.encounters}`);
+  if (loc.outcome)     parts.push(`\nOutcome / Reward:\n${loc.outcome}`);
   if (loc.lore)        parts.push(`\nLore:\n${loc.lore}`);
   if (loc.notes)       parts.push(`\nDM Notes:\n${loc.notes}`);
 
@@ -728,7 +745,7 @@ function addToCampaign() {
 
 // ── Load into Builder from Registry ──────────────────────────
 function loadIntoBuilder(id) {
-  const loc = safeReadMap().locations.find(l => l.id === id);
+  const loc = safeReadMap().encounters.find(l => l.id === id);
   if (!loc) return;
   document.getElementById('locName').value        = loc.name || '';
   document.getElementById('locType').value        = loc.type || 'Other';
@@ -736,7 +753,8 @@ function loadIntoBuilder(id) {
   document.getElementById('locAtmosphere').value  = loc.atmosphere || 'Eerie';
   document.getElementById('locDescription').value = loc.description || '';
   document.getElementById('locFeatures').value    = loc.notableFeatures || loc.features || '';
-  document.getElementById('locEncounters').value  = loc.encounters || '';
+  document.getElementById('locEncounters').value  = loc.encounterSetup || loc.encounters || '';
+  document.getElementById('locOutcome').value     = loc.outcome || '';
   document.getElementById('locLore').value        = loc.lore || '';
   document.getElementById('locNotes').value       = loc.notes || '';
   updatePreview();
@@ -745,20 +763,20 @@ function loadIntoBuilder(id) {
 
 function deleteFromRegistry(id) {
   const mapData = safeReadMap();
-  const loc = mapData.locations.find(l => l.id === id);
+  const loc = mapData.encounters.find(l => l.id === id);
   if (!loc) return;
   if (!confirm(`Delete "${loc.name}" from the Map?`)) return;
-  mapData.locations = mapData.locations.filter(l => l.id !== id);
+  mapData.encounters = mapData.encounters.filter(l => l.id !== id);
   safeWriteMap(mapData);
   renderRegistry();
 }
 
 // ── Registry Render ───────────────────────────────────────────
 function renderRegistry() {
-  const list = safeReadMap().locations;
+  const list = safeReadMap().encounters;
   const el   = document.getElementById('registryList');
   if (!list.length) {
-    el.innerHTML = '<div class="empty">No locations saved yet. Generate one above and click Save to Map.</div>';
+    el.innerHTML = '<div class="empty">No encounters saved yet. Generate one above and click Save to Map.</div>';
     return;
   }
   el.innerHTML = '<div class="registry-list">' + list.map(loc => `
@@ -775,21 +793,22 @@ function renderRegistry() {
 }
 
 function queueFromRegistry(id) {
-  const loc = safeReadMap().locations.find(l => l.id === id);
+  const loc = safeReadMap().encounters.find(l => l.id === id);
   if (!loc) return;
   if (!localStorage.getItem('dndToolsActiveCampaignId')) {
     showFlash('No active campaign — open a campaign first from the Hub.', true);
     return;
   }
   const parts = [];
-  if (loc.type)        parts.push(`Type: ${loc.type}`);
-  if (loc.region)      parts.push(`Region: ${loc.region}`);
-  if (loc.atmosphere)  parts.push(`Atmosphere: ${loc.atmosphere}`);
-  if (loc.description) parts.push(`\n${loc.description}`);
-  if (loc.features)    parts.push(`\nNotable Features:\n${loc.features}`);
-  if (loc.encounters)  parts.push(`\nEncounters / Hazards:\n${loc.encounters}`);
-  if (loc.lore)        parts.push(`\nLore:\n${loc.lore}`);
-  if (loc.notes)       parts.push(`\nDM Notes:\n${loc.notes}`);
+  if (loc.type)             parts.push(`Type: ${loc.type}`);
+  if (loc.region)           parts.push(`Region: ${loc.region}`);
+  if (loc.atmosphere)       parts.push(`Atmosphere: ${loc.atmosphere}`);
+  if (loc.description)      parts.push(`\n${loc.description}`);
+  if (loc.notableFeatures||loc.features) parts.push(`\nEnvironment & Hazards:\n${loc.notableFeatures||loc.features}`);
+  if (loc.encounterSetup||loc.encounters) parts.push(`\nEncounter Setup:\n${loc.encounterSetup||loc.encounters}`);
+  if (loc.outcome)          parts.push(`\nOutcome / Reward:\n${loc.outcome}`);
+  if (loc.lore)             parts.push(`\nLore:\n${loc.lore}`);
+  if (loc.notes)            parts.push(`\nDM Notes:\n${loc.notes}`);
   localStorage.setItem(ADD_KEY, JSON.stringify({ name: loc.name, notes: parts.join('\n') }));
   showFlash(`"${loc.name}" queued — open Campaign to see it in your locations.`);
   document.getElementById('campaignNavLink').style.display = '';
@@ -804,7 +823,7 @@ document.getElementById('addCampaignBtn').addEventListener('click',addToCampaign
 document.getElementById('saveRegBtn').addEventListener('click',    saveRegion);
 document.getElementById('locType').addEventListener('change', updatePreview);
 
-['locName','locRegion','locAtmosphere','locDescription','locFeatures','locEncounters','locLore','locNotes']
+['locName','locRegion','locAtmosphere','locDescription','locFeatures','locEncounters','locOutcome','locLore','locNotes']
   .forEach(id => document.getElementById(id).addEventListener('input', updatePreview));
 
 // ── Init ──────────────────────────────────────────────────────

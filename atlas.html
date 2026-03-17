@@ -215,9 +215,9 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   border: 1px solid var(--gold-dim);
   border-radius: 16px;
   padding: 24px;
-  max-width: 560px;
+  max-width: 680px;
   width: 100%;
-  max-height: 85vh;
+  max-height: 90vh;
   overflow-y: auto;
   box-shadow: 0 20px 60px rgba(0,0,0,0.7);
   position: relative;
@@ -293,11 +293,10 @@ button:hover { border-color: var(--gold); color: var(--gold); }
   <a href="index.html">Hub</a>
   <a href="campaign.html" id="campaignNavLink" style="display:none;">Campaign</a>
   <a href="character_creator.html">Character Creator</a>
-  <a href="location_creator.html">Map Creator</a>
+  <a href="vault.html">Vault</a>
   <a href="atlas.html" class="active">Atlas</a>
   <a href="monster_manual.html">Monster Manual</a>
   <a href="spellbook.html">Spellbook</a>
-  <a href="vault.html">Vault</a>
 </nav>
 <script>if (localStorage.getItem('dndToolsActiveCampaignId')) document.getElementById('campaignNavLink').style.display = '';</script>
 
@@ -308,7 +307,7 @@ button:hover { border-color: var(--gold); color: var(--gold); }
       <h2 style="margin-bottom:0;">Atlas</h2>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <button class="btn-secondary" onclick="openCreateModal('region')">+ New Region</button>
-        <button class="btn-secondary" onclick="openCreateModal('location')">+ New Location</button>
+        <button class="btn-secondary" onclick="openCreateModal('encounter')">+ New Encounter</button>
         <button class="btn-gold" onclick="saveMapJson()">💾 Export Atlas JSON</button>
         <label class="btn-gold" style="cursor:pointer;padding:7px 12px;border:1px solid rgba(196,152,58,0.5);border-radius:8px;color:var(--gold);font-weight:600;font-size:0.87rem;">
           📂 Import Atlas JSON
@@ -321,7 +320,7 @@ button:hover { border-color: var(--gold); color: var(--gold); }
     <div class="btabs" style="margin-bottom:12px;">
       <button class="btab btab-active" data-filter="all" onclick="setFilter('all')">All</button>
       <button class="btab" data-filter="region" onclick="setFilter('region')">Regions</button>
-      <button class="btab" data-filter="location" onclick="setFilter('location')">Locations</button>
+      <button class="btab" data-filter="encounter" onclick="setFilter('encounter')">Encounters</button>
     </div>
 
     <input id="mapSearch" placeholder="Search by name or type…" style="max-width:320px;margin-bottom:12px;">
@@ -378,9 +377,13 @@ function safeWrite(key, v) { localStorage.setItem(key, JSON.stringify(v)); }
 function safeReadMap() {
   try {
     const v = JSON.parse(localStorage.getItem(SK.map)||'null');
-    if (v && typeof v==='object' && !Array.isArray(v)) return v;
-    return { regions:[], locations:[] };
-  } catch { return { regions:[], locations:[] }; }
+    if (v && typeof v==='object' && !Array.isArray(v)) {
+      if (!v.encounters && v.locations) v.encounters = v.locations;
+      if (!v.encounters) v.encounters = [];
+      return v;
+    }
+    return { regions:[], encounters:[] };
+  } catch { return { regions:[], encounters:[] }; }
 }
 function safeWriteMap(v) { safeWrite(SK.map, v); }
 function uid(p) { return `${p}-${Date.now()}-${Math.floor(Math.random()*1e5)}`; }
@@ -404,11 +407,11 @@ function migrateOldLocations() {
     const old = JSON.parse(localStorage.getItem(SK.oldLocations)||'null');
     if (!old || !Array.isArray(old) || !old.length) return;
     const mapData = safeReadMap();
-    const existingIds = new Set(mapData.locations.map(l=>l.id));
+    const existingIds = new Set(mapData.encounters.map(l=>l.id));
     let added = 0;
     old.forEach(loc => {
       if (!loc.id || existingIds.has(loc.id)) return;
-      mapData.locations.push({
+      mapData.encounters.push({
         id: loc.id,
         name: loc.name || '',
         type: loc.type || 'Other',
@@ -422,7 +425,7 @@ function migrateOldLocations() {
     });
     if (added > 0) {
       safeWriteMap(mapData);
-      flash('mapFlash', `Migrated ${added} location(s) from old registry.`);
+      flash('mapFlash', `Migrated ${added} encounter(s) from old registry.`);
     }
   } catch { /* ignore */ }
 }
@@ -452,11 +455,11 @@ function setSort(col) {
 function renderTable() {
   const mapData = safeReadMap();
   let entries = [];
-  if (_filter !== 'location') {
+  if (_filter !== 'encounter') {
     (mapData.regions||[]).forEach(r => entries.push({ kind:'region', data:r }));
   }
   if (_filter !== 'region') {
-    (mapData.locations||[]).forEach(l => entries.push({ kind:'location', data:l }));
+    (mapData.encounters||[]).forEach(l => entries.push({ kind:'encounter', data:l }));
   }
 
   // Filter by search
@@ -482,7 +485,7 @@ function renderTable() {
 
   const wrap = document.getElementById('mapTableWrap');
   if (!entries.length) {
-    wrap.innerHTML = '<div class="empty">No entries yet. Create a Region or Location, or import from the Location Creator.</div>';
+    wrap.innerHTML = '<div class="empty">No entries yet. Create a Region or Encounter, or import from the Map Creator.</div>';
     return;
   }
 
@@ -494,7 +497,7 @@ function renderTable() {
   const rows = entries.map(({ kind, data }) => {
     const badge = kind==='region'
       ? `<span class="type-badge badge-region">Region</span>`
-      : `<span class="type-badge badge-location">Location</span>`;
+      : `<span class="type-badge badge-location">Encounter</span>`;
     const subtype = esc(data.type||'—');
     const preview = kind==='region'
       ? esc((data.blurb||'').slice(0,80) + (data.blurb&&data.blurb.length>80?'…':''))
@@ -529,14 +532,14 @@ function renderTable() {
 // ══════════════════════════════════════════════════════════════
 function deleteEntry(kind, id) {
   const mapData = safeReadMap();
-  const arr = kind==='region' ? mapData.regions : mapData.locations;
+  const arr = kind==='region' ? mapData.regions : mapData.encounters;
   const entry = arr.find(x=>x.id===id);
   if (!entry) return;
   if (!confirm(`Delete "${entry.name||'this entry'}" from the Map registry?`)) return;
   if (kind==='region') {
     mapData.regions = mapData.regions.filter(x=>x.id!==id);
   } else {
-    mapData.locations = mapData.locations.filter(x=>x.id!==id);
+    mapData.encounters = mapData.encounters.filter(x=>x.id!==id);
   }
   safeWriteMap(mapData);
   renderTable();
@@ -552,19 +555,19 @@ let _editId   = '';
 function openCreateModal(kind) {
   _editKind = kind;
   _editId   = '';
-  document.getElementById('editModalTitle').textContent = kind==='region' ? 'New Region' : 'New Location';
+  document.getElementById('editModalTitle').textContent = kind==='region' ? 'New Region' : 'New Encounter';
   renderEditForm(kind, null);
   document.getElementById('editModal').classList.add('open');
 }
 
 function openEditModal(kind, id) {
   const mapData = safeReadMap();
-  const arr = kind==='region' ? mapData.regions : mapData.locations;
+  const arr = kind==='region' ? mapData.regions : mapData.encounters;
   const entry = arr.find(x=>x.id===id);
   if (!entry) return;
   _editKind = kind;
   _editId   = id;
-  document.getElementById('editModalTitle').textContent = `Edit ${kind==='region'?'Region':'Location'}: ${entry.name||''}`;
+  document.getElementById('editModalTitle').textContent = `Edit ${kind==='region'?'Region':'Encounter'}: ${entry.name||''}`;
   renderEditForm(kind, entry);
   document.getElementById('editModal').classList.add('open');
 }
@@ -585,18 +588,26 @@ function renderEditForm(kind, entry) {
   } else {
     const LOC_TYPES = ['Tavern / Inn','Building','Village','Town','City','Dungeon','Cave / Cavern','Forest','Ruins','Keep / Castle','Temple / Shrine','Tower','Wilderness','Underground','Coastal','Other'];
     document.getElementById('editModalForm').innerHTML = `
-      <div class="form-row"><label class="fl">Name</label><input id="ef-name" value="${v('name')}" placeholder="Location name"></div>
+      <div class="form-row" style="display:flex;gap:6px;align-items:flex-end;">
+        <div style="flex:1;"><label class="fl">Name</label><input id="ef-name" value="${v('name')}" placeholder="Encounter name"></div>
+        <button type="button" class="btn-sm" onclick="genEncounterName()" title="Generate a random name">↺ Name</button>
+      </div>
       <div class="form-row">
         <label class="fl">Type</label>
         <select id="ef-type">
           ${LOC_TYPES.map(t=>`<option ${(entry&&entry.type===t)?'selected':''}>${t}</option>`).join('')}
         </select>
       </div>
+      <div class="form-row" style="display:flex;gap:6px;flex-wrap:wrap;">
+        <button type="button" class="btn-sm" onclick="genEncounterDetails()">↺ Generate Details</button>
+        <button type="button" class="btn-sm btn-secondary" onclick="genFullEncounter()">↺ Generate All</button>
+      </div>
       <div class="form-row"><label class="fl">Region / Setting</label><input id="ef-region" value="${v('region')}" placeholder="Northern Mountains, The Underdark…"></div>
       <div class="form-row"><label class="fl">Atmosphere</label><input id="ef-atmosphere" value="${v('atmosphere')}" placeholder="Eerie, welcoming, dangerous…"></div>
-      <div class="form-row"><label class="fl">Description</label><textarea id="ef-description" style="min-height:90px;">${entry?esc(entry.description||''):''}</textarea></div>
-      <div class="form-row"><label class="fl">Notable Features</label><textarea id="ef-notableFeatures" style="min-height:60px;">${entry?esc(entry.notableFeatures||''):''}</textarea></div>
-      <div class="form-row"><label class="fl">Encounters / Hazards</label><textarea id="ef-encounters" style="min-height:60px;">${entry?esc(entry.encounters||''):''}</textarea></div>
+      <div class="form-row"><label class="fl">Setting Description</label><textarea id="ef-description" style="min-height:90px;">${entry?esc(entry.description||''):''}</textarea></div>
+      <div class="form-row"><label class="fl">Environment &amp; Hazards</label><textarea id="ef-notableFeatures" style="min-height:60px;">${entry?esc(entry.notableFeatures||''):''}</textarea></div>
+      <div class="form-row"><label class="fl">Encounter Setup</label><textarea id="ef-encounterSetup" style="min-height:60px;">${entry?esc(entry.encounterSetup||entry.encounters||''):''}</textarea></div>
+      <div class="form-row"><label class="fl">Outcome / Reward</label><textarea id="ef-outcome" style="min-height:60px;">${entry?esc(entry.outcome||''):''}</textarea></div>
       <div class="form-row"><label class="fl">Lore &amp; History</label><textarea id="ef-lore" style="min-height:60px;">${entry?esc(entry.lore||''):''}</textarea></div>
       <div class="form-row"><label class="fl">DM Notes</label><textarea id="ef-notes" style="min-height:60px;">${entry?esc(entry.notes||''):''}</textarea></div>`;
   }
@@ -638,17 +649,18 @@ function saveEditModal() {
       atmosphere:      document.getElementById('ef-atmosphere').value.trim(),
       description:     document.getElementById('ef-description').value.trim(),
       notableFeatures: document.getElementById('ef-notableFeatures').value.trim(),
-      encounters:      document.getElementById('ef-encounters').value.trim(),
+      encounterSetup:  document.getElementById('ef-encounterSetup').value.trim(),
+      outcome:         document.getElementById('ef-outcome').value.trim(),
       lore:            document.getElementById('ef-lore').value.trim(),
       notes:           document.getElementById('ef-notes').value.trim(),
-      createdAt:       _editId ? (mapData.locations.find(l=>l.id===_editId)||{}).createdAt||now : now,
+      createdAt:       _editId ? (mapData.encounters.find(l=>l.id===_editId)||{}).createdAt||now : now,
       updatedAt:       now
     };
     if (_editId) {
-      const idx = mapData.locations.findIndex(l=>l.id===_editId);
-      if (idx!==-1) mapData.locations[idx]=entry; else mapData.locations.unshift(entry);
+      const idx = mapData.encounters.findIndex(l=>l.id===_editId);
+      if (idx!==-1) mapData.encounters[idx]=entry; else mapData.encounters.unshift(entry);
     } else {
-      mapData.locations.unshift(entry);
+      mapData.encounters.unshift(entry);
     }
   }
   safeWriteMap(mapData);
@@ -707,15 +719,17 @@ function addToCampaign(campaignId) {
     if (!camp.activeRegionId) camp.activeRegionId = camp.regions[camp.regions.length-1].id;
     flash('cpickFlash', `"${reg.name}" added to ${camp.name||'campaign'}.`);
   } else {
-    const loc = (mapData.locations||[]).find(l=>l.id===_cpickId);
-    if (!loc) { flash('cpickFlash','Location not found.',true); return; }
+    const loc = (mapData.encounters||[]).find(l=>l.id===_cpickId);
+    if (!loc) { flash('cpickFlash','Encounter not found.',true); return; }
     const alreadyHas = camp.areas.some(a=>a.sourceId===loc.id || a.id===loc.id);
     if (alreadyHas) { flash('cpickFlash',`"${loc.name}" is already in this campaign.`,true); return; }
     const noteParts = [];
     if (loc.type) noteParts.push(`Type: ${loc.type}`);
     if (loc.atmosphere) noteParts.push(`Atmosphere: ${loc.atmosphere}`);
     if (loc.description) noteParts.push(loc.description);
-    if (loc.notableFeatures) noteParts.push(`Notable Features:\n${loc.notableFeatures}`);
+    if (loc.notableFeatures) noteParts.push(`Environment & Hazards:\n${loc.notableFeatures}`);
+    if (loc.encounterSetup) noteParts.push(`Encounter Setup:\n${loc.encounterSetup}`);
+    if (loc.outcome) noteParts.push(`Outcome / Reward:\n${loc.outcome}`);
     camp.areas.push({
       id: uid('area'), sourceId: loc.id, name: loc.name,
       notes: noteParts.join('\n'), regionId: '', createdAt: now
@@ -755,14 +769,16 @@ function importMapJson(file) {
       if (!confirm('Import this Atlas JSON? Existing entries with matching IDs will be updated.')) return;
       const existing = safeReadMap();
       const regIds   = new Set(existing.regions.map(r=>r.id));
-      const locIds   = new Set(existing.locations.map(l=>l.id));
+      const encIds   = new Set(existing.encounters.map(l=>l.id));
       (data.regions||[]).forEach(r => {
         if (regIds.has(r.id)) { const i=existing.regions.findIndex(x=>x.id===r.id); existing.regions[i]=r; }
         else { existing.regions.push(r); }
       });
-      (data.locations||[]).forEach(l => {
-        if (locIds.has(l.id)) { const i=existing.locations.findIndex(x=>x.id===l.id); existing.locations[i]=l; }
-        else { existing.locations.push(l); }
+      // support both old "locations" key and new "encounters" key in imported JSON
+      const importedEnc = data.encounters || data.locations || [];
+      importedEnc.forEach(l => {
+        if (encIds.has(l.id)) { const i=existing.encounters.findIndex(x=>x.id===l.id); existing.encounters[i]=l; }
+        else { existing.encounters.push(l); }
       });
       safeWriteMap(existing);
       renderTable();
@@ -792,6 +808,88 @@ document.getElementById('importMapInput').addEventListener('change', e => {
 
 migrateOldLocations();
 renderTable();
+
+// ══════════════════════════════════════════════════════════════
+//  ENCOUNTER GENERATION (for New / Edit Encounter modal)
+// ══════════════════════════════════════════════════════════════
+const _G = {
+  TAVERN_ADJ:  ['Rusty','Golden','Silver','Laughing','Drunken','Wandering','Weeping','Broken','Sleeping','Howling','Tipsy','Leaning','Grizzled','Old','Gilded'],
+  TAVERN_NOUN: ['Flagon','Dragon','Sword','Gnome','Dwarf','Wolf','Crow','Toad','Skull','Lantern','Compass','Anchor','Hammer','Chalice','Boot'],
+  PLACE_PRE:   ['Ash','Black','Cold','Dark','Elder','Far','Frost','Grey','High','Iron','Mire','Oak','River','Stone','Straw','Wind','Wood','Ember','Dusk','Crag'],
+  PLACE_SUF:   ['brook','burgh','cliff','dale','ford','gate','haven','holm','mere','mill','moor','port','ton','vale','wick','hold','reach','falls','crossing'],
+  DUN_PRE:     ['Tomb','Ruins','Caverns','Depths','Catacombs','Labyrinth','Temple','Vault','Sanctum','Warrens'],
+  DUN_SUF:     ['of the Shadow','of Eternal Night','of the Lost','of Forgotten Kings','of Ancient Evil','of Whispers','of the Fallen','of Shattered Stone','of the Undying','of Black Glass'],
+  FOREST_ADJ:  ['Ancient','Whispering','Cursed','Enchanted','Shadowed','Twilight','Crimson','Pale','Gloomwood','Ironwood'],
+  FOREST_NOUN: ['Wood','Forest','Grove','Thicket','Reaches','Marches','Hollow','Weald','Wildwood','Tangle'],
+  KEEP_ADJ:    ['Black','Iron','Stone','High','Grim','Grey','Dark','Frost','Ashen','Shattered'],
+  KEEP_NOUN:   ['Keep','Castle','Fort','Tower','Bastion','Hold','Stronghold','Citadel','Spire','Redoubt'],
+  TEMPLE_ADJ:  ['Holy','Sacred','Ancient','Ruined','Forgotten','Cursed','Blessed','Hidden','Sunken','Sealed'],
+  TEMPLE_NOUN: ['Temple','Shrine','Sanctum','Chapel','Cathedral','Altar','Grove','Ossuary','Vault','Reliquary'],
+  DESCS: {
+    'Tavern / Inn': ['Low beams blackened by decades of pipe smoke stretch the length of the common room. A fire crackles in the wide stone hearth, throwing long shadows across mismatched tables crowded with travelers and locals alike.','The smell of roasting meat and spilled ale greets you before you even open the door. Inside, a gruff barkeep wipes down the counter while a bard in the corner picks out a familiar tune on a battered lute.','Candles stuck in empty bottles provide most of the light. The floorboards are warped but clean, and a hand-painted sign above the bar reads: "No magic, no debts, no exceptions."'],
+    'Village':      ['A cluster of thatch-roofed cottages huddled behind a low stone wall. Chickens wander freely, and the smell of bread drifting from the baker\'s makes the whole place feel deceptively peaceful.','Fewer than two hundred souls call this place home. The well at the center of the square is the only gathering spot, and the faces that watch you from doorways are curious but wary.'],
+    'Dungeon':      ['The air is cold and still, carrying the faint odor of mold and something older — a mineral smell, like rust and deep earth. Torchlight barely reaches the walls, and every sound echoes twice.','Crude symbols are scratched into the stone at intervals, warnings in a script too old to easily read. The corridor descends at a shallow angle, slick with moisture, into deeper dark.'],
+    'Cave / Cavern':['Bioluminescent fungi dot the ceiling of the cavern in pale blue clusters, casting just enough light to make the pools of standing water gleam. The dripping of water is constant and directionless.','The cave mouth is narrow enough to squeeze through one at a time. Inside it opens dramatically into a cathedral space, stalactites hanging like chandeliers thirty feet overhead.'],
+    'Forest':       ['The trees here are old — wide as cottages, bark furrowed deep — and the canopy above lets through only thin ribbons of grey light. The undergrowth is silent. Too silent.','A hunting trail threads between massive oaks, but it hasn\'t been maintained in years. Roots have buckled the path and something has dragged branches across it at regular intervals.'],
+    'Ruins':        ['Moss and climbing vines have done their patient work here — the walls are half-swallowed, the towers broken, the floor a cracked mosaic barely visible through years of overgrowth.','It was a significant structure once. The stonework is fine — you can still see the chisel marks of skilled craftsmen — but time and something else have conspired to lay it low.'],
+    'Keep / Castle':['The gatehouse portcullis is down and rusted in place. The walls are thick — six feet at least — and the arrow slits have been recently mortared wider, suggesting someone converted defense to offense.','Built into the cliff face, the keep appears to grow directly from the stone. Its north tower collapsed at some point and was never fully rebuilt. Smoke rises from the main hall.'],
+    'Temple / Shrine':['Incense smoke hangs heavy in the air despite no visible source. The marble floor is cold underfoot, and the acoustics of the domed ceiling carry every whisper to every corner.','The god worshipped here has been forgotten or replaced; the iconography above the altar has been chiseled away. Someone still lights the candles, though — they\'re fresh.'],
+  },
+  FEATURES: {
+    'Tavern / Inn': ['A private room upstairs with a suspiciously new lock','A cellar entrance behind the bar that the owner discourages questions about','A wanted notice pinned near the door, weeks old but never taken down'],
+    'Village':      ['A communal notice board covered in requests and rumors','An ancient well said to grant dreams to those who drink from it at midnight','A sealed building at the edge of town that nobody talks about'],
+    'Dungeon':      ['A pit trap in the third corridor, reset recently','Carvings on the walls depicting the original purpose of this place','A locked iron door with no keyhole — only a symbol to press your palm against'],
+    'Cave / Cavern':['A subterranean stream drinkable but ice-cold','An alcove filled with carefully stacked bones, arranged by size','A natural chimney that vents smoke and can be climbed with difficulty'],
+    'Forest':       ['A clearing where no animals go and no birds sing','A trail of unusual footprints that do not match any known creature','Ancient boundary stones marking a territory nobody claims anymore'],
+    'Ruins':        ['A sealed vault door with a combination lock of symbols','Frescoes on an interior wall still vibrant despite the ruin around them','A cellar intact beneath the rubble, accessible through a collapsed section'],
+    'Keep / Castle':['A secret passage behind the great hall fireplace','A dungeon level never shown on official plans','A tower room that was clearly sealed from the outside'],
+    'Temple / Shrine':['An inner sanctum requiring a specific ritual to enter safely','A confessional where secrets are said to be held against the penitent','A pool of still water that shows the past instead of the present'],
+  },
+  SETUP: {
+    'Tavern / Inn': ['A drunk mercenary spoiling for a fight — the barkeep wants them removed peacefully','Two thieves casing the wealthier-looking patrons; they bolt if confronted directly','An informant seated in the back corner who will only talk if bought enough drinks'],
+    'Village':      ['Villagers hostile to outsiders following a recent incident no one will explain fully','A pair of bandits posing as merchants, demanding a "toll" from anyone leaving','A child following the party, convinced they are heroes from an old story'],
+    'Dungeon':      ['1d4 Giant Rats (CR 1/8) in the first corridor, protecting a nest','Animated armor (CR 1) standing guard at a T-junction, attacks on sight','A wandering Gelatinous Cube (CR 2) moving silently through the lower passages'],
+    'Cave / Cavern':['1d6 Stirges (CR 1/8) roosting in an upper passage, disturbed by light','A Cave Bear (CR 2) with cubs in the back chamber — aggressive if cornered','A Grick (CR 2) lurking in a crack in the ceiling, waiting for prey to pass below'],
+    'Forest':       ['1d4 Wolves (CR 1/4) that have been shadowing the party since the treeline','A Bandit patrol (4× CR 1/8) demanding payment to pass through "their" territory','A Green Hag (CR 3) at a crossroads, offering accurate directions for a favor'],
+    'Ruins':        ['1d8 Skeletons (CR 1/4) animated by residual magic, patrol the outer walls','A Scarecrow (CR 1) that activates only when someone enters the fresco room','2 Wights (CR 3) sealed in the vault level, dormant until the door is opened'],
+    'Keep / Castle':['4 Guards (CR 1/8) at the gatehouse demanding travel documents and a reason to enter','A Spy (CR 1) embedded in the household staff who reports everything to a rival faction','A Specter (CR 1) haunting the collapsed north tower after dark — bound to a grievance'],
+    'Temple / Shrine':['A Cult Fanatic (CR 2) conducting a midnight rite in the inner sanctum','1d4 Shadows (CR 1/2) that manifest immediately when the candles are extinguished','A Banshee (CR 4) bound to protect the sanctum, will negotiate before attacking'],
+  },
+  LORE: ['This place was built during the Third Expansion, when the empire\'s reach exceeded its wisdom.','Local stories claim something was buried here that was never meant to be found again.','Three different factions have held claim to this location in the last century — none peacefully.','The original builders vanished before construction was completed. No record explains why.','A treaty was once signed here that has since been broken by all parties involved.','Every generation someone is born nearby with strange gifts that they credit to this place.'],
+  ATMO: ['Eerie','Welcoming','Dangerous','Mysterious','Ancient & Forgotten','Bustling','Desolate','Sacred','Oppressive','Lively','Haunted','Serene'],
+};
+
+function _gpick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+
+function genEncounterName() {
+  const type = (document.getElementById('ef-type')||{}).value || 'Other';
+  let name = '';
+  if (type === 'Tavern / Inn') name = `The ${_gpick(_G.TAVERN_ADJ)} ${_gpick(_G.TAVERN_NOUN)}`;
+  else if (['Village','Town','City'].includes(type)) { name = _gpick(_G.PLACE_PRE) + _gpick(_G.PLACE_SUF); name = name[0].toUpperCase() + name.slice(1); }
+  else if (['Dungeon','Underground'].includes(type)) name = `${_gpick(_G.DUN_PRE)} ${_gpick(_G.DUN_SUF)}`;
+  else if (type === 'Forest') name = `${_gpick(_G.FOREST_ADJ)} ${_gpick(_G.FOREST_NOUN)}`;
+  else if (['Keep / Castle','Tower'].includes(type)) name = `${_gpick(_G.KEEP_ADJ)} ${_gpick(_G.KEEP_NOUN)}`;
+  else if (type === 'Temple / Shrine') name = `${_gpick(_G.TEMPLE_ADJ)} ${_gpick(_G.TEMPLE_NOUN)}`;
+  else { name = _gpick(_G.PLACE_PRE) + _gpick(_G.PLACE_SUF); name = name[0].toUpperCase() + name.slice(1); }
+  const el = document.getElementById('ef-name'); if (el) el.value = name;
+}
+
+function genEncounterDetails() {
+  const typeEl = document.getElementById('ef-type');
+  const type = typeEl ? typeEl.value : 'Ruins';
+  const atmoEl = document.getElementById('ef-atmosphere');
+  if (atmoEl) atmoEl.value = _gpick(_G.ATMO);
+  const descEl = document.getElementById('ef-description');
+  if (descEl) descEl.value = _gpick(_G.DESCS[type] || _G.DESCS['Ruins']);
+  const featEl = document.getElementById('ef-notableFeatures');
+  if (featEl) featEl.value = _gpick(_G.FEATURES[type] || _G.FEATURES['Ruins']);
+  const setupEl = document.getElementById('ef-encounterSetup');
+  if (setupEl) setupEl.value = _gpick(_G.SETUP[type] || _G.SETUP['Ruins']);
+  const loreEl = document.getElementById('ef-lore');
+  if (loreEl) loreEl.value = _gpick(_G.LORE);
+}
+
+function genFullEncounter() { genEncounterName(); genEncounterDetails(); }
 </script>
 </body>
 </html>

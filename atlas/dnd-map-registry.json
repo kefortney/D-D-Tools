@@ -1,0 +1,261 @@
+{
+  "regions": [
+    {
+      "id": "reg-1773627878287-64093",
+      "name": "The Catacombs",
+      "type": "Dungeon",
+      "blurb": "",
+      "description": "The crack in the ancient oak opens into a narrow stone staircase smelling of earth and old rain. The walls are carved — intentional, covered in flowing patterns of vines and stars and small animals. Someone built this a long time ago and built it beautifully. Torches in iron brackets burn with soft blue flame that never goes out. Whatever is down here has been expecting visitors.",
+      "createdAt": "2026-03-16T02:24:38.287Z",
+      "updatedAt": "2026-03-16T02:24:38.287Z"
+    },
+    {
+      "id": "reg-1773627848992-76557",
+      "name": "The Bramblewood",
+      "type": "Wilderness",
+      "blurb": "",
+      "description": "The Bramblewood starts friendly — tall oaks, soft moss, shafts of golden light. Ten minutes in, the light dims, the trees crowd together, and the path becomes a suggestion. Glowing mushrooms pulse faintly blue-green everywhere. They don’t hurt anyone. They’re just watching. (Probably.)",
+      "createdAt": "2026-03-16T02:24:08.992Z",
+      "updatedAt": "2026-03-16T02:24:08.992Z"
+    },
+    {
+      "id": "reg-1773627827416-28657",
+      "name": "Willowmere",
+      "type": "Town",
+      "blurb": "",
+      "description": "A drowsy little town at the edge of the Bramblewood forest where everyone knows everyone, the baker leaves muffins on your doorstep when you’re sick, and the worst thing that usually happens is old Mr. Thistlewick’s goat escaping again. Cobblestone paths wind between flower-box cottages, a small market square sits at the center with a splashing fountain, and paper lanterns hang between buildings that glow warm orange at night. Lately though, the forest has gone quiet — no birdsong, no rustling — and some of the children have started finding strange glowing mushrooms at the treeline.",
+      "createdAt": "2026-03-16T02:23:47.415Z",
+      "updatedAt": "2026-03-16T02:23:47.415Z"
+    }
+  ],
+  "locations": [
+    {
+      "id": "loc-1773628271636-68287",
+      "name": "Town Square",
+      "type": "Town",
+      "region": "",
+      "atmosphere": "Welcoming",
+      "description": "Moss and climbing vines have done their patient work here — the walls are half-swallowed, the towers broken, the floor a cracked mosaic barely visible through years of overgrowth.",
+      "notableFeatures": "A cellar intact beneath the rubble, accessible through a collapsed section",
+      "encounters": "1d8 Skeletons (CR 1/4) animated by residual magic",
+      "lore": "A treaty was once signed here that has since been broken by all parties involved.",
+      "notes": "",
+      "createdAt": "2026-03-16T02:31:11.636Z",
+      "updatedAt": "2026-03-16T02:31:11.636Z"
+    },
+    {
+      "id": "loc-1773628223642-3814",
+      "name": "The Blacksmiths",
+      "type": "Building",
+      "region": "",
+      "atmosphere": "Oppressive",
+      "description": "It was a significant structure once. The stonework is fine — you can still see the chisel marks of skilled craftsmen — but time and something else have conspired to lay it low.",
+      "notableFeatures": "A sealed vault door with a combination lock of symbols",
+      "encounters": "1d8 Skeletons (CR 1/4) animated by residual magic",
+      "lore": "A treaty was once signed here that has since been broken by all parties involved.",
+      "notes": "",
+      "createdAt": "2026-03-16T02:30:23.641Z",
+      "updatedAt": "2026-03-16T02:30:23.641Z"
+    },
+    {
+      "id": "loc-1773627988567-57382",
+      "name": "Old Wren's Hovel",
+      "type": "Other",
+      "atmosphere": "",
+      "description": "Lives just outside town in a cottage covered in drying flowers. Ancient, possibly. Speaks in a slow, certain way that makes everything sound important. She knows the Bramblewood better than anyone.\n\n“The forest isn’t angry. It’s afraid. There’s a difference.”\n\nShe knows about the mushrooms and the humming. She will not go into the forest herself. She knows why.",
+      "notableFeatures": "",
+      "createdAt": "2026-03-16T02:26:28.567Z",
+      "updatedAt": "2026-03-16T02:26:28.567Z"
+    },
+    {
+      "id": "loc-1773627941091-92299",
+      "name": "The Mushroom Maze",
+      "type": "Forest Clearing",
+      "atmosphere": "",
+      "description": "Glowing mushrooms grow as tall as the players. The path splits constantly and looks identical every direction. Navigation is impossible by normal means.\n\nThe trick: hum or sing and the mushrooms pointing toward the center glow brighter. Old Wren would know this. Pip would accidentally discover it. Let the youngest player lead here. Her voice literally guides the party forward.",
+      "notableFeatures": "Encounter: The Spore Sprites\n\nThree tiny fae, mischievous but not evil, redirecting travelers away from the center because they’re scared too. They speak in rhymes, steal small objects, and are won over with food — Marta’s muffins work perfectly. Once befriended they give the party a glowing seed that grows the bridge in Chamber Two. Use Pixie stat block, CR 1/4. They flee if combat starts.",
+      "createdAt": "2026-03-16T02:25:41.091Z",
+      "updatedAt": "2026-03-16T02:25:41.091Z"
+    },
+    {
+      "id": "loc-1773627920595-63593",
+      "name": "The Dark Heart",
+      "type": "Tavern / Inn",
+      "region": "",
+      "atmosphere": "",
+      "description": "Ancient enormous trees. Roots erupting from the ground like frozen waves. No mushrooms — that absence should feel wrong. No sound at all. A massive oak at the center with a crack down its trunk glowing faint red from far below.\n\nThe Stranger’s camp is here. Cold fire. Same boot prints. Scratched into the bark: “Don’t wake her until you’re ready.”",
+      "notableFeatures": "The Bramble Guardian — Treant (reskinned) | CR 5 | AC 13\n\nA creature of twisted branches and old roots blocking the crack in the tree. Not a villain. It asks three questions:\n\nHave you helped someone today?\nHave you been afraid and done it anyway?\nDo you promise to be careful down there?\nAnswer honestly — it steps aside and gives the party the root bracelet. Attack it — it wins, but always offers another chance to just answer the questions.\n\n“She made me. I miss her. Bring her back if you can.”",
+      "encounterSetup": "A creature of twisted branches and old roots blocking the crack in the tree. Not a villain. It asks three questions:\n\nHave you helped someone today?\nHave you been afraid and done it anyway?\nDo you promise to be careful down there?\nAnswer honestly — it steps aside and gives the party the root bracelet. Attack it — it wins, but always offers another chance to just answer the questions.\n\n“She made me. I miss her. Bring her back if you can.”",
+      "outcome": "Items Carried into the Catacombs\n\nItem\n\nSource\nUsed In\n\nGlowing seed\n\nSpore Sprites\n\nChamber Two — grows the root bridge\n\nRoot bracelet\n\nBramble Guardian\n\nChamber Three — heart pedestal\n\nMarta’s muffins\n\nTavern\n\nSpore Sprites or offered to Mira\n\nFox companion\n\nSunny Edge\n\nChamber Three — paw print pedestal",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T02:25:20.595Z",
+      "updatedAt": "2026-03-16T12:51:46.707Z"
+    },
+    {
+      "id": "loc-1773627410682-31608",
+      "name": "The Sunny Edge",
+      "type": "Wilderness",
+      "atmosphere": "Bustling",
+      "description": "Fireflies even during the day. A small creek with smooth stones. A hollow log big enough to crawl through. Pip knows this part.",
+      "notableFeatures": "The party finds their first real clue here: a child’s wooden toy, half-buried, that doesn’t belong to anyone",
+      "createdAt": "2026-03-16T02:16:50.682Z",
+      "updatedAt": "2026-03-16T02:16:50.682Z"
+    },
+    {
+      "id": "loc-1773627658219-11095",
+      "name": "The Drowsy Badger",
+      "type": "Tavern / Inn",
+      "atmosphere": "Welcoming",
+      "description": "The smell of roasting meat and spilled ale greets you before you even open the door. Inside, a gruff barkeep wipes down the counter while a bard in the corner picks out a familiar tune on a battered lute.",
+      "notableFeatures": "A cellar entrance behind the bar that the owner discourages questions about",
+      "createdAt": "2026-03-16T02:20:58.219Z",
+      "updatedAt": "2026-03-16T02:20:58.219Z"
+    }
+  ],
+  "encounters": [
+    {
+      "id": "loc-1773665694476-77896",
+      "name": "The Sleeping Grove",
+      "type": "Dungeon",
+      "region": "",
+      "atmosphere": "",
+      "description": "A vast underground cavern. Domed ceiling covered in carved stars. Floor of soft moss. Complete silence. In the center — a stone cradle covered in vines, with a figure sleeping inside.",
+      "notableFeatures": "",
+      "encounterSetup": "Mira of the Roots — Forest Spirit | CR 2 | AC 13 | HP 50\n\nTall, willowy, made of living wood and flowering vines. Moss-green eyes. Voice like wind in leaves. Ancient. The reason the Bramblewood exists at all. She fell into a cursed sleep long ago and the forest has been dying slowly without understanding why. The glowing mushrooms were her dreaming. The silence was her forgetting.\n\nWaking Mira requires three things — this is not a fight:\n\nA kind word — speak to her, tell her something true and good about the forest above\n\nA brave act — step forward alone into the darkest part of the room and call her name clearly: Mira\n\nSomething given freely — not traded, not taken. The party decides. Fuzz will give his spoon if they hesitate.\n\nOn waking: Wisdom save DC 10. On a failure she lashes out once in confusion — Grasping Vines, 2d6 bludgeoning, restrained. She releases immediately if anyone says her name. This is an accident, not an attack.\n\nWhen fully awake:\n\nRegrows the Bramblewood to full health overnight\nSpeaks to any plant or animal\nGrants the party Blessing of the Root — advantage on Nature and Animal Handling checks until next long rest, tiny flowers bloom briefly wherever they step\n“Oh. You’re very small. And very brave. Thank you for remembering me.”\n\nLook at the youngest player when you say this line.",
+      "outcome": "",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T12:54:54.476Z",
+      "updatedAt": "2026-03-16T12:54:54.476Z"
+    },
+    {
+      "id": "loc-1773665647702-18841",
+      "name": "The Puzzle Room",
+      "type": "Dungeon",
+      "region": "",
+      "atmosphere": "",
+      "description": "Circular room. Locked stone door. Mosaic floor showing the entire Bramblewood. Five stone pedestals: flame, leaf, water, paw print, heart.",
+      "notableFeatures": "",
+      "encounterSetup": "Large spider, bigger than a cat, smaller than a dog. Has lived here so long her webs are woven into the mosaic in genuinely beautiful patterns. Not aggressive. She hatched from an egg in this room before Mira fell asleep and is the last creature Mira spoke to before the long sleep. She has been keeping this room clean and waiting for someone to come solve it for a very long time.\n\nBe kind to her — she climbs onto the heart pedestal and taps it with one leg. She follows the party to the final chamber and sits on Mira’s cradle when she wakes. That is where she belongs.\n\nPuzzle Solutions:\n\nHeart → root bracelet from the Guardian\n\nPaw print → the fox steps on it on its own, right when the party is stuck. The fox knew.\n\nFlame → torch or fire cantrip\n\nLeaf → any natural item carried from the forest\n\nWater → water carried from the flooded room, or water cantrip\n\nThe door opens with a sound like wind through branches and the smell of something green and living rushes out.",
+      "outcome": "",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T12:54:07.702Z",
+      "updatedAt": "2026-03-16T12:54:07.702Z"
+    },
+    {
+      "id": "loc-1773665607062-41670",
+      "name": "The Flooded Room",
+      "type": "Dungeon",
+      "region": "",
+      "atmosphere": "",
+      "description": "Knee-deep perfectly still black water full of drifting stars — not reflection, actual tiny lights. Beautiful and eerie. The floor drops suddenly in the center. Too deep to cross.\n\nPlant the glowing seed in a crack in the wall — it grows instantly into a root bridge arching across the deep section.",
+      "notableFeatures": "",
+      "encounterSetup": "Luminara — Ochre Jelly | CR 2 | AC 8 | HP 45 (6d10+12)\n\nLuminara was not always ochre. Centuries of absorbing the starlit water — soaking in Mira’s dreaming light — stained her slowly gold, then amber, then the deep warm ochre she is now. She is the oldest thing in the catacombs besides Mira and Cobweb, and she moves like she knows it. Enormous, slow, completely unbothered.\n\nShe doesn’t sting. She engulfs — she just doesn’t always notice what’s inside her. Avoid her by moving slowly and hugging the walls. If hit with slashing damage she splits into two dimmer confused pieces that drift apart. Moving quickly past her triggers a pseudopod opportunity attack: 2d6 acid.\n\nVex and Drift are also here — smaller jellyfish, ambient. Vex bumps into fast movers (1d4 lightning, purely reflexive). Drift is the size of a dinner plate and harmless. Move calmly and both part like a curtain.\n\nSnip takes a shortcut and falls in the deep section. Fuzz pulls him out using a spoon as a reaching tool. This should not work. It does. This is their heroic moment.",
+      "outcome": "",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T12:53:27.062Z",
+      "updatedAt": "2026-03-16T12:53:27.062Z"
+    },
+    {
+      "id": "loc-1773665572618-88620",
+      "name": "The Hall of Echoes",
+      "type": "Dungeon",
+      "region": "",
+      "atmosphere": "",
+      "description": "A long corridor lined with alcoves, each containing a stone animal — a fox, a deer, a bird, an owl. Their eyes follow the party. Not threatening. Curious. Talk to them — the torches brighten. Rush past ignoring them — a low rumble, torches dim. This chamber teaches the youngest player that kindness is the mechanic down here, not combat.",
+      "notableFeatures": "",
+      "encounterSetup": "The five bats roost in the ceiling: Squeaky (loudest), Noctis (hangs in front of faces and stares), Thistle (slightly sticky fur, no one knows why). They trigger as a Swarm of Bats, CR 1/4, only if the party is loud and sudden. Disperses after one round automatically.",
+      "outcome": "",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T12:52:52.618Z",
+      "updatedAt": "2026-03-16T12:52:52.618Z"
+    },
+    {
+      "id": "loc-1773628271636-68287",
+      "name": "Town Square",
+      "type": "Town",
+      "region": "",
+      "atmosphere": "Welcoming",
+      "description": "Moss and climbing vines have done their patient work here — the walls are half-swallowed, the towers broken, the floor a cracked mosaic barely visible through years of overgrowth.",
+      "notableFeatures": "A cellar intact beneath the rubble, accessible through a collapsed section",
+      "encounters": "1d8 Skeletons (CR 1/4) animated by residual magic",
+      "lore": "A treaty was once signed here that has since been broken by all parties involved.",
+      "notes": "",
+      "createdAt": "2026-03-16T02:31:11.636Z",
+      "updatedAt": "2026-03-16T02:31:11.636Z"
+    },
+    {
+      "id": "loc-1773628223642-3814",
+      "name": "The Blacksmiths",
+      "type": "Building",
+      "region": "",
+      "atmosphere": "Oppressive",
+      "description": "It was a significant structure once. The stonework is fine — you can still see the chisel marks of skilled craftsmen — but time and something else have conspired to lay it low.",
+      "notableFeatures": "A sealed vault door with a combination lock of symbols",
+      "encounters": "1d8 Skeletons (CR 1/4) animated by residual magic",
+      "lore": "A treaty was once signed here that has since been broken by all parties involved.",
+      "notes": "",
+      "createdAt": "2026-03-16T02:30:23.641Z",
+      "updatedAt": "2026-03-16T02:30:23.641Z"
+    },
+    {
+      "id": "loc-1773627988567-57382",
+      "name": "Old Wren's Hovel",
+      "type": "Other",
+      "atmosphere": "",
+      "description": "Lives just outside town in a cottage covered in drying flowers. Ancient, possibly. Speaks in a slow, certain way that makes everything sound important. She knows the Bramblewood better than anyone.\n\n“The forest isn’t angry. It’s afraid. There’s a difference.”\n\nShe knows about the mushrooms and the humming. She will not go into the forest herself. She knows why.",
+      "notableFeatures": "",
+      "createdAt": "2026-03-16T02:26:28.567Z",
+      "updatedAt": "2026-03-16T02:26:28.567Z"
+    },
+    {
+      "id": "loc-1773627941091-92299",
+      "name": "The Mushroom Maze",
+      "type": "Forest Clearing",
+      "atmosphere": "",
+      "description": "Glowing mushrooms grow as tall as the players. The path splits constantly and looks identical every direction. Navigation is impossible by normal means.\n\nThe trick: hum or sing and the mushrooms pointing toward the center glow brighter. Old Wren would know this. Pip would accidentally discover it. Let the youngest player lead here. Her voice literally guides the party forward.",
+      "notableFeatures": "Encounter: The Spore Sprites\n\nThree tiny fae, mischievous but not evil, redirecting travelers away from the center because they’re scared too. They speak in rhymes, steal small objects, and are won over with food — Marta’s muffins work perfectly. Once befriended they give the party a glowing seed that grows the bridge in Chamber Two. Use Pixie stat block, CR 1/4. They flee if combat starts.",
+      "createdAt": "2026-03-16T02:25:41.091Z",
+      "updatedAt": "2026-03-16T02:25:41.091Z"
+    },
+    {
+      "id": "loc-1773627920595-63593",
+      "name": "The Dark Heart",
+      "type": "Tavern / Inn",
+      "region": "",
+      "atmosphere": "",
+      "description": "Ancient enormous trees. Roots erupting from the ground like frozen waves. No mushrooms — that absence should feel wrong. No sound at all. A massive oak at the center with a crack down its trunk glowing faint red from far below.\n\nThe Stranger’s camp is here. Cold fire. Same boot prints. Scratched into the bark: “Don’t wake her until you’re ready.”",
+      "notableFeatures": "The Bramble Guardian — Treant (reskinned) | CR 5 | AC 13\n\nA creature of twisted branches and old roots blocking the crack in the tree. Not a villain. It asks three questions:\n\nHave you helped someone today?\nHave you been afraid and done it anyway?\nDo you promise to be careful down there?\nAnswer honestly — it steps aside and gives the party the root bracelet. Attack it — it wins, but always offers another chance to just answer the questions.\n\n“She made me. I miss her. Bring her back if you can.”",
+      "encounterSetup": "A creature of twisted branches and old roots blocking the crack in the tree. Not a villain. It asks three questions:\n\nHave you helped someone today?\nHave you been afraid and done it anyway?\nDo you promise to be careful down there?\nAnswer honestly — it steps aside and gives the party the root bracelet. Attack it — it wins, but always offers another chance to just answer the questions.\n\n“She made me. I miss her. Bring her back if you can.”",
+      "outcome": "Items Carried into the Catacombs\n\nItem\n\nSource\nUsed In\n\nGlowing seed\n\nSpore Sprites\n\nChamber Two — grows the root bridge\n\nRoot bracelet\n\nBramble Guardian\n\nChamber Three — heart pedestal\n\nMarta’s muffins\n\nTavern\n\nSpore Sprites or offered to Mira\n\nFox companion\n\nSunny Edge\n\nChamber Three — paw print pedestal",
+      "lore": "",
+      "notes": "",
+      "createdAt": "2026-03-16T02:25:20.595Z",
+      "updatedAt": "2026-03-16T12:51:46.707Z"
+    },
+    {
+      "id": "loc-1773627410682-31608",
+      "name": "The Sunny Edge",
+      "type": "Wilderness",
+      "atmosphere": "Bustling",
+      "description": "Fireflies even during the day. A small creek with smooth stones. A hollow log big enough to crawl through. Pip knows this part.",
+      "notableFeatures": "The party finds their first real clue here: a child’s wooden toy, half-buried, that doesn’t belong to anyone",
+      "createdAt": "2026-03-16T02:16:50.682Z",
+      "updatedAt": "2026-03-16T02:16:50.682Z"
+    },
+    {
+      "id": "loc-1773627658219-11095",
+      "name": "The Drowsy Badger",
+      "type": "Tavern / Inn",
+      "atmosphere": "Welcoming",
+      "description": "The smell of roasting meat and spilled ale greets you before you even open the door. Inside, a gruff barkeep wipes down the counter while a bard in the corner picks out a familiar tune on a battered lute.",
+      "notableFeatures": "A cellar entrance behind the bar that the owner discourages questions about",
+      "createdAt": "2026-03-16T02:20:58.219Z",
+      "updatedAt": "2026-03-16T02:20:58.219Z"
+    }
+  ]
+}

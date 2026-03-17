@@ -1,0 +1,1249 @@
+Monster,Source,CR,Size,Type,Second Type,Elite,Legendary,NPC,Unique,AC,HP,STR,DEX,CON,INT,WIS,CHA,Proficiency Bonus,Maneuver DC,Variants,Base Creature
+Aleas,Dungeon Delver's Guide,Varies,Varies,Celestial,N/A,0,0,0,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,0,0
+Tarrasque,Monstrous Menagerie,30,Titanic,Monstrosity,N/A,1,1,0,0,25,1230,30,12,30,4,14,14,9,27,0,0
+Cthulhu,Mythological Figures & Maleficent Monsters ,30,Gargantuan,Aberration,N/A,0,1,1,1,24,585,27,19,28,28,30,27,9,25,0,0
+Lucifer,Mythological Figures & Maleficent Monsters ,35,Huge,Fiend,N/A,0,1,1,1,24,290,30,27,26,27,25,31,10,28,0,0
+Ancient Blue Dragon,Monstrous Menagerie,25,Gargantuan,Dragon,N/A,0,1,0,0,22,407,28,10,26,18,16,20,8,25,1,0
+Ancient Gold Dragon,Monstrous Menagerie,26,Gargantuan,Dragon,N/A,0,1,0,0,22,487,30,14,28,18,16,28,8,26,1,0
+Ancient Red Dragon,Monstrous Menagerie,26,Gargantuan,Dragon,N/A,0,1,0,0,22,448,30,10,28,18,16,22,8,26,1,0
+Ancient Silver Dragon,Monstrous Menagerie,25,Gargantuan,Dragon,N/A,0,1,0,0,22,429,30,14,28,18,14,22,8,26,0,0
+Blue Great Wyrm,Monstrous Menagerie,25,Gargantuan,Dragon,N/A,1,1,0,0,22,814,28,10,26,18,16,20,8,25,0,Ancient Blue Dragon
+Gold Great Wyrm,Monstrous Menagerie,26,Gargantuan,Dragon,N/A,1,1,0,0,22,975,30,14,28,18,16,28,8,26,0,Ancient Gold Dragon
+Red Great Wyrm,Monstrous Menagerie,26,Gargantuan,Dragon,N/A,1,1,0,0,22,897,30,10,28,18,16,22,8,26,0,Ancient Red Dragon
+Ancient Black Dragon,Monstrous Menagerie,23,Gargantuan,Dragon,N/A,0,1,0,0,22,367,26,14,24,16,14,18,7,23,1,0
+Ancient Earth Dragon,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,0,1,0,0,22,425,26,14,26,16,22,14,7,23,0,0
+Black Great Wyrm,Monstrous Menagerie,23,Gargantuan,Dragon,N/A,1,1,0,0,22,735,26,14,24,16,14,18,7,23,0,Ancient Black Dragon
+Fallen Solar,Monstrous Menagerie,21,Large,Celestial,N/A,0,1,0,0,21,319,28,22,28,28,30,30,7,24,0,Solar
+Solar,Monstrous Menagerie,21,Large,Celestial,N/A,0,1,0,0,21,319,28,22,28,28,30,30,7,24,2,0
+Solar Counselor,Monstrous Menagerie,21,Large,Celestial,N/A,1,1,0,0,21,638,28,22,28,28,30,30,7,24,0,Solar
+Ancient Sapphire Dragon,Monstrous Menagerie,25,Gargantuan,Dragon,N/A,0,1,0,0,21,429,24,24,22,26,24,20,8,23,0,0
+Archlich: The Mouthless One,Blog/A5e Tools,26,Medium,Undead,N/A,1,1,0,1,21,630,12,18,22,26,22,20,8,20,0,0
+Midir,Dungeon Delver's Guide,24,Gargantuan,Celestial,N/A,0,1,0,0,21,369,30,24,30,24,20,30,7,25,1,0
+Midir the Reborn,Dungeon Delver's Guide,24,Gargantuan,Celestial,N/A,1,1,0,0,21,738,30,24,30,24,20,30,7,25,0,Midir
+Aklea,Monstrous Menagerie,22,Gargantuan,Celestial,N/A,1,1,0,0,21,656,30,24,30,22,24,26,7,25,0,Empyrean
+Dracula,Mythological Figures & Maleficent Monsters ,21,Medium,Undead,N/A,0,1,1,1,21,437,20,25,20,22,21,23,7,22,0,0
+Empyrean,Monstrous Menagerie,22,Gargantuan,Celestial,N/A,0,1,0,0,21,328,30,24,30,22,24,26,7,25,2,0
+King Fomor,Monstrous Menagerie,22,Gargantuan,Celestial,N/A,1,1,0,0,21,656,30,24,30,22,24,26,7,25,0,Empyrean
+Ancient Copper Dragon,Monstrous Menagerie,23,Gargantuan,Dragon,N/A,0,1,0,0,21,367,26,12,24,20,16,18,7,23,0,0
+Ancient Green Dragon,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,0,1,0,0,21,420,26,12,24,20,16,18,7,23,1,0
+Green Great Wyrm,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,1,1,0,0,21,840,26,12,24,20,16,18,7,23,0,Ancient Green Dragon
+Ancient Bronze Dragon,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,0,1,0,0,21,425,28,10,26,18,16,20,7,24,0,0
+Ancient Shadow Dragon,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,0,1,0,0,21,296,26,16,26,16,16,26,7,23,0,0
+Dragon Turtle,Monstrous Menagerie,17,Gargantuan,Dragon,N/A,0,0,0,0,21,264,24,10,22,14,16,16,6,21,1,0
+Titanic Dragon Turtle,Monstrous Menagerie,24,Titanic,Dragon,N/A,0,1,0,0,21,396,24,10,22,14,16,16,7,22,0,Dragon Turtle
+Joan of Arc,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,21,117,16,12,14,14,10,16,4,15,0,0
+Ancient Amethyst Dragon,Monstrous Menagerie,23,Gargantuan,Dragon,N/A,0,1,0,0,20,313,22,24,22,26,16,24,7,22,0,0
+Ancient Emerald Dragon,Monstrous Menagerie,24,Gargantuan,Dragon,N/A,0,1,0,0,20,346,26,26,22,26,14,22,7,23,0,0
+Baba Yaga,Mythological Figures & Maleficent Monsters ,22,Medium,Humanoid,N/A,0,0,1,1,20,262,16,17,22,24,19,21,7,18,0,0
+Demilich,Monstrous Menagerie,18,Tiny,Undead,N/A,0,1,0,0,20,159,10,24,16,24,22,20,6,21,1,0
+Demilich Mastermind,Monstrous Menagerie,18,Tiny,Undead,N/A,1,1,0,0,20,319,10,24,16,24,22,20,6,21,0,Demilich
+Kraken,Monstrous Menagerie,25,Gargantuan,Monstrosity,N/A,0,1,0,0,20,444,30,10,26,22,18,18,8,26,1,0
+Titanic Kraken,Monstrous Menagerie,25,Titanic,Monstrosity,N/A,0,1,0,0,20,888,30,10,26,22,18,18,8,26,0,Kraken
+Ancient Brass Dragon,Monstrous Menagerie,22,Gargantuan,Dragon,N/A,0,1,0,0,20,367,26,10,24,20,16,18,7,23,0,0
+Arcane Blademaster,Monstrous Menagerie,19,Medium,Humanoid,N/A,0,0,1,0,20,256,20,12,20,20,14,12,6,19,0,0
+Greater Sphinx,Monstrous Menagerie,17,Huge,Monstrosity,N/A,0,1,0,0,20,220,22,14,18,18,22,20,6,20,0,Sphinx
+Sphinx,Monstrous Menagerie,11,Large,Monstrosity,N/A,0,1,0,0,20,142,22,14,18,18,22,20,4,18,1,0
+Ancient River Dragon,Monstrous Menagerie,23,Gargantuan,Dragon,N/A,0,1,0,0,20,372,20,24,20,16,24,20,7,22,0,0
+Loki,Mythological Figures & Maleficent Monsters ,13,Medium,Humanoid,N/A,0,0,1,1,20,143,9,16,12,16,14,20,5,16,0,0
+Fenrir,Mythological Figures & Maleficent Monsters ,33,Gargantuan,Beast,N/A,0,1,1,1,20,499,35,20,27,15,20,18,10,30,0,0
+Archpriest,Monstrous Menagerie,16,Medium,Humanoid,N/A,0,0,1,0,20,150,18,10,16,14,20,16,5,17,0,0
+Jabberwock,Gate Pass Gazette #0,18,Huge,Dragon,N/A,0,1,0,0,20,270,24,18,24,14,20,22,6,21,1,0
+Jabberwocky,Gate Pass Gazette #0,24,Huge,Dragon,N/A,0,1,0,1,20,405,24,18,24,14,20,22,7,22,0,Jabberwock
+Brünnhilde,Mythological Figures & Maleficent Monsters ,11,Medium,Celestial,N/A,0,0,1,1,20,133,18,17,20,13,18,19,4,16,0,0
+Lancelot du Lac,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,20,127,16,11,17,13,9,14,4,15,0,0
+Knight Captain,Monstrous Menagerie,14,Medium,Humanoid,N/A,0,0,1,0,20,171,20,12,20,12,12,16,5,18,1,0
+Mountain Dwarf Lord,Monstrous Menagerie,14,Medium,Humanoid,N/A,0,0,1,0,20,171,20,12,20,12,12,16,5,18,0,Knight Captain
+Ancient White Dragon,Monstrous Menagerie,22,Gargantuan,Dragon,N/A,0,1,0,0,20,370,26,12,26,10,16,16,7,23,1,0
+Ascetic Grandmaster,Monstrous Menagerie,14,Medium,Humanoid,N/A,0,0,1,0,20,172,16,20,16,10,20,10,5,18,0,0
+White Great Wyrm,Monstrous Menagerie,22,Gargantuan,Dragon,N/A,1,1,0,0,20,740,26,12,26,10,16,16,7,23,0,Ancient White Dragon
+Mountain Dwarf Defender,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,1,0,20,52,16,12,14,10,10,14,2,13,0,Knight
+Terraforming Detritivore,Planestrider's Journal,23,Gargantuan,Aberration,N/A,0,0,0,0,20,363,26,24,23,8,13,19,7,23,0,0
+Dread Borenbog,Adventures in Zeitgeist,15,Medium,Fey,N/A,0,0,0,1,20,264,20,8,24,6,9,5,5,18,0,0
+Roper,Monstrous Menagerie,5,Large,Monstrosity,N/A,0,0,0,0,20,93,18,8,16,6,14,4,3,15,1,0
+Tentacle Tree,Monstrous Menagerie,5,Large,Monstrosity,N/A,0,0,0,0,20,93,18,8,16,6,14,4,3,15,0,Roper
+Cerberus Guardian,Dungeon Delver's Guide,23,Huge,Construct,N/A,0,1,0,0,20,310,26,12,28,6,18,14,7,23,0,0
+Shadowlisk,Adventures in Zeitgeist,11,Large,Fey,N/A,0,0,0,0,20,92,21,20,22,6,12,7,4,17,0,0
+Malice Spawn,Adventures in Zeitgeist,N/A,Medium,Aberration,N/A,0,0,0,0,20,10,21,20,22,4,12,7,4,17,0,0
+Ten-Headed Lion,Adventures in Zeitgeist,14,Large,Fey,N/A,0,0,0,0,20,126,21,20,22,4,12,6,5,18,0,0
+Iron Guardian,Monstrous Menagerie,14,Large,Construct,N/A,0,0,0,0,20,210,24,12,20,3,12,1,5,20,0,0
+Crusher,Monstrous Menagerie,10,Large,Construct,N/A,0,0,0,0,20,115,20,8,20,1,6,1,4,17,0,0
+Adult Sapphire Dragon,Monstrous Menagerie,19,Huge,Dragon,N/A,0,1,0,0,19,304,22,22,18,22,20,16,6,20,0,0
+Fallen Planetar,Monstrous Menagerie,16,Large,Celestial,N/A,0,0,0,0,19,250,22,22,24,22,24,24,5,19,0,Planetar
+Pit Fiend,Monstrous Menagerie,20,Large,Fiend,N/A,0,0,0,0,19,300,26,16,24,22,18,24,6,22,1,0
+Pit Fiend General,Monstrous Menagerie,20,Huge,Fiend,N/A,1,0,0,0,19,600,26,16,24,22,18,24,6,22,0,Pit Fiend
+Planetar,Monstrous Menagerie,16,Large,Celestial,N/A,0,0,0,0,19,250,22,22,24,22,24,24,5,19,1,0
+Santa Claus,Mythological Figures & Maleficent Monsters ,21,Medium,Fey,N/A,0,1,1,1,19,210,21,20,22,21,26,23,7,20,0,0
+Balor,Monstrous Menagerie,19,Huge,Fiend,N/A,0,0,0,0,19,299,26,18,20,20,20,22,6,22,1,0
+Balor General,Monstrous Menagerie,24,Huge,Fiend,N/A,0,1,0,0,19,379,26,18,20,20,20,22,7,23,0,Balor
+Hayreddin Barbarossa,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,19,143,12,14,14,20,16,16,4,14,0,0
+Saladin,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,19,123,14,10,14,19,14,14,4,14,0,0
+Cirothe,To Save A Kingdom,18,Huge,Dragon,N/A,0,1,0,1,19,270,23,10,24,17,15,21,6,20,0,0
+Adult Blue Dragon,Monstrous Menagerie,19,Huge,Dragon,N/A,0,1,0,0,19,275,24,10,22,16,14,18,6,21,0,0
+Adult Gold Dragon,Monstrous Menagerie,20,Huge,Dragon,N/A,0,1,0,0,19,324,26,14,24,16,14,24,6,22,0,0
+Agonized Khyphon,To Save A Kingdom,14,Large,Celestial,N/A,0,0,0,0,19,195,19,14,17,16,14,17,5,17,0,0
+Adult Red Dragon,Monstrous Menagerie,20,Huge,Dragon,N/A,0,1,0,0,19,310,26,10,24,16,14,20,6,22,0,0
+Adult Silver Dragon,Monstrous Menagerie,19,Huge,Dragon,N/A,0,1,0,0,19,283,24,14,24,16,12,20,6,21,0,0
+Bone Devil,Monstrous Menagerie,9,Large,Fiend,N/A,0,0,0,0,19,142,18,16,18,16,14,16,4,16,0,0
+Tamar the Great,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,19,104,11,12,14,16,16,16,3,12,0,0
+Adult Black Dragon,Monstrous Menagerie,17,Huge,Dragon,N/A,0,1,0,0,19,253,22,14,20,14,12,16,6,20,1,0
+Adult Black Dragon Lich,Monstrous Menagerie,17,Huge,Undead,Dragon,0,1,0,0,19,253,22,14,20,14,12,16,6,20,0,Adult Black Dragon
+Adult Earth Dragon,Monstrous Menagerie,18,Huge,Dragon,N/A,0,1,0,0,19,287,22,14,22,14,20,12,6,20,0,0
+Minotaur Conqueror,Gate Pass Gazette #12,16,Huge,Monstrosity,N/A,0,0,0,0,19,262,22,10,22,14,16,14,5,19,0,Minotaur Champion
+Khutulun,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,19,104,16,14,14,13,10,14,3,14,0,0
+Arthur Pendragon,Mythological Figures & Maleficent Monsters ,14,Medium,Humanoid,N/A,0,0,1,1,19,143,16,14,14,12,12,18,5,16,0,0
+Harald Hardrada,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,19,136,18,14,14,12,12,14,4,16,0,0
+Hippolyta,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,19,165,16,18,12,12,13,14,4,16,0,0
+Achilles,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,19,136,17,17,15,11,9,13,4,15,0,0
+Imp Flock,To Save A Kingdom,5,Large,Fiend,N/A,0,0,0,0,19,49,6,17,13,11,12,14,3,14,0,0
+Saint George,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,19,153,16,14,18,11,14,14,4,15,0,0
+Angelic Spirit Soldier,To Save A Kingdom,7,Huge,Celestial,N/A,0,0,0,0,19,115,17,15,19,10,15,11,3,14,0,0
+Flip the Herald,To Save A Kingdom,3,Small,Humanoid,N/A,0,0,1,1,19,52,16,13,15,10,10,15,2,13,0,0
+Minotaur Champion,Monstrous Menagerie,16,Huge,Monstrosity,N/A,0,0,0,0,19,262,22,10,22,10,16,14,5,19,1,0
+Penthesilea,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,19,157,18,18,16,10,12,12,4,16,0,0
+Sun Wukong,Mythological Figures & Maleficent Monsters ,12,Small,Beast,N/A,0,0,1,1,19,110,17,20,12,10,14,7,4,17,0,0
+Xorn,Monstrous Menagerie,5,Medium,Elemental,N/A,0,0,0,0,19,73,18,10,22,10,10,10,3,15,0,0
+Gorgon,Monstrous Menagerie,6,Large,Monstrosity,N/A,0,0,0,0,19,110,20,10,16,2,12,5,3,16,0,0
+Adult Amethyst Dragon,Monstrous Menagerie,17,Huge,Dragon,N/A,0,1,0,0,18,220,18,20,18,22,14,20,6,19,0,0
+Adult Emerald Dragon,Monstrous Menagerie,17,Huge,Dragon,N/A,0,1,0,0,18,241,22,22,18,22,12,18,6,20,0,0
+Bookseer,Planestrider's Journal,9,Tiny,Construct,N/A,0,0,0,0,18,72,6,14,15,21,16,7,4,14,0,0
+Aboleth Brute,Dungeon Delver's Guide,13,Large,Aberration,N/A,0,0,0,0,18,210,22,14,20,20,20,18,5,19,1,0
+Aboleth Fallen Ascendant,Dungeon Delver's Guide,14,Large,Aberration,N/A,0,0,0,0,18,210,22,14,20,20,20,18,5,19,0,Aboleth Brute
+Lich,Monstrous Menagerie,21,Medium,Undead,N/A,0,0,0,0,18,170,12,16,18,20,16,16,7,18,0,0
+Marilith,Monstrous Menagerie,16,Large,Fiend,N/A,0,0,0,0,18,220,20,22,20,20,18,20,5,19,0,0
+Merlin Ambrosius,Mythological Figures & Maleficent Monsters ,17,Medium,Humanoid,N/A,0,0,1,1,18,137,10,14,12,20,18,10,6,16,0,0
+Nalfeshnee,Monstrous Menagerie,13,Large,Fiend,N/A,0,0,0,0,18,184,20,16,22,20,16,16,5,18,0,0
+Sherlock Holmes,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,18,117,10,16,14,20,12,10,4,15,0,0
+Māui,Mythological Figures & Maleficent Monsters ,18,Medium,Humanoid,N/A,0,0,1,1,18,345,33,21,24,19,18,24,6,25,0,0
+Noble of the Diamond,Planestrider's Journal,16,Medium,Aberration,N/A,0,1,0,0,18,246,15,20,19,19,14,16,5,18,0,0
+Adult Brass Dragon,Monstrous Menagerie,16,Huge,Dragon,N/A,0,1,0,0,18,161,22,10,20,18,14,16,5,19,0,0
+Adult Copper Dragon,Monstrous Menagerie,17,Huge,Dragon,N/A,0,1,0,0,18,253,22,12,20,18,14,16,6,20,0,0
+Adult Green Dragon,Monstrous Menagerie,18,Huge,Dragon,N/A,0,1,0,0,18,287,22,12,20,18,14,16,6,20,0,0
+Anzû,Mythological Figures & Maleficent Monsters ,14,Huge,Celestial,N/A,0,0,1,1,18,230,23,21,20,18,19,20,5,19,0,0
+Ice Devil,Monstrous Menagerie,12,Large,Fiend,N/A,0,0,0,0,18,180,20,14,18,18,16,18,4,17,0,0
+Young Sapphire Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,18,161,18,18,16,18,16,14,4,16,0,0
+Sapphire Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,18,161,18,18,16,18,16,14,2,14,0,0
+Noble of the Club,Planestrider's Journal,15,Medium,Plant,N/A,0,1,0,0,18,240,18,16,17,17,18,19,5,17,0,0
+Vampire Lord Nemirtvi,To Save A Kingdom,15,Medium,Undead,N/A,0,1,1,1,18,144,19,18,18,17,15,28,5,17,0,0
+Accursed Guardian Naga,Monstrous Menagerie,12,Large,Monstrosity,N/A,0,0,0,0,18,130,16,18,16,16,18,18,4,16,0,Guardian Naga
+Adult Bronze Dragon,Monstrous Menagerie,18,Huge,Dragon,N/A,0,1,0,0,18,287,24,10,22,16,14,18,6,21,0,0
+Bonesmith,To Save A Kingdom,12,Medium,Fiend,N/A,0,0,0,0,18,157,17,14,17,16,15,16,4,15,0,0
+Guardian Naga,Monstrous Menagerie,10,Large,Monstrosity,N/A,0,0,0,0,18,130,16,18,16,16,18,18,4,16,1,0
+Hua Mulan,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,18,143,14,14,12,16,10,14,4,14,0,0
+Odysseus,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,18,153,12,16,10,16,18,14,4,15,0,0
+Vampire Warrior,Monstrous Menagerie,12,Medium,Undead,N/A,0,1,0,0,18,142,20,18,20,16,16,18,4,17,0,Vampire
+Young Gold Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,18,157,22,14,20,16,12,20,4,18,0,0
+Alpha Xenid,Planestrider's Journal,8,Large,Monstrosity,N/A,0,0,0,0,18,127,21,18,17,15,16,7,3,16,0,0
+Don Quixote,Mythological Figures & Maleficent Monsters ,3,Medium,Humanoid,N/A,0,0,1,1,18,33,11,14,13,15,9,16,2,12,0,0
+Master Assassin,Monstrous Menagerie,17,Medium,Humanoid,N/A,0,0,1,0,18,143,20,2,14,15,12,12,6,19,1,0
+Master Thief,Monstrous Menagerie,17,Medium,Humanoid,N/A,0,0,1,0,18,143,20,2,14,15,12,12,6,19,0,Master Assassin
+Adult River Dragon,Monstrous Menagerie,17,Huge,Dragon,N/A,0,1,0,0,18,252,18,20,18,14,20,16,6,19,0,0
+Adult Shadow Dragon,Monstrous Menagerie,19,Huge,Dragon,N/A,0,1,0,0,18,212,22,14,22,14,14,22,6,20,0,0
+Chief Basyak,To Save A Kingdom,5,Medium,Humanoid,N/A,0,0,1,1,18,90,17,12,17,14,14,17,3,14,0,0
+Dread Knight,Monstrous Menagerie,19,Medium,Undead,N/A,0,0,0,0,18,262,22,16,22,14,18,20,6,20,1,0
+Dread Knight Champion,Monstrous Menagerie,23,Medium,Undead,N/A,0,0,0,0,18,346,22,16,22,14,18,20,7,21,0,Dread Knight
+Erinyes,Monstrous Menagerie,12,Medium,Fiend,N/A,0,0,0,0,18,161,18,18,18,14,16,18,4,16,0,0
+Young Blue Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,18,152,20,10,18,14,12,16,4,17,0,0
+Young Red Dragon,Monstrous Menagerie,11,Large,Dragon,N/A,0,0,0,0,18,178,22,10,20,14,12,18,4,18,0,0
+Young Silver Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,18,157,22,14,20,14,10,18,4,18,0,0
+Imhotep,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,18,44,10,14,12,14,18,14,3,13,0,0
+Military Steamsuit Pilot,Adventures in Zeitgeist,5,Medium,Humanoid,N/A,0,0,0,0,18,90,23,16,14,14,11,8,3,17,0,0
+Hobgoblin Captain,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,0,0,18,52,16,14,14,14,12,14,2,13,1,0
+Hobgoblin Warlord,Monstrous Menagerie,3,Medium,Humanoid,N/A,1,0,0,0,18,104,16,14,14,14,12,14,2,13,0,Hobgoblin Captain
+Corrupted Jovan,To Save A Kingdom,6,Medium,Undead,N/A,0,0,1,1,18,85,16,15,18,13,15,14,3,14,0,0
+Thor Odinson,Mythological Figures & Maleficent Monsters ,19,Medium,Humanoid,N/A,0,0,1,1,18,209,25,16,20,13,10,12,6,21,0,0
+High Priest,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,18,82,14,10,16,12,18,16,3,13,1,0
+Shadow Elf High Priest,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,18,82,14,10,16,12,18,16,3,13,0,High Priest
+Blackguard,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,18,82,16,12,16,12,14,14,3,14,0,0
+Divi,Monstrous Menagerie,11,Large,Elemental,N/A,0,0,0,0,18,172,22,12,22,12,14,14,4,18,1,0
+Divi Noble,Monstrous Menagerie,11,Large,Elemental,N/A,1,0,0,0,18,345,22,12,22,12,14,14,4,18,0,Divi
+Draconic Horror,Dungeon Delver's Guide,19,Huge,Aberration,Dragon,0,1,0,0,18,287,22,14,20,12,16,22,6,20,0,0
+Feywood Treeheard,Planestrider's Journal,18,Huge,Plant,N/A,1,0,0,0,18,207,23,8,21,12,20,13,6,20,0,0
+Fiendbloom Treant,Monstrous Menagerie,9,Huge,Fiend,Plant,0,0,0,0,18,138,22,8,20,12,20,12,4,18,0,Treant
+Holy Knight,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,18,93,18,12,18,12,14,14,3,15,0,0
+Horned Devil,Monstrous Menagerie,11,Large,Fiend,N/A,0,0,0,0,18,168,20,16,20,12,16,16,4,17,0,0
+Treant,Monstrous Menagerie,9,Huge,Plant,N/A,0,0,0,0,18,138,22,8,20,12,20,12,4,18,1,0
+Young Black Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,18,144,18,14,16,12,12,14,4,16,0,0
+Young Earth Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,18,161,18,12,18,12,16,10,4,16,0,0
+Belagon the Behemoth,Planestrider's Journal,12,Huge,Giant,Fiend,1,0,0,0,18,325,25,10,23,11,14,12,4,19,0,0
+Beowulf,Mythological Figures & Maleficent Monsters ,17,Medium,Humanoid,N/A,0,0,1,1,18,252,24,14,22,11,12,10,6,21,0,0
+Corrupted Modrick,To Save A Kingdom,5,Medium,Undead,N/A,0,0,1,1,18,55,16,9,12,11,15,12,3,14,0,0
+Fafnir,Mythological Figures & Maleficent Monsters ,12,Huge,Dragon,N/A,0,1,1,1,18,740,21,20,19,11,12,14,4,17,0,0
+Celestial Spirit Soldier,To Save A Kingdom,5,Large,Celestial,N/A,0,0,0,0,18,67,17,15,15,10,15,11,3,14,0,0
+Fire Giant,Monstrous Menagerie,11,Huge,Giant,N/A,0,0,0,0,18,162,25,10,22,10,14,12,4,19,1,0
+Dwarven Sunderknight,To Save A Kingdom,3,Medium,Humanoid,N/A,0,0,0,0,18,60,16,12,14,10,11,14,2,13,0,0
+Fire Giant War Priest,Monstrous Menagerie,12,Huge,Giant,N/A,0,0,0,0,18,162,25,10,22,10,14,12,4,19,0,Fire Giant
+Hercules,Mythological Figures & Maleficent Monsters ,19,Medium,Humanoid,N/A,0,0,1,1,18,187,29,16,18,10,9,10,6,23,0,0
+Knight,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,1,0,18,52,16,12,14,10,10,14,2,13,1,0
+Titania,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,18,130,10,20,14,10,8,20,4,17,0,0
+Cave Troll,Monstrous Menagerie,6,Large,Giant,N/A,0,0,0,0,18,84,18,12,20,8,12,8,3,15,0,Troll
+Enkidu,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,18,180,16,16,20,8,12,10,4,15,0,0
+Rock Troll,Gate Pass Gazette #3,6,Large,Giant,N/A,0,0,0,0,18,84,18,12,20,8,12,8,3,15,0,Troll
+Adult White Dragon,Monstrous Menagerie,16,Huge,Dragon,N/A,0,1,0,0,18,250,22,12,22,8,14,14,5,19,0,0
+Magma Elemental,Planestrider's Journal,16,Huge,Elemental,N/A,0,0,0,0,18,283,25,17,24,6,10,7,5,20,0,0
+Wyvern,Monstrous Menagerie,6,Large,Dragon,N/A,0,0,0,0,18,110,18,10,16,5,12,6,3,15,0,0
+BEAR,Adventures in Zeitgeist,10,Medium,Construct,N/A,0,0,0,0,18,123,21,20,20,4,12,6,4,17,0,0
+Screaming Malice,Adventures in Zeitgeist,10,Huge,Aberration,N/A,0,1,0,0,18,125,21,20,22,4,12,7,4,17,0,0
+Ice Worm,Monstrous Menagerie,15,Gargantuan,Monstrosity,N/A,0,0,0,0,18,247,28,8,22,2,10,4,5,22,0,Purple Worm
+Purple Worm,Monstrous Menagerie,15,Gargantuan,Monstrosity,N/A,0,0,0,0,18,247,28,8,22,2,10,4,5,22,2,0
+Sand Worm,Monstrous Menagerie,15,Gargantuan,Monstrosity,N/A,0,0,0,0,18,247,28,8,22,2,10,4,5,22,0,Purple Worm
+Animated Armor,Monstrous Menagerie,1,Medium,Construct,N/A,0,0,0,0,18,31,14,10,10,1,10,1,2,12,0,0
+Clockwork Sentinel,Monstrous Menagerie,4,Medium,Construct,N/A,0,0,0,0,18,60,16,12,16,1,6,1,2,13,0,0
+Spell Automaton,Gate Pass Gazette #0,N/A,Medium,Construct,N/A,0,0,0,0,18,90,16,12,16,1,6,1,2,13,0,0
+Aboleth,Monstrous Menagerie,11,Large,Aberration,N/A,0,1,0,0,17,171,20,12,18,20,20,18,4,17,1,0
+Ancient Aboleth,Monstrous Menagerie,11,Huge,Aberration,N/A,1,1,0,0,17,342,20,12,18,20,20,18,4,17,0,Aboleth
+Captain Nemo,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,17,49,19,16,12,20,12,11,4,16,0,0
+"Tolamir, Ancient Aboleth Necromancer",To Save A Kingdom,11,Huge,Aberration,N/A,1,1,0,1,17,342,20,12,18,20,20,18,4,17,0,0
+Deva,Monstrous Menagerie,10,Medium,Celestial,N/A,0,0,0,0,17,153,18,18,18,18,20,20,4,16,1,0
+Fallen Deva,Monstrous Menagerie,10,Medium,Celestial,N/A,0,0,0,0,17,153,18,18,18,18,20,20,4,16,0,Deva
+Glabrezu,Monstrous Menagerie,10,Large,Fiend,N/A,0,0,0,0,17,157,20,16,20,18,18,18,4,17,0,0
+Young Amethyst Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,133,16,16,16,18,12,16,4,15,0,0
+Young Emerald Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,133,18,18,16,18,12,16,4,16,0,0
+Bonnie Blastfire,Gate Pass Gazette #17,12,Small,Humanoid,N/A,0,0,1,1,17,170,18,19,20,17,14,17,4,16,0,0
+Seraph,To Save A Kingdom,12,Large,Celestial,N/A,0,0,0,0,17,133,14,24,19,17,14,15,4,19,0,0
+Ching Shih (Zheng Shi),Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,17,143,10,18,14,16,14,16,4,16,0,0
+Coven Winter Hag,Monstrous Menagerie,9,Medium,Fey,N/A,0,0,0,0,17,135,18,16,16,16,16,18,4,16,0,Winter Hag
+Fateholder,Gate Pass Gazette #1,13,Large,Monstrosity,N/A,0,1,0,0,17,210,18,20,20,16,20,18,5,18,0,0
+Winter Hag,Monstrous Menagerie,7,Medium,Fey,N/A,0,0,0,0,17,120,18,16,16,16,16,18,3,15,1,0
+Marid,Monstrous Menagerie,11,Large,Elemental,N/A,0,0,0,0,17,172,22,16,22,16,14,16,4,18,1,0
+Marid Noble,Monstrous Menagerie,11,Large,Elemental,N/A,1,0,0,0,17,344,22,16,22,16,14,16,4,18,0,Marid
+Skeletal Warlord,Dungeon Delver's Guide,9,Medium,Undead,N/A,0,0,0,0,17,144,18,16,18,16,14,16,4,16,0,0
+Noble of the Spade,Planestrider's Journal,15,Medium,Undead,N/A,0,1,0,0,17,247,18,17,20,16,19,15,5,17,0,0
+Young Brass Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,153,18,10,16,16,12,14,4,16,0,0
+Young Copper Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,144,18,12,16,16,12,14,4,16,0,0
+Coven Night Hag,Monstrous Menagerie,7,Medium,Fey,N/A,0,0,0,0,17,120,18,14,16,16,14,16,3,15,0,Night Hag
+Night Hag,Monstrous Menagerie,5,Medium,Fey,N/A,0,0,0,0,17,105,18,14,16,16,14,16,3,15,1,0
+Balor (MF&MM),Mythological Figures & Maleficent Monsters ,15,Gargantuan,Giant,N/A,0,0,1,1,17,262,28,13,24,15,12,19,5,22,0,0
+Ghenghis Khan,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,17,180,14,14,16,15,11,14,4,14,0,0
+Khyphon,To Save A Kingdom,12,Large,Celestial,N/A,0,0,0,0,17,150,19,16,15,15,19,14,4,16,0,0
+Blas de Lezo y Olavarrieta,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,17,171,14,14,20,14,10,14,4,14,0,0
+Chupacabra,Mythological Figures & Maleficent Monsters ,13,Large,Beast,N/A,0,0,1,1,17,210,23,18,21,14,19,16,5,19,0,0
+Efreeti,Monstrous Menagerie,11,Large,Elemental,N/A,0,0,0,0,17,172,22,18,22,14,16,16,4,18,1,0
+Efreeti Noble,Monstrous Menagerie,11,Large,Elemental,N/A,1,0,0,0,17,344,22,18,22,14,16,16,4,18,0,Efreeti
+Grace O'Malley,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,17,130,14,18,14,14,12,14,4,16,0,0
+Young Bronze Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,17,152,20,10,18,14,12,18,4,17,0,0
+Morgan le Fay,Mythological Figures & Maleficent Monsters ,13,Medium,Humanoid,N/A,0,0,1,1,17,97,9,18,14,14,14,20,5,17,0,0
+Perseus,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,17,82,11,16,12,14,10,14,4,15,0,0
+Gold Dragon Wyrmling,Monstrous Menagerie,4,Medium,Dragon,N/A,0,0,0,0,17,75,18,14,16,14,12,16,2,14,0,0
+Crypt Thing,To Save A Kingdom,5,Medium,Undead,N/A,0,0,0,0,17,52,19,14,15,13,14,15,3,15,0,0
+Mary Read,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,17,84,12,16,14,13,10,14,3,14,0,0
+Metal Wolf,Planestrider's Journal,5,Large,Humanoid,N/A,0,0,0,0,17,68,20,17,16,13,12,11,3,16,0,0
+Miyamoto Musashi,Mythological Figures & Maleficent Monsters ,12,Medium,Humanoid,N/A,0,0,1,1,17,169,16,20,14,13,9,11,4,17,0,0
+Rhode Warden,Gate Pass Gazette #28,6,Medium,Humanoid,N/A,0,0,1,0,17,102,14,18,16,13,15,11,3,15,0,0
+Aspect of Srasama,Adventures in Zeitgeist,N/A,Huge,Celestial,N/A,0,0,0,0,17,78,18,18,10,12,6,12,3,15,0,0
+Earth Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,17,58,14,12,14,12,14,10,2,12,0,0
+Julie d'Aubigny (La Maupin),Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,17,123,14,20,14,12,10,16,4,17,0,0
+Luz Mala,Gate Pass Gazette #12,4,Small,Undead,N/A,0,0,0,0,17,45,2,24,10,12,18,12,2,17,0,Will-o-Wisp
+Shadow Symbiote Knight,Dungeon Delver's Guide,7,Medium,Undead,N/A,0,0,0,0,17,110,18,14,18,12,14,16,3,15,0,0
+Musō Gonnosuke,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,17,71,16,16,12,12,11,10,3,14,0,0
+Will-o-Wisp,Monstrous Menagerie,2,Small,Undead,N/A,0,0,0,0,17,28,2,24,10,12,14,12,2,17,1,0
+Noble of the Heart,Planestrider's Journal,16,Medium,Monstrosity,N/A,0,1,0,0,17,247,20,17,20,12,13,19,5,18,0,0
+Mummy Lord,Monstrous Menagerie,15,Medium,Undead,N/A,0,1,0,0,17,221,18,10,18,12,18,16,5,17,0,0
+Young River Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,142,14,16,14,12,16,12,4,15,0,0
+Young Shadow Dragon,Monstrous Menagerie,10,Large,Dragon,N/A,0,0,0,0,17,114,18,14,18,12,12,18,4,16,0,0
+Blue Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,17,58,16,12,14,12,10,14,2,13,0,0
+Red Dragon Wyrmling,Monstrous Menagerie,4,Medium,Dragon,N/A,0,0,0,0,17,75,18,12,16,12,10,14,2,14,0,0
+Silver Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,17,60,18,14,16,12,10,14,2,14,0,0
+Mohrg,To Save A Kingdom,11,Medium,Undead,N/A,0,0,0,0,17,136,20,21,19,11,14,18,4,17,0,0
+Penner the Pigfarmer,To Save A Kingdom,6,Small,Undead,N/A,0,0,1,1,17,112,18,17,18,11,15,12,3,15,0,0
+Unholy Huntmaster,Planestrider's Journal,17,Medium,Fiend,N/A,0,0,0,0,17,152,20,15,20,11,15,16,6,19,0,0
+Drider,Monstrous Menagerie,6,Large,Monstrosity,N/A,0,0,0,0,17,114,18,16,18,10,16,12,3,15,1,0
+Shadow Elf Spellcaster Drider,Monstrous Menagerie,6,Large,Monstrosity,N/A,0,0,1,0,17,114,18,16,18,10,16,12,3,15,0,Drider
+Brass Man,Adventures in Zeitgeist,3,Medium,Construct,N/A,0,0,0,0,17,36,18,10,10,10,11,8,2,14,0,0
+Chain Devil,Monstrous Menagerie,9,Medium,Fiend,N/A,0,0,0,0,17,127,18,14,18,10,12,16,4,16,0,0
+Chained One,Monstrous Menagerie,13,Large,Fiend,N/A,0,0,0,0,17,199,18,14,18,10,12,16,5,17,0,0
+Forgotten Death God,Monstrous Menagerie,10,Large,Celestial,N/A,0,1,0,0,17,161,20,18,20,10,20,20,4,17,0,Forgotten God
+Forgotten God,Monstrous Menagerie,10,Large,Celestial,N/A,0,1,0,0,17,161,20,18,20,10,20,20,4,17,2,0
+Forgotten Nature God,Monstrous Menagerie,10,Large,Celestial,N/A,0,1,0,0,17,161,20,18,20,10,20,20,4,17,0,Forgotten God
+Goblin Dreadnought,Monstrous Menagerie,0.5,Small,Humanoid,N/A,0,0,0,0,17,10,8,12,10,10,10,10,2,11,0,Goblin
+Stone Giant,Monstrous Menagerie,8,Huge,Giant,N/A,0,0,0,0,17,126,23,14,20,10,12,10,3,17,1,0
+Stone Giant Stonetalker,Monstrous Menagerie,8,Huge,Giant,N/A,0,0,0,0,17,126,23,14,20,10,12,10,3,17,0,Stone Giant
+Black Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,17,44,14,16,12,10,10,12,2,13,0,0
+Talos,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,17,52,16,16,14,10,10,10,3,14,0,0
+Cyclops Myrmidon,Monstrous Menagerie,10,Huge,Giant,N/A,0,0,0,0,17,126,20,10,20,8,10,10,4,17,0,Cyclops
+Young White Dragon,Monstrous Menagerie,9,Large,Dragon,N/A,0,0,0,0,17,152,18,10,18,8,12,12,4,16,0,0
+Giant Earth Elemental,Monstrous Menagerie,9,Large,Elemental,N/A,0,0,0,0,17,157,18,10,18,6,10,6,4,16,0,Earth Elemental
+Earth Elemental,Monstrous Menagerie,5,Large,Elemental,N/A,0,0,0,0,17,114,18,10,18,6,10,6,3,15,1,0
+Shield Guardian,Monstrous Menagerie,7,Large,Construct,N/A,0,0,0,0,17,133,18,10,18,6,10,3,3,15,0,0
+Detritivore Larva,Planestrider's Journal,12,Large,Aberration,N/A,0,0,0,0,17,180,20,20,18,5,10,16,4,17,0,0
+Storm Elemental,Planestrider's Journal,15,Huge,Elemental,N/A,0,0,0,0,17,250,20,24,23,5,10,8,5,20,0,0
+Remorhaz,Monstrous Menagerie,12,Huge,Monstrosity,N/A,0,0,0,0,17,195,22,12,20,4,12,5,4,18,0,0
+Sea Serpent,Monstrous Menagerie,16,Gargantuan,Monstrosity,N/A,0,0,0,0,17,247,28,10,22,4,14,8,5,22,0,0
+Cù-Sìth,Mythological Figures & Maleficent Monsters ,7,Large,Fey,N/A,0,0,1,1,17,127,18,17,16,3,15,16,3,15,0,0
+Stone Colossus,Monstrous Menagerie,16,Gargantuan,Construct,N/A,0,1,0,0,17,263,22,10,20,3,12,1,5,19,0,Stone Guardian
+Stone Guardian,Monstrous Menagerie,10,Large,Construct,N/A,0,0,0,0,17,178,22,10,20,3,12,1,4,18,1,0
+Witchoil Automaton,Adventures in Zeitgeist,7,Large,Construct,N/A,0,0,0,0,17,134,20,6,14,3,11,1,3,16,0,0
+Giant Grick,Monstrous Menagerie,2,Medium,Monstrosity,N/A,0,0,0,0,17,90,20,14,14,2,14,5,2,15,0,0
+Bulette,Monstrous Menagerie,6,Large,Monstrosity,N/A,0,0,0,0,17,95,18,10,18,2,10,8,3,15,0,0
+Vampiric Dire Bear,To Save A Kingdom,10,Huge,Undead,N/A,0,1,0,0,17,114,21,14,16,2,13,7,4,17,0,0
+Flying Sword,Monstrous Menagerie,0.25,Small,Construct,N/A,0,0,0,0,17,10,12,12,10,1,10,1,2,11,0,0
+Piercer,Monstrous Menagerie,0.25,Small,Monstrosity,N/A,0,0,0,0,17,9,0,10,12,1,6,2,2,10,0,0
+Nebradakk,To Save A Kingdom,18,Medium,Aberration,N/A,0,1,0,1,16,255,16,18,19,23,16,19,6,18,0,0
+Kalle Sirkesalo,To Save A Kingdom,18,Medium,Humanoid,N/A,0,0,1,1,16,130,11,12,16,20,13,15,6,15,0,0
+Gourd Empress,Gate Pass Gazette #20,11,Large,Plant,N/A,0,1,0,0,16,161,18,17,18,19,20,21,4,16,0,0
+Couatl,Monstrous Menagerie,4,Medium,Celestial,N/A,0,0,0,0,16,85,18,18,18,18,20,18,2,14,0,0
+Khalkos,Monstrous Menagerie,9,Medium,Aberration,N/A,0,0,0,0,16,130,12,16,14,18,16,16,4,15,0,0
+Prospero,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,16,105,9,16,16,18,11,14,4,15,0,0
+Shadowspinner,Planestrider's Journal,11,Large,Monstrosity,N/A,0,1,0,0,16,178,16,20,15,18,16,16,4,17,0,0
+Accursed Spirit Naga,Monstrous Menagerie,8,Large,Monstrosity,N/A,0,0,0,0,16,85,16,16,16,16,14,16,3,14,0,Spirit Naga
+Archfey,Monstrous Menagerie,12,Medium,Fey,N/A,1,0,0,0,16,330,16,20,16,16,20,20,4,17,0,Faerie Noble
+Corrupted Bluestone,To Save A Kingdom,5,Medium,Undead,N/A,0,0,1,1,16,75,13,6,16,16,12,5,3,12,0,0
+Elder Vampire,Monstrous Menagerie,11,Medium,Undead,N/A,1,1,0,0,16,285,20,18,20,16,16,18,4,17,0,Vampire
+Faerie Noble,Monstrous Menagerie,12,Medium,Fey,N/A,0,0,0,0,16,165,16,20,16,16,20,20,4,17,2,0
+Dr. John Watson,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,16,77,12,16,12,16,14,11,3,14,0,0
+Fiendbloom Fey Queen Nidla,Monstrous Menagerie,12,Medium,Fey,Plant,0,0,0,0,16,165,16,20,16,16,20,20,4,17,0,Faerie Noble
+Rakshasa,Monstrous Menagerie,13,Medium,Fiend,N/A,0,0,0,0,16,161,16,16,18,16,16,20,5,16,0,0
+Storm Giant,Monstrous Menagerie,14,Huge,Giant,N/A,0,0,0,0,16,230,29,14,20,16,18,18,5,22,1,0
+Storm Giant Monarch,Monstrous Menagerie,14,Huge,Giant,N/A,1,0,0,0,16,460,29,14,20,16,18,18,5,22,0,Storm Giant
+Vampire,Monstrous Menagerie,11,Medium,Undead,N/A,0,1,0,0,16,142,20,18,20,16,16,18,4,17,4,0
+Vampire Assassin,Monstrous Menagerie,12,Medium,Undead,N/A,0,1,0,0,16,142,20,18,20,16,16,18,4,17,0,Vampire
+Vampire Mage,Monstrous Menagerie,13,Medium,Undead,N/A,0,1,0,0,16,142,20,18,20,16,16,18,5,18,0,Vampire
+Cambion,Monstrous Menagerie,5,Medium,Fiend,N/A,0,0,0,0,16,93,18,18,18,16,14,18,3,15,0,0
+Khalkos Spawn,Monstrous Menagerie,2,Tiny,Aberration,N/A,0,0,0,0,16,27,6,16,14,16,14,12,2,13,0,0
+Urban Detective,Planestrider's Journal,6,Medium,Humanoid,N/A,0,0,0,0,16,71,13,18,133,16,18,15,3,15,0,0
+Spirit Naga,Monstrous Menagerie,6,Large,Monstrosity,N/A,0,0,0,0,16,85,16,16,16,16,14,16,3,14,1,0
+Swarm of Khalkos Spawn,Monstrous Menagerie,2,Medium,Aberration,N/A,0,0,0,0,16,71,6,16,14,16,14,12,2,13,0,0
+Amethyst Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,45,14,14,14,16,10,14,2,12,0,0
+Blastfire Captain,Gate Pass Gazette #17,6,Medium,Humanoid,N/A,0,0,1,0,16,119,16,17,18,15,12,15,3,14,0,0
+Crazed Troll,To Save A Kingdom,7,Large,Giant,N/A,0,0,0,0,16,84,18,16,20,15,9,7,3,15,0,0
+Easter Bunny,Mythological Figures & Maleficent Monsters ,12,Small,Humanoid,N/A,0,0,1,1,16,170,15,22,20,15,15,16,4,18,0,0
+Infernal Dwarf,To Save A Kingdom,3,Medium,Fiend,N/A,0,0,0,0,16,65,14,11,14,15,12,13,2,12,0,0
+Blackbeard,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,16,104,14,16,14,14,10,14,3,14,0,0
+Circe,Mythological Figures & Maleficent Monsters ,7,Medium,Fey,N/A,0,0,1,1,16,95,14,19,20,14,19,21,3,15,0,0
+Djinni,Monstrous Menagerie,11,Large,Elemental,N/A,0,0,0,0,16,172,18,22,22,14,16,20,4,18,1,0
+Djinni Noble,Monstrous Menagerie,11,Large,Elemental,N/A,1,0,0,0,16,344,18,22,22,14,16,20,4,18,0,Djinni
+George Washington,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,16,150,12,16,16,14,14,18,3,14,0,0
+Young Green Dragon,Monstrous Menagerie,10,Huge,Dragon,N/A,0,0,0,0,16,55,14,14,12,14,10,12,4,14,0,0
+Headless Horseman,Mythological Figures & Maleficent Monsters ,6,Medium,Undead,N/A,0,0,1,1,16,68,18,16,19,14,15,17,3,15,0,0
+Knight of the Diamond,Planestrider's Journal,5,Medium,Aberration,N/A,0,0,0,0,16,90,13,18,16,14,13,13,3,15,0,0
+Brass Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,38,14,12,12,14,12,12,2,12,0,0
+Somnula,To Save A Kingdom,6,Large,Fiend,N/A,0,0,0,0,16,57,19,14,19,14,14,15,3,15,0,0
+Ogre Mage,Monstrous Menagerie,7,Large,Giant,N/A,0,0,0,0,16,102,18,10,16,14,12,16,3,15,0,0
+Copper Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,44,15,12,13,14,11,13,2,12,0,0
+Emerald Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,45,14,14,12,14,10,12,2,12,0,0
+Green Dragon Wyrmling,Monstrous Menagerie,3,Huge,Dragon,N/A,0,0,0,0,16,55,14,14,12,14,10,12,2,12,0,0
+Zhuang Zhou,Mythological Figures & Maleficent Monsters ,3,Medium,Humanoid,N/A,0,0,1,1,16,38,9,14,12,14,16,16,2,12,0,0
+Anne Bonny,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,16,60,12,18,12,13,12,14,3,15,0,0
+Corrupted Andrew Nemeth,To Save A Kingdom,6,Medium,Undead,N/A,0,0,1,1,16,55,20,18,13,13,17,20,3,16,0,0
+Harry Houdini,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,16,78,12,18,14,13,10,16,3,15,0,0
+Motleymage,To Save A Kingdom,3,Medium,Humanoid,N/A,0,0,0,0,16,85,17,18,19,13,16,14,2,14,0,0
+Tomoe Gozen,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,16,143,16,14,12,13,14,13,4,15,0,0
+Allan Quartermain,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,16,97,14,18,14,12,14,13,4,16,0,0
+Strider,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,12,18,16,12,18,12,3,15,1,0
+Wood Elf Sharpshooter,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,12,18,16,12,18,12,3,15,0,Strider
+Billy the Kid,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,16,65,14,18,14,12,9,14,3,15,0,0
+Azer Forgemaster,Monstrous Menagerie,4,Medium,Elemental,N/A,0,0,0,0,16,78,18,14,14,12,16,16,2,14,0,0
+Fey Knight,Monstrous Menagerie,4,Medium,Fey,N/A,0,0,0,0,16,58,14,18,14,12,16,16,2,14,0,0
+David,Mythological Figures & Maleficent Monsters ,4,Medium,Humanoid,N/A,0,0,1,1,16,52,13,18,12,12,14,12,2,14,0,0
+Robin Hood,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,16,66,12,18,12,12,12,15,3,15,0,0
+Troll Hulk,Dungeon Delver's Guide,15,Huge,Giant,N/A,0,0,0,0,16,250,24,12,22,12,16,10,5,20,1,0
+Troll King,Dungeon Delver's Guide,15,Huge,Giant,N/A,1,1,0,0,16,500,24,12,22,12,16,10,5,20,0,Troll Hulk
+Sheeltielle the Queen Spider,To Save A Kingdom,7,Gargantuan,Beast,N/A,0,0,1,1,16,80,17,16,12,12,13,17,3,14,0,0
+Assassin,Monstrous Menagerie,7,Medium,Humanoid,N/A,0,0,1,0,16,97,10,16,14,12,12,12,3,14,1,0
+Goblin Boss,Monstrous Menagerie,1,Small,Humanoid,N/A,0,0,0,0,16,24,12,14,10,12,12,12,2,12,0,0
+Swift Sendriya,Planestrider's Journal,7,Medium,Celestial,N/A,0,0,0,0,16,90,12,18,16,12,18,12,3,15,0,0
+Half-Shadow Dragon Assassin,Monstrous Menagerie,7,Medium,Humanoid,N/A,0,0,0,0,16,97,10,16,14,12,12,12,3,14,0,0
+Spymaster,Monstrous Menagerie,7,Medium,Humanoid,N/A,0,0,1,0,16,97,10,16,14,12,12,12,3,14,0,Assassin
+Bronze Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,16,39,16,10,14,12,10,14,2,13,0,0
+Black Axe,To Save A Kingdom,6,Medium,Humanoid,N/A,0,0,1,1,16,90,19,18,17,11,12,15,3,15,0,0
+Boudica,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,16,66,14,16,12,11,12,16,3,14,0,0
+Ōphan,To Save A Kingdom,10,Small,Celestial,N/A,0,0,0,0,16,115,12,17,15,11,14,18,4,15,0,0
+River Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,44,12,14,12,10,14,10,2,12,0,0
+Behir,Monstrous Menagerie,11,Huge,Monstrosity,N/A,0,0,0,0,16,168,20,14,18,10,16,12,4,17,1,0
+Behir Magus,Blog/A5e Tools,12,Huge,Monstrosity,N/A,0,0,0,0,16,168,20,14,18,10,16,12,4,17,0,Behir
+Firebird,Monstrous Menagerie,10,Large,Elemental,N/A,0,0,0,0,16,144,16,20,16,10,12,12,4,17,0,0
+Frankenstein's Monster,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,16,136,20,9,18,10,16,8,4,17,0,0
+Hobgoblin,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,16,19,13,12,14,10,10,10,2,11,0,0
+Azer,Monstrous Menagerie,2,Medium,Elemental,N/A,0,0,0,0,16,39,16,12,14,10,12,10,2,13,0,0
+Champion Warrior,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,18,18,16,10,12,14,3,15,3,0
+Greater Spirit Soldier,To Save A Kingdom,3,Large,Celestial,N/A,0,0,0,0,16,52,17,15,15,10,15,11,2,13,0,0
+Duelist,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,18,18,16,10,12,14,3,15,0,Champion Warrior
+Gladiator,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,16,105,18,14,16,10,12,14,3,15,0,0
+Mountain Dwarf Soldier,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,16,19,14,12,14,10,10,10,2,12,0,Soldier
+Sahuagin Champion,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,0,0,16,90,18,18,16,10,12,14,3,15,0,0
+Shadow Elf Champion Warrior,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,18,18,16,10,12,14,3,15,0,Champion Warrior
+Warhordling Orc War Chief,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,1,0,16,90,18,18,16,10,12,14,3,15,0,Champion Warrior
+Soldier,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,16,19,14,12,14,10,10,10,2,12,2,0
+Rustshot,Planestrider's Journal,6,Tiny,Construct,N/A,0,0,0,0,16,93,10,19,16,10,13,15,3,15,0,0
+Deep Dwarf Soldier,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,1,0,16,19,14,12,14,10,10,10,2,12,0,Soldier
+Shadow Elf Veteran,To Save A Kingdom,3,Medium,Humanoid,N/A,0,0,0,0,16,58,16,12,14,10,15,10,2,13,0,0
+Half-Red Dragon Veteran,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,0,0,16,58,16,12,14,10,10,10,2,13,0,0
+Kobold Broodguard,Monstrous Menagerie,2,Small,Humanoid,N/A,0,0,0,0,16,44,14,14,14,10,10,12,2,12,1,0
+Kobold Broodguard Dragon Servitor,Monstrous Menagerie,2,Small,Humanoid,N/A,0,0,0,0,16,44,14,14,14,10,10,12,2,12,0,Kobold Broodguard
+Shadow Dragon Wyrmling,Monstrous Menagerie,3,Medium,Dragon,N/A,0,0,0,0,16,52,14,14,14,10,10,14,2,12,0,0
+Soldier Squad,Monstrous Menagerie,5,Large,Humanoid,N/A,0,0,1,0,16,97,14,12,14,10,10,10,3,13,0,0
+Veteran,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,1,0,16,58,16,12,14,10,10,10,2,13,0,0
+Gilgamesh,Mythological Figures & Maleficent Monsters ,10,Medium,Humanoid,N/A,0,0,1,1,16,156,20,16,14,9,16,11,4,17,0,0
+Hydrodaemon,To Save A Kingdom,6,Large,Fiend,N/A,0,0,0,0,16,76,17,14,18,9,15,14,3,14,0,0
+Tarzan,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,16,90,16,16,16,9,13,9,3,14,0,0
+Aracnecore,Monstrous Menagerie,5,Large,Monstrosity,N/A,0,0,0,0,16,85,16,14,16,8,12,8,3,14,0,0
+Hezrou,Monstrous Menagerie,10,Large,Fiend,N/A,0,0,0,0,16,136,18,16,20,8,12,12,4,16,0,0
+Murmuring Worm,Monstrous Menagerie,12,Huge,Aberration,N/A,0,0,0,0,16,195,20,12,20,8,14,18,4,17,0,0
+Carrionettes,Planestrider's Journal,3,Medium,Construct,N/A,0,0,0,0,16,68,19,10,19,7,8,6,2,14,0,0
+Wailrus,Gate Pass Gazette #21,11,Huge,Undead,N/A,0,1,0,0,16,162,20,9,22,7,12,15,4,17,0,0
+Abrikandilu,To Save A Kingdom,5,Large,Fiend,N/A,0,0,0,0,16,65,17,11,12,6,10,13,3,14,0,0
+Smoke Elemental,Planestrider's Journal,12,Huge,Elemental,N/A,0,0,0,0,16,195,20,23,20,6,10,7,4,18,0,0
+White Dragon Wyrmling,Monstrous Menagerie,2,Medium,Dragon,N/A,0,0,0,0,16,45,14,12,14,6,10,10,2,12,0,0
+Chuul,Monstrous Menagerie,5,Large,Aberration,N/A,0,0,0,0,16,93,18,10,16,5,16,10,3,15,1,0
+Spell-warped Chuul,Monstrous Menagerie,7,Large,Aberration,N/A,0,0,0,0,16,127,18,10,16,5,16,10,3,15,0,Chuul
+Ankheg Empress,To Save A Kingdom,8,Gargantuan,Monstrosity,N/A,0,0,0,0,16,174,21,14,19,4,17,10,3,16,0,0
+Mutant Rust Monster,Dungeon Delver's Guide,8,Large,Monstrosity,N/A,0,0,0,0,16,126,20,12,20,4,12,6,3,16,1,0
+Supermutant Rust Monster,Dungeon Delver's Guide,12,Huge,Monstrosity,N/A,0,0,0,0,16,195,20,12,20,4,12,6,4,17,0,Mutant Rust Monster
+Pale Striganes,Planestrider's Journal,5,Medium,Monstrosity,N/A,0,0,0,0,16,55,12,18,12,3,15,11,3,15,0,0
+Young Red Dragon Zombie,Monstrous Menagerie,11,Large,Undead,N/A,0,0,0,0,16,178,22,6,20,3,8,4,4,18,0,0
+Zombie Knight,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,16,52,16,6,14,3,8,4,2,13,1,0
+Ankylosaurus,Monstrous Menagerie,3,Huge,Beast,N/A,0,0,0,0,16,63,18,10,18,2,12,5,2,14,1,0
+Stegosaurus,Monstrous Menagerie,3,Huge,Beast,N/A,0,0,0,0,16,63,18,10,18,2,12,5,2,14,0,Ankylosaurus
+Fiendish Dire Boar,To Save A Kingdom,3,Large,Monstrosity,N/A,0,0,0,0,16,59,18,15,17,2,15,8,2,14,0,0
+Hydra,Monstrous Menagerie,9,Huge,Monstrosity,N/A,0,1,0,0,16,172,20,12,20,2,12,6,4,17,1,0
+Pyrohydra,Monstrous Menagerie,13,Huge,Monstrosity,N/A,0,1,0,0,16,218,20,12,20,2,12,6,5,18,0,Hydra
+Rock Dragon,Gate Pass Gazette #7,9,Gargantuan,Beast,N/A,0,0,0,0,16,147,20,10,18,2,12,5,4,17,0,Triceratops
+Flame-Spitting Statue,Monstrous Menagerie,4,Large,Construct,N/A,0,0,0,0,16,76,18,8,18,1,10,1,2,14,0,0
+Rug of Smothering,Monstrous Menagerie,2,Large,Construct,N/A,0,0,0,0,16,76,18,8,18,1,10,5,2,14,0,0
+Walking Statue,Monstrous Menagerie,3,Large,Construct,N/A,0,0,0,0,16,66,18,8,18,1,10,1,2,14,0,0
+Limpocait,Planestrider's Journal,10,Large,Monstrosity,N/A,0,0,0,0,16,190,22,5,18,1,14,1,4,18,0,0
+Nikola Tesla,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,15,49,10,14,13,20,14,12,3,13,0,0
+Grootslang,Mythological Figures & Maleficent Monsters ,11,Gargantuan,Monstrosity,N/A,0,0,1,1,15,145,24,13,18,19,14,9,4,19,0,0
+Specter of Tamas Agrens,To Save A Kingdom,7,Medium,Undead,N/A,0,0,0,1,15,85,1,20,18,18,20,19,3,16,0,0
+Scorpionfolk Imperator,Monstrous Menagerie,5,Large,Monstrosity,N/A,0,0,0,0,15,52,14,12,14,18,10,10,3,13,0,Scorpionfolk
+Confucius,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,15,90,9,14,10,16,16,16,3,13,0,0
+Cursed Ghost,To Save A Kingdom,11,Medium,Undead,N/A,0,0,0,0,15,127,17,21,18,16,14,19,4,17,0,0
+Crime Boss,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,15,127,18,14,18,16,16,16,3,15,0,0
+Goblinspeaker Yahret,To Save A Kingdom,3,Medium,Humanoid,N/A,0,0,1,1,15,65,10,15,14,16,15,11,2,12,0,0
+Lord Pemberton,To Save A Kingdom,8,Medium,Undead,N/A,0,0,1,1,15,82,16,17,17,16,13,18,3,14,0,0
+Wraith Lord,Monstrous Menagerie,13,Medium,Undead,N/A,0,0,0,0,15,171,14,20,20,16,18,18,5,18,0,0
+Yobbo,Presents for Goblins,0.5,Small,Humanoid,N/A,0,0,0,0,15,11,8,14,10,16,8,8,2,12,0,0
+Knight of the Club,Planestrider's Journal,5,Medium,Plant,N/A,0,0,0,0,15,84,16,14,15,15,16,17,3,14,0,0
+Mariner Ghost Swarm,To Save A Kingdom,11,Huge,Undead,N/A,1,0,0,0,15,340,9,14,15,15,14,20,4,14,0,0
+Shadow Elf Warmage,To Save A Kingdom,5,Medium,Humanoid,N/A,0,0,0,0,15,45,8,14,14,15,11,17,3,13,0,0
+Bartl the Bloody,To Save A Kingdom,3,Medium,Humanoid,N/A,0,0,1,1,15,65,15,16,15,14,12,15,2,13,0,0
+Cleopatra,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,15,93,9,14,12,14,14,18,3,13,0,0
+Elizabeth Báthory,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,15,55,10,16,12,14,9,20,3,14,0,0
+High Elf Spell Slinger,Gate Pass Gazette #26,1,Medium,Humanoid,N/A,0,0,0,0,15,22,11,14,10,14,13,12,2,12,0,Mounted Pistoleer
+Bandit Captain,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,1,0,15,65,14,16,14,14,12,14,2,13,1,0
+Last Raven Rooker,Adventures in Zeitgeist,2,Medium,Humanoid,N/A,0,0,1,0,15,36,8,14,10,14,11,12,2,12,0,0
+Faerie Dragon,Monstrous Menagerie,1,Tiny,Dragon,N/A,0,0,0,0,15,14,3,20,12,14,12,16,2,15,1,0
+Faerie Dragon Familiar,Monstrous Menagerie,1,Tiny,Dragon,N/A,0,0,0,0,15,14,3,20,12,14,12,16,2,15,0,Faerie Dragon
+Shadow Elf Priest,To Save A Kingdom,6,Medium,Humanoid,N/A,0,0,0,0,15,67,10,15,16,14,17,11,3,13,0,0
+Sinbad,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,15,78,11,16,14,14,14,14,3,14,0,0
+Pirate Captain,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,1,0,15,65,14,16,14,14,12,14,2,13,0,Bandit Captain
+Arachne,Mythological Figures & Maleficent Monsters ,6,Medium,Monstrosity,N/A,0,0,1,1,15,97,18,17,15,13,11,12,3,15,0,0
+Barbed Devil,Monstrous Menagerie,5,Medium,Fiend,N/A,0,0,0,0,15,102,18,16,18,12,14,14,3,15,0,0
+Drona,Mythological Figures & Maleficent Monsters ,9,Medium,Humanoid,N/A,0,0,1,1,15,195,16,14,14,12,12,16,4,15,0,0
+Dryad,Monstrous Menagerie,0.5,Medium,Fey,N/A,0,0,0,0,15,22,14,12,10,12,16,18,2,12,2,0
+Knight of the Spade,Planestrider's Journal,5,Medium,Undead,N/A,0,0,0,0,15,82,16,133,17,12,14,11,3,72,0,0
+Miremuck Goblin King,Presents for Goblins,3,Medium,Humanoid,N/A,0,0,1,1,15,62,12,16,10,12,8,18,2,13,0,0
+Mykand,Gate Pass Gazette #13,0.5,Medium,Fey,N/A,0,0,0,0,15,22,14,12,10,12,16,18,2,12,0,Dryad
+Nixie,Planestrider's Journal,0.5,Tiny,Fey,N/A,0,0,0,0,15,2,2,20,10,12,9,15,2,15,0,0
+Naiad,Monstrous Menagerie,0.5,Medium,Fey,N/A,0,0,0,0,15,22,14,12,10,12,16,18,2,12,0,Dryad
+Rangale,Adventures in Zeitgeist,8,Large,Fey,N/A,0,0,0,0,15,119,22,17,16,12,14,12,3,17,0,0
+Rasputin,Mythological Figures & Maleficent Monsters ,6,Medium,Humanoid,N/A,0,0,1,1,15,110,10,12,18,12,12,15,3,12,0,0
+Goblin Warlock,Monstrous Menagerie,1,Small,Humanoid,N/A,0,0,0,0,15,21,10,14,10,12,12,14,2,12,0,0
+Minstrel,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,15,32,10,16,14,12,12,16,2,13,1,0
+Orcish Wildling Minstrel,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,15,32,10,16,14,12,12,16,2,13,0,Minstrel
+Grendel,Mythological Figures & Maleficent Monsters ,9,Large,Giant,N/A,0,0,1,1,15,114,22,15,18,11,14,7,4,18,0,0
+Mounted Pistoleer Squad,Gate Pass Gazette #26,6,Large,Humanoid,N/A,0,0,0,0,15,125,11,14,10,11,13,12,3,13,0,0
+Paul Bunyan,Mythological Figures & Maleficent Monsters ,23,Gargantuan,Giant,N/A,0,0,1,1,15,248,30,15,21,11,16,14,7,25,0,0
+Siaso,Planestrider's Journal,7,Large,Undead,N/A,0,0,0,0,15,112,10,20,15,11,11,16,3,16,0,0
+Vampire Spawn,Monstrous Menagerie,4,Medium,Undead,N/A,0,0,0,0,15,76,18,16,18,10,14,14,2,14,0,0
+Askwise Keeper,Gate Pass Gazette #1,0.25,Tiny,Fey,N/A,0,0,0,0,15,2,2,20,10,10,12,14,2,15,0,Pixie
+Deep Gnome Scout,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,15,19,10,16,14,10,14,10,2,13,0,Scout
+Dragoon,Gate Pass Gazette #26,1,Medium,Humanoid,N/A,0,0,0,0,15,22,11,14,10,10,13,12,2,12,0,Mounted Pistoleer
+Festung Psychic Elemental,To Save A Kingdom,N/A,Small,Elemental,N/A,0,0,0,0,15,40,12,12,15,10,10,6,3,12,0,0
+Fomorian,Monstrous Menagerie,8,Huge,Fey,N/A,0,1,0,0,15,138,20,10,20,10,14,18,3,16,0,0
+Forest Gnome Scout,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,15,19,10,16,14,10,14,10,2,13,0,Scout
+Frost Giant,Monstrous Menagerie,9,Huge,Giant,N/A,0,0,0,0,15,138,22,8,20,10,10,12,4,18,1,0
+Frost Giant Jarl,Monstrous Menagerie,12,Huge,Giant,N/A,0,0,0,0,15,184,22,8,20,10,10,12,4,18,0,Frost Giant
+Guard,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,15,11,10,12,12,10,10,10,2,11,1,0
+High Elf Noble,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,15,13,10,12,10,10,12,14,2,11,0,Noble
+Bugbear Chief,Monstrous Menagerie,4,Medium,Humanoid,N/A,0,0,0,0,15,71,18,14,14,10,12,10,2,14,0,0
+Fogborn Wight,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,15,45,14,14,16,10,12,14,2,12,0,Wight
+Kech,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,0,0,15,71,18,14,14,10,12,10,2,14,0,Bugbear
+Improved Spirit Soldier,To Save A Kingdom,2,Large,Celestial,N/A,0,0,0,0,15,37,17,15,15,10,14,11,2,13,0,0
+Lizardfolk Chosen One,Monstrous Menagerie,4,Medium,Humanoid,N/A,0,0,0,0,15,75,16,12,16,10,12,14,2,13,0,0
+Knight of the Heart,Planestrider's Journal,5,Medium,Monstrosity,N/A,0,0,0,0,15,93,18,15,18,10,9,16,3,15,0,0
+Noble,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,15,13,10,12,10,10,12,14,2,11,1,0
+Loch Ness Monster,Mythological Figures & Maleficent Monsters ,6,Huge,Beast,N/A,0,0,1,1,15,95,20,16,17,10,13,5,3,16,0,0
+Pixie,Monstrous Menagerie,0.25,Tiny,Fey,N/A,0,0,0,0,15,2,2,20,10,10,12,14,2,15,1,0
+Wight,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,15,45,14,14,16,10,12,14,2,12,1,0
+Mounted Gunslinger,Gate Pass Gazette #26,2,Medium,Humanoid,N/A,0,0,0,0,15,36,11,16,10,10,13,12,2,13,0,Mounted Pistoleer
+Mounted Pistoleer,Gate Pass Gazette #26,1,Medium,Humanoid,N/A,0,0,0,0,15,22,11,14,10,10,13,12,2,12,3,0
+Salamander Noble,Monstrous Menagerie,8,Huge,Elemental,N/A,0,0,0,0,15,136,18,14,14,10,10,12,3,15,0,Salamander
+Scout,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,15,19,10,16,14,10,14,10,2,13,3,0
+Stout Halfling Guard,Monstrous Menagerie,0.25,Small,Humanoid,N/A,0,0,1,0,15,11,10,12,12,10,10,10,2,11,0,Guard
+Wood Elf Scout,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,15,19,10,16,14,10,14,10,2,13,0,Scout
+Scourge of Corpse Flies,Gate Pass Gazette #4,6,Medium,Monstrosity,N/A,0,0,0,0,15,105,12,18,16,10,8,8,3,15,0,0
+Gnoll Demonfang,Monstrous Menagerie,4,Medium,Humanoid,Fiend,0,0,0,0,15,65,16,16,14,10,10,12,2,13,0,0
+Shadow Elf Soldier,To Save A Kingdom,4,Medium,Humanoid,N/A,0,0,0,0,15,45,14,14,11,10,12,10,2,12,0,0
+Guard Squad,Monstrous Menagerie,3,Large,Humanoid,N/A,0,0,1,0,15,55,10,12,12,10,10,10,2,11,0,0
+Shadow Hound Killer,Adventures in Zeitgeist,5,Medium,Humanoid,N/A,0,0,0,0,15,75,13,20,16,10,11,13,3,16,0,0
+Merfolk Knight,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,0,0,15,52,16,12,14,10,10,14,2,13,0,0
+Salamander,Monstrous Menagerie,6,Large,Elemental,N/A,0,0,0,0,15,90,18,14,14,10,10,12,3,15,1,0
+Scorpionfolk,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,15,52,14,12,14,10,10,10,2,12,1,0
+Feral Giant,To Save A Kingdom,10,Huge,Giant,N/A,0,0,0,0,15,105,23,13,19,9,5,6,4,18,0,0
+Knútadraugr,Planestrider's Journal,2,Medium,Undead,N/A,0,0,0,0,15,52,14,14,15,9,8,5,2,12,0,0
+Drainpipe Gargoyle,Monstrous Menagerie,2,Medium,Elemental,N/A,0,0,0,0,15,45,14,10,16,8,14,8,2,12,0,Gargoyle
+Gargoyle,Monstrous Menagerie,2,Medium,Elemental,N/A,0,0,0,0,15,45,14,10,16,8,14,8,2,12,2,0
+Oculite,Dungeon Delver's Guide,2,Small,Aberration,N/A,0,0,0,0,15,49,6,14,12,8,14,14,2,12,0,0
+Vrock,Monstrous Menagerie,6,Large,Fiend,N/A,0,0,0,0,15,104,16,16,18,8,14,10,3,14,0,0
+Building Mimic,Planestrider's Journal,9,Gargantuan,Monstrosity,N/A,0,0,0,0,15,202,20,10,16,8,16,12,4,17,0,0
+Corpse Fly,Gate Pass Gazette #4,1,Tiny,Monstrosity,N/A,0,0,0,0,15,22,8,14,13,8,8,8,2,12,0,0
+Dread Troll,Monstrous Menagerie,7,Large,Giant,N/A,0,0,0,0,15,105,18,12,20,8,12,8,3,15,0,Troll
+Faerie Eater Troll,Monstrous Menagerie,6,Large,Giant,N/A,0,0,0,0,15,84,18,12,20,8,12,8,3,15,0,Troll
+Scrag,Monstrous Menagerie,5,Large,Giant,N/A,0,0,0,0,15,84,18,12,20,8,12,8,3,15,0,Troll
+Troll,Monstrous Menagerie,5,Large,Giant,N/A,0,0,0,0,15,84,18,12,20,8,12,8,3,15,6,0
+Greater Mimic,Planestrider's Journal,6,Large,Monstrosity,N/A,0,0,0,0,15,110,18,12,16,8,13,8,3,15,0,0
+Kobold Hunter,To Save A Kingdom,1,Small,Humanoid,N/A,0,0,0,0,15,28,8,16,13,8,11,9,2,13,0,0
+Puny Troll,To Save A Kingdom,3,Large,Giant,N/A,0,0,0,0,15,42,18,12,20,8,12,8,2,14,0,0
+Rhinam Guardian,Gate Pass Gazette #11,4,Medium,Elemental,N/A,0,0,0,0,15,67,16,10,16,8,14,8,2,13,0,Gargoyle
+Troll Elder,To Save A Kingdom,6,Large,Giant,N/A,0,0,0,0,15,94,18,12,20,8,12,8,3,15,0,0
+Skeletal Immortal,Dungeon Delver's Guide,1,Medium,Undead,N/A,0,0,0,0,15,19,14,16,14,8,8,5,2,13,0,0
+Cerberus,Mythological Figures & Maleficent Monsters ,9,Huge,Monstrosity,N/A,0,0,1,1,15,152,22,15,17,7,12,10,4,18,0,0
+Vampire Spawn Ogre,To Save A Kingdom,6,Large,Undead,N/A,0,0,0,0,15,102,20,14,16,7,9,11,3,16,0,0
+Black Shuck,Mythological Figures & Maleficent Monsters ,8,Large,Fey,N/A,0,0,1,1,15,97,18,17,19,6,18,14,3,15,0,0
+Fiendbloom Hell Hound,Monstrous Menagerie,3,Medium,Fiend,Plant,0,0,0,0,15,52,16,14,16,6,12,8,2,13,0,Hell Hound
+Hell Hound,Monstrous Menagerie,3,Medium,Fiend,N/A,0,0,0,0,15,52,16,14,16,6,12,8,2,13,1,0
+Sewer Walker,Gate Pass Gazette #1,6,Large,Plant,N/A,0,0,0,0,15,123,18,10,18,6,12,6,3,15,0,Shambling Mound
+Shambling Mound,Monstrous Menagerie,6,Large,Plant,N/A,0,0,0,0,15,123,18,10,18,6,12,6,3,15,1,0
+Geode Spider,Planestrider's Journal,7,Small,Elemental,N/A,0,0,0,0,15,153,19,12,20,6,13,7,3,15,0,0
+Íssax,To Save A Kingdom,6,Large,Elemental,N/A,0,0,0,0,15,114,17,16,18,6,15,6,3,14,0,0
+Littoral Spider,Planestrider's Journal,5,Small,Elemental,N/A,0,0,0,0,15,91,20,14,17,6,13,7,3,16,0,0
+Fogborn Skeletal Champion,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,15,58,16,16,14,6,8,5,2,13,0,Skeletal Champion
+Skeletal Champion,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,15,58,16,16,14,6,8,5,2,13,1,0
+Ran's Cachean Elephant,Adventures in Zeitgeist,6,Huge,Monstrosity,N/A,0,0,0,0,15,119,23,9,16,5,11,6,3,17,0,0
+Spyskull,Gate Pass Gazette #6,1,Tiny,Undead,N/A,0,0,0,0,15,27,7,18,15,5,14,8,2,14,0,0
+Unraveled,Planestrider's Journal,8,Large,Undead,N/A,0,0,0,0,15,120,23,14,15,5,6,4,3,17,0,0
+Wild Troll,Monstrous Menagerie,5,Large,Giant,N/A,0,0,0,0,15,84,18,12,20,4,12,8,3,15,0,Troll
+Malice Rager,Adventures in Zeitgeist,3,Large,Aberration,N/A,0,0,0,0,15,88,18,13,14,4,12,6,2,14,0,0
+Infernal Mammoth,To Save A Kingdom,5,Huge,Undead,N/A,0,0,0,0,15,104,22,9,17,3,11,6,3,17,0,0
+Roc,Monstrous Menagerie,13,Gargantuan,Beast,N/A,0,0,0,0,15,232,28,10,20,3,12,8,5,22,0,0
+Hound Guardian,Monstrous Menagerie,1,Medium,Construct,N/A,0,0,0,0,15,32,16,10,14,2,12,6,2,13,0,0
+Basilisk,Monstrous Menagerie,3,Medium,Monstrosity,N/A,0,0,0,0,15,52,14,8,16,2,10,8,2,12,0,0
+Ravel Larva,Planestrider's Journal,1,Tiny,Aberration,N/A,0,0,0,0,15,36,7,20,14,2,15,5,2,15,0,0
+Rust Monster,Monstrous Menagerie,0.5,Medium,Monstrosity,N/A,0,0,0,0,15,27,12,12,12,2,12,6,2,11,0,0
+Giant Scorpion,Monstrous Menagerie,3,Large,Beast,N/A,0,0,0,0,15,52,14,12,14,2,8,4,2,12,0,0
+Dead Man’s Fingers,Monstrous Menagerie,10,Medium,Plant,N/A,0,0,0,0,15,190,20,10,20,1,12,1,4,17,0,0
+Giant Crab,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,15,9,12,14,10,1,8,4,2,12,1,0
+Lance Crab,Gate Pass Gazette #5,1,Medium,Beast,N/A,0,0,0,0,15,32,12,14,10,1,8,4,2,12,0,Giant Crab
+Psionic Brain,Planestrider's Journal,7,Large,Aberration,N/A,0,0,0,0,14,114,7,17,16,21,16,14,3,14,0,0
+Daedalus,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,14,90,14,15,10,20,14,8,3,13,0,0
+Alchemist,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,14,91,11,16,14,19,14,13,3,14,1,0
+Cosmopolitan Alchemist,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,14,91,11,16,14,19,14,13,3,14,0,Alchemist
+Dr. Jekyll,Mythological Figures & Maleficent Monsters ,2,Medium,Humanoid,N/A,0,0,1,1,14,28,9,14,12,18,13,15,2,12,0,0
+Warmonger,To Save A Kingdom,6,Large,Fiend,N/A,0,0,0,0,14,76,20,17,18,18,17,15,3,16,0,0
+Brainling,Planestrider's Journal,3,Medium,Aberration,N/A,0,0,0,0,14,77,14,16,13,17,14,15,2,13,0,0
+Dorian Gray,Mythological Figures & Maleficent Monsters ,7,Medium,Humanoid,N/A,0,0,1,1,14,85,13,18,19,17,14,20,3,15,0,0
+Gidim Scout,Planestrider's Journal,5,Medium,Aberration,N/A,0,0,0,0,14,63,10,17,10,17,13,12,3,14,0,0
+Corrupted Unicorn,Monstrous Menagerie,5,Large,Celestial,Fey,0,0,0,0,14,85,20,18,18,16,20,20,3,16,0,Unicorn
+Unicorn,Monstrous Menagerie,5,Large,Celestial,Fey,0,0,0,0,14,85,20,18,18,16,20,20,3,16,1,0
+Douban,Mythological Figures & Maleficent Monsters ,2,Medium,Humanoid,N/A,0,0,1,1,14,36,9,14,11,16,16,13,2,12,0,0
+Intellect Devourer,Monstrous Menagerie,3,Tiny,Aberration,N/A,0,0,0,0,14,36,6,16,14,16,14,14,2,13,0,0
+Malcubus,Monstrous Menagerie,4,Medium,Fiend,N/A,0,0,0,0,14,78,10,16,14,14,16,20,2,13,0,0
+Sprite,Monstrous Menagerie,0.25,Tiny,Fey,N/A,0,0,0,0,14,2,2,18,10,14,12,10,2,14,0,0
+Aboleth Champion,Dungeon Delver's Guide,7,Medium,Humanoid,N/A,0,0,0,0,14,135,18,12,16,14,14,16,3,15,0,0
+Coven Green Hag,Monstrous Menagerie,5,Medium,Fey,N/A,0,0,0,0,14,97,16,14,14,14,14,16,3,14,0,Green Hag
+Invisible Man,Mythological Figures & Maleficent Monsters ,4,Medium,Humanoid,N/A,0,0,1,1,14,55,13,18,12,14,11,10,2,14,0,0
+Green Hag,Monstrous Menagerie,3,Medium,Fey,N/A,0,0,0,0,14,71,16,14,14,14,14,16,2,13,1,0
+Witch,The Business of Emotion,2,Medium,Humanoid,N/A,0,0,1,0,14,38,18,13,17,13,14,15,2,14,0,0
+Aladdin,Mythological Figures & Maleficent Monsters ,4,Medium,Humanoid,N/A,0,0,1,1,14,52,11,16,14,12,15,14,2,13,0,0
+Atalanta,Mythological Figures & Maleficent Monsters ,5,Medium,Humanoid,N/A,0,0,1,1,14,65,14,18,14,12,14,10,3,15,0,0
+Bay Witch,Gate Pass Gazette #5,2,Medium,Fey,N/A,0,0,0,0,14,52,16,12,16,12,12,16,2,13,0,Sea Hag
+Blastfire Crewmate,Gate Pass Gazette #17,3,Medium,Humanoid,N/A,0,0,1,0,14,60,14,15,16,12,11,11,2,12,0,0
+Priest,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,14,32,12,10,14,12,16,12,2,11,2,0
+Warhordling Orc Eye,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,14,32,12,10,14,12,16,12,2,11,0,Priest
+Cloud Giant,Monstrous Menagerie,10,Huge,Giant,N/A,0,0,0,0,14,187,27,10,22,12,16,16,4,20,1,0
+Devil Dwarf,To Save A Kingdom,2,Medium,Fiend,N/A,0,0,0,0,14,44,14,10,13,12,10,11,2,12,0,0
+Cloud Giant Noble,Monstrous Menagerie,12,Huge,Giant,N/A,0,0,0,0,14,187,27,10,22,12,16,16,4,20,0,Cloud Giant
+Medusa,Monstrous Menagerie,7,Medium,Monstrosity,N/A,0,0,0,0,14,120,12,18,16,12,14,14,3,15,1,0
+Scarecrow Harvester,Monstrous Menagerie,4,Medium,Construct,Undead,0,0,0,0,14,67,16,18,16,12,14,16,2,14,0,0
+Medusa Queen,Monstrous Menagerie,11,Medium,Monstrosity,N/A,0,1,0,0,14,153,12,18,16,12,14,14,4,16,0,Medusa
+Nilbog,Presents for Goblins,0.5,Small,Humanoid,N/A,0,0,0,0,14,14,12,8,10,12,14,10,2,11,0,0
+Peter Pan,Mythological Figures & Maleficent Monsters ,8,Small,Fey,N/A,0,0,1,1,14,130,9,19,17,12,14,18,3,15,0,0
+Coven Sea Hag,Monstrous Menagerie,4,Medium,Fey,N/A,0,0,0,0,14,75,16,12,16,12,12,16,2,13,0,Sea Hag
+Tragedian Actor,Planestrider's Journal,2,Medium,Humanoid,N/A,0,0,0,0,14,38,11,14,13,12,10,17,2,12,0,0
+Sea Hag,Monstrous Menagerie,2,Medium,Fey,N/A,0,0,0,0,14,52,16,12,16,12,12,16,2,13,2,0
+Bubear Door Breaker,Gate Pass Gazette #26,3,Medium,Humanoid,N/A,0,0,0,0,14,60,17,10,15,11,10,8,2,13,0,Door Breaker
+Door Breaker,Gate Pass Gazette #26,3,Medium,Humanoid,N/A,0,0,0,0,14,60,17,10,15,11,10,8,2,13,1,0
+Cultist Excecrator,Dungeon Delver's Guide,6,Medium,Humanoid,N/A,0,0,1,0,14,102,16,14,18,10,18,14,3,14,0,0
+Antaeus,Mythological Figures & Maleficent Monsters ,4,Medium,Giant,N/A,0,0,1,1,14,57,20,14,20,10,10,12,2,15,0,0
+Minotaur,Monstrous Menagerie,4,Large,Monstrosity,N/A,0,0,0,0,14,76,18,10,16,10,16,10,2,14,0,0
+Doppelganger,Monstrous Menagerie,3,Medium,Monstrosity,N/A,0,0,0,0,14,52,10,18,14,10,14,16,2,14,0,0
+Hill Dwarf Wrestler,Monstrous Menagerie,4,Medium,Humanoid,N/A,0,0,1,0,14,75,16,14,16,10,14,10,2,13,0,Pugilist
+Invisible Stalker,Monstrous Menagerie,6,Medium,Elemental,N/A,0,0,0,0,14,104,16,18,14,10,14,10,3,15,1,0
+Pugilist,Monstrous Menagerie,4,Medium,Humanoid,N/A,0,0,1,0,14,75,16,14,16,10,14,10,2,13,1,0
+Black Talon Devotee,To Save A Kingdom,2,Large,Beast,N/A,0,0,0,0,14,39,14,16,12,10,15,9,2,13,0,0
+Black Talon Spider,To Save A Kingdom,1,Large,Beast,N/A,0,0,0,0,14,32,14,16,12,10,10,8,2,13,0,0
+Cannibal Reaver,Monstrous Menagerie,0.5,Medium,Fiend,N/A,0,0,0,0,14,22,14,12,10,10,8,10,2,12,0,Gnoll
+Elite Pirate,To Save A Kingdom,1,Medium,#N/A,N/A,1,0,1,0,14,32,16,12,14,10,10,10,2,13,0,0
+Elite Pirate Unit,To Save A Kingdom,6,Large,Humanoid,N/A,1,0,1,0,14,160,16,12,14,10,10,10,3,14,0,0
+Gnoll,Monstrous Menagerie,0.5,Medium,Humanoid,Fiend,0,0,0,0,14,22,14,12,10,10,8,10,2,12,2,0
+Lizardfolk,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,14,22,14,12,12,10,10,8,2,12,1,0
+Motleywarrior,To Save A Kingdom,1,Medium,Humanoid,N/A,0,0,0,0,14,39,15,14,14,10,15,11,2,12,0,0
+Notturna,Adventures in Zeitgeist,0.25,Tiny,Fey,N/A,0,1,0,0,14,2,2,18,10,10,14,15,2,14,0,0
+Rime Ant Queen,Gate Pass Gazette #11,4,Huge,Monstrosity,N/A,0,0,0,0,14,68,16,10,14,10,18,8,2,13,0,Ankheg
+Spring-Heeled Jack,To Save A Kingdom,3,Small,Fey,N/A,0,0,0,1,14,33,13,17,12,10,8,13,2,13,0,0
+Lizardfolk Druid,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,0,0,14,22,14,12,12,10,10,8,2,12,0,Lizardfolk
+Thug,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,1,0,14,32,16,12,14,10,10,10,2,13,0,0
+Gnoll Pack Leader,Monstrous Menagerie,2,Medium,Humanoid,Fiend,0,0,0,0,14,45,14,12,10,10,8,10,2,12,0,Gnoll
+Stuffed Crab,Gate Pass Gazette #2,6,Huge,Undead,N/A,0,0,0,0,14,104,20,4,10,10,1,8,3,16,0,0
+Caliban,Mythological Figures & Maleficent Monsters ,2,Medium,Humanoid,N/A,0,0,1,1,14,45,15,18,16,9,15,8,2,14,0,0
+Adamanticore,Gate Pass Gazette #3,3,Large,Monstrosity,N/A,0,0,0,0,14,85,16,14,16,8,12,8,2,13,0,Manticore
+Canicore,Gate Pass Gazette #3,2,Large,Monstrosity,N/A,0,0,0,0,14,51,16,14,16,8,12,8,2,13,0,Manticore
+Manticore,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,14,68,16,14,16,8,12,8,2,13,2,0
+Mr. Hyde,Mythological Figures & Maleficent Monsters ,8,Medium,Humanoid,N/A,0,0,1,1,14,80,23,15,22,8,13,12,3,17,0,0
+Magmin,Monstrous Menagerie,0.5,Small,Elemental,N/A,0,0,0,0,14,14,8,14,10,8,10,10,2,12,0,0
+Salamander Nymph,Monstrous Menagerie,1,Medium,Elemental,N/A,0,0,0,0,14,27,14,14,12,8,10,8,2,12,0,0
+Gourdling,Gate Pass Gazette #20,3,Medium,Plant,N/A,0,0,0,0,14,60,17,9,16,7,10,8,2,13,0,0
+Jackalope,Monstrous Menagerie,3,Tiny,Beast,N/A,0,0,0,0,14,55,11,19,16,6,17,14,2,14,0,0
+Blazing Spider,Planestrider's Journal,3,Small,Elemental,N/A,0,0,0,0,14,77,11,17,14,6,12,7,2,13,0,0
+Blood Guardian,To Save A Kingdom,7,Medium,Construct,N/A,0,0,0,0,14,102,15,17,18,6,14,5,3,14,0,0
+Cloud of Ghasthoppers,Gate Pass Gazette #24,4,Medium,Undead,N/A,0,0,0,0,14,78,2,16,14,6,14,10,2,13,0,0
+Otyugh,Monstrous Menagerie,6,Large,Aberration,N/A,0,0,0,0,14,110,16,10,16,6,14,5,3,14,1,0
+Giant Ape,Monstrous Menagerie,7,Huge,Beast,N/A,0,0,0,0,14,115,20,14,18,6,12,6,3,16,0,0
+Giant Air Elemental,Monstrous Menagerie,9,Huge,Elemental,N/A,0,0,0,0,14,127,10,18,14,6,10,6,4,16,0,Air Elemental
+Giant Fire Elemental,Monstrous Menagerie,9,Huge,Elemental,N/A,0,0,0,0,14,127,10,18,14,6,10,6,4,16,0,Fire Elemental
+Giant Water Elemental,Monstrous Menagerie,9,Huge,Elemental,N/A,0,0,0,0,14,157,18,14,18,6,10,6,4,16,0,Water Elemental
+Ur-Otyugh,Monstrous Menagerie,10,Large,Aberration,N/A,0,1,0,0,14,144,16,10,16,6,14,5,4,15,0,Otyugh
+Air Elemental,Monstrous Menagerie,5,Large,Elemental,N/A,0,0,0,0,14,90,10,18,14,6,10,6,3,15,1,0
+Fire Elemental,Monstrous Menagerie,5,Large,Elemental,N/A,0,0,0,0,14,90,10,18,14,6,10,6,3,15,1,0
+Phase Spider,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,14,39,14,14,12,6,10,4,2,12,0,0
+Water Elemental,Monstrous Menagerie,5,Large,Elemental,N/A,0,0,0,0,14,114,18,14,18,6,10,6,3,15,1,0
+Swarm of Mimics,Planestrider's Journal,3,Large,Monstrosity,N/A,0,0,0,0,14,33,16,14,10,5,13,8,2,13,0,0
+Foundro,Planestrider's Journal,2,Tiny,Plant,N/A,0,0,0,0,14,45,17,14,15,4,13,14,2,13,0,0
+Remorhaz Spawn,Monstrous Menagerie,5,Large,Monstrosity,N/A,0,0,0,0,14,95,18,14,18,4,12,5,3,15,0,0
+Giant Walrus,Gate Pass Gazette #21,3,Huge,Beast,N/A,0,0,0,0,14,66,16,9,17,4,11,6,2,13,0,0
+Kanos Spawn,Gate Pass Gazette #13,4,Medium,Fiend,N/A,0,0,0,0,14,78,16,14,12,4,12,5,2,13,0,Raptor
+Bunyip,Monstrous Menagerie,8,Huge,Beast,N/A,0,0,0,0,14,150,23,15,22,3,12,8,3,17,0,0
+Clay Guardian,Monstrous Menagerie,9,Large,Construct,N/A,0,0,0,0,14,133,20,10,18,3,10,1,4,17,0,0
+Invisible Render,Monstrous Menagerie,8,Medium,Elemental,N/A,0,0,0,0,14,123,16,18,14,3,14,10,3,15,0,Invisible Stalker
+Roc Juvenile,Monstrous Menagerie,8,Huge,Beast,N/A,0,0,0,0,14,147,22,12,18,3,12,8,3,17,0,0
+Ankheg,Monstrous Menagerie,2,Large,Monstrosity,N/A,0,0,0,0,14,45,16,10,14,2,14,8,2,13,3,0
+Ankheg Queen,Monstrous Menagerie,3,Huge,Monstrosity,N/A,0,1,0,0,14,59,16,10,14,2,14,8,2,13,0,Ankheg
+Grick,Monstrous Menagerie,2,Medium,Monstrosity,N/A,0,0,0,0,14,33,14,14,14,2,14,5,2,12,1,0
+Wallflower,Monstrous Menagerie,2,Medium,Plant,N/A,0,0,0,0,14,33,14,14,14,2,14,5,2,12,0,Grick
+Allosaurus,Monstrous Menagerie,3,Huge,Beast,N/A,0,0,0,0,14,57,18,18,16,2,12,5,2,14,0,0
+Diplodocus,Monstrous Menagerie,7,Gargantuan,Beast,N/A,0,0,0,0,14,139,24,8,20,2,12,5,3,18,0,0
+Triceratops,Monstrous Menagerie,5,Huge,Beast,N/A,0,0,0,0,14,84,20,10,18,2,12,5,3,16,1,0
+Dune Scorpion,Planestrider's Journal,5,Huge,Beast,N/A,0,0,0,0,14,104,18,13,17,2,9,8,3,15,0,0
+Fire Stirge,To Save A Kingdom,0.25,Tiny,Beast,N/A,0,0,0,0,14,10,5,16,13,2,8,7,2,13,0,0
+Frilled Lizard,To Save A Kingdom,2,Large,Beast,N/A,0,0,0,0,14,52,14,12,12,2,10,4,2,12,0,0
+Giant Crocodile,Monstrous Menagerie,5,Huge,Beast,N/A,0,0,0,0,14,85,20,10,16,2,10,6,3,16,0,0
+Giant Spider,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,14,26,14,16,12,2,10,4,2,13,0,0
+Grave Guardian,To Save A Kingdom,1,Medium,Construct,N/A,0,0,0,0,14,30,16,15,16,2,12,1,2,13,0,0
+Hlaupa,To Save A Kingdom,1,Large,Beast,N/A,0,0,0,0,14,30,15,13,14,2,11,6,2,12,0,0
+Rime Ant,Gate Pass Gazette #11,2,Large,Monstrosity,N/A,0,0,0,0,14,45,16,10,14,2,14,8,2,13,0,Ankheg
+Swarm of Poisonous Snakes,Monstrous Menagerie,2,Medium,Beast,N/A,0,0,0,0,14,45,8,18,10,1,10,4,2,14,1,0
+Bolt-Thrower,Monstrous Menagerie,2,Small,Construct,N/A,0,0,0,0,14,44,6,16,14,1,6,1,2,13,0,0
+Misery of Blood Maggots,Gate Pass Gazette #4,2,Medium,Monstrosity,N/A,0,0,0,0,14,45,9,18,12,1,8,6,2,14,0,0
+Sandpit Vipers,Gate Pass Gazette #7,3,Medium,Beast,N/A,0,0,0,0,14,45,8,18,10,1,10,4,2,14,0,Swarm of Poisonous Snakes
+Echo Emperor,Planestrider's Journal,15,Medium,Aberration,N/A,0,1,0,0,13,221,14,13,19,18,15,22,5,15,0,0
+Elemental Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,13,36,14,13,10,15,12,8,2,12,0,0
+Giant Lanternfish,Monstrous Menagerie,4,Large,Monstrosity,Fiend,0,0,0,0,13,85,16,16,16,14,16,18,2,13,0,Lamia
+Lamia,Monstrous Menagerie,4,Large,Monstrosity,Fiend,0,0,0,0,13,85,16,16,16,14,16,18,2,13,2,0
+Snake Lamia,Monstrous Menagerie,4,Large,Monstrosity,Fiend,0,0,0,0,13,85,16,16,16,14,16,18,2,13,0,Lamia
+Tyskri,To Save A Kingdom,2,Medium,Fey,N/A,0,0,0,0,13,52,10,16,14,14,16,20,2,13,0,0
+Wraith,Monstrous Menagerie,5,Medium,Undead,N/A,0,0,0,0,13,67,8,16,16,12,16,14,3,14,0,0
+Cloaker,Monstrous Menagerie,8,Large,Aberration,N/A,0,0,0,0,13,97,18,16,14,12,12,12,3,15,2,0
+Boggard Sovereign,Monstrous Menagerie,3,Large,Humanoid,N/A,0,0,0,0,13,67,16,12,14,12,14,12,2,13,0,0
+Shadow Demon,Monstrous Menagerie,4,Medium,Fiend,N/A,0,0,0,0,13,45,5,16,10,12,14,16,2,13,0,0
+Sand Ray,Monstrous Menagerie,8,Large,Aberration,N/A,0,0,0,0,13,97,18,16,14,12,12,12,3,15,0,Cloaker
+Shroud Ray,Monstrous Menagerie,8,Large,Aberration,N/A,0,0,0,0,13,97,18,16,14,12,12,12,3,15,0,Cloaker
+Squashling,Gate Pass Gazette #20,1,Tiny,Plant,N/A,0,0,0,0,13,36,8,9,15,12,14,13,2,10,0,0
+Banshee,Monstrous Menagerie,4,Medium,Undead,N/A,0,0,0,0,13,58,8,16,10,12,10,18,2,13,1,0
+Warlord's Ghost,Monstrous Menagerie,4,Medium,Undead,N/A,0,0,0,0,13,58,8,16,10,12,10,18,2,13,0,Banshee
+Centaur,Monstrous Menagerie,2,Large,Fey,N/A,0,0,0,0,13,45,16,16,14,10,16,10,2,13,1,0
+Horned Tauric,Monstrous Menagerie,2,Large,Fey,N/A,0,0,0,0,13,45,16,16,14,10,16,10,2,13,0,Centaur
+Pegasus,Monstrous Menagerie,2,Large,Celestial,N/A,0,0,0,0,13,57,18,16,18,10,14,12,2,14,0,0
+Warrior Band,Monstrous Menagerie,3,Large,Humanoid,N/A,0,0,1,0,13,55,12,12,12,10,14,10,2,11,0,0
+Berserker Horde,Monstrous Menagerie,10,Large,Humanoid,N/A,0,0,1,0,13,225,14,10,16,10,10,12,4,14,0,0
+Blink Dog,Monstrous Menagerie,0.25,Medium,Fey,N/A,0,0,0,0,13,22,14,16,12,10,12,10,2,13,0,0
+Dragonbound Warrior,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,13,11,12,12,12,10,14,10,2,11,0,Warrior
+Earless Hungerer,Gate Pass Gazette #1,0.5,Medium,Fey,N/A,0,0,0,0,13,22,12,14,10,10,10,16,2,12,0,Satyr
+Family Capodecina,Adventures in Zeitgeist,1,Medium,Humanoid,N/A,0,0,1,0,13,36,13,12,10,10,11,14,2,11,0,0
+Fey Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,13,44,17,10,12,10,9,17,2,13,0,0
+Goblin,Monstrous Menagerie,0.25,Small,Humanoid,N/A,0,0,0,0,13,10,8,12,10,10,10,10,2,11,5,0
+Goblin Alchemist,Monstrous Menagerie,0.5,Small,Humanoid,N/A,0,0,0,0,13,10,8,12,10,10,10,10,2,11,0,Goblin
+Goblin Musketeer,Monstrous Menagerie,0.5,Small,Humanoid,N/A,0,0,0,0,13,10,8,12,10,10,10,10,2,11,0,Goblin
+Goblin Shieldbearer,Monstrous Menagerie,0.5,Small,Humanoid,N/A,0,0,0,0,13,10,8,12,10,10,10,10,2,11,0,Goblin
+Goblin Skulker,Monstrous Menagerie,0.5,Small,Humanoid,N/A,0,0,0,0,13,10,8,12,10,10,10,10,2,11,0,Goblin
+Homunculus,Monstrous Menagerie,0,Tiny,Construct,N/A,0,0,0,0,13,5,4,16,10,10,10,10,2,13,0,0
+Imp,Monstrous Menagerie,0.5,Tiny,Fiend,N/A,0,0,0,0,13,14,6,16,12,10,12,14,2,13,1,0
+Imp Familiar,Monstrous Menagerie,0.5,Tiny,Fiend,N/A,0,0,0,0,13,14,6,16,12,10,12,14,2,13,0,Imp
+Fell Nightmare,Monstrous Menagerie,5,Large,Fiend,N/A,0,0,0,0,13,93,18,14,16,10,12,14,3,15,0,Nightmare
+Half-Demon Ogre,To Save A Kingdom,3,Large,Giant,N/A,0,0,0,0,13,68,19,8,16,10,10,13,2,14,0,0
+John Henry,Mythological Figures & Maleficent Monsters ,11,Medium,Humanoid,N/A,0,0,1,1,13,204,20,16,18,10,10,12,4,17,0,0
+Merrow,Monstrous Menagerie,2,Large,Monstrosity,N/A,0,0,0,0,13,45,18,10,14,10,12,10,2,14,1,0
+Merrow Mage,Monstrous Menagerie,4,Large,Monstrosity,N/A,0,0,0,0,13,45,18,10,14,10,12,14,2,14,0,Merrow
+Nightmare,Monstrous Menagerie,3,Large,Fiend,N/A,0,0,0,0,13,68,18,14,16,10,12,14,2,14,1,0
+Peryton,Monstrous Menagerie,2,Large,Monstrosity,N/A,0,0,0,0,13,34,16,16,16,10,12,12,2,13,0,0
+Revenant,Monstrous Menagerie,5,Medium,Undead,N/A,0,0,0,0,13,110,18,16,18,10,12,18,3,15,0,0
+Kuchnost Negotiator,Adventures in Zeitgeist,1,Medium,Humanoid,N/A,0,0,1,0,13,39,10,12,14,10,11,14,2,11,0,0
+Weretiger,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,0,0,13,90,16,16,16,10,12,10,2,13,0,0
+Pseudodragon,Monstrous Menagerie,0.25,Tiny,Dragon,N/A,0,0,0,0,13,7,6,14,12,10,12,10,2,12,1,0
+Military Troop,Adventures in Zeitgeist,6,Huge,Humanoid,N/A,0,0,1,0,13,125,14,12,12,10,10,10,3,13,0,0
+Pseudodragon Familiar,Monstrous Menagerie,0.25,Tiny,Dragon,N/A,0,0,0,0,13,7,6,14,12,10,12,10,2,12,0,Pseudodragon
+Quasit,Monstrous Menagerie,0.5,Tiny,Fiend,N/A,0,0,0,0,13,14,5,16,12,10,12,12,2,13,1,0
+Quasit Familiar,Monstrous Menagerie,0.5,Tiny,Fiend,N/A,0,0,0,0,13,14,5,16,12,10,12,12,2,13,0,Quasit
+Rockborn Guard,Dungeon Delver's Guide,0.25,Medium,Humanoid,N/A,0,0,1,0,13,13,14,10,14,10,10,10,2,12,0,0
+Satyr,Monstrous Menagerie,0.5,Medium,Fey,N/A,0,0,0,0,13,22,12,14,10,10,10,16,2,12,1,0
+Shadow Elf Warrior,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,13,11,12,12,12,10,14,10,2,11,0,Warrior
+Phantasmal Poltergeist,Gate Pass Gazette #8,1,Medium,Undead,N/A,0,0,0,0,13,36,6,16,10,10,8,16,2,13,0,Poltergeist
+Poltergeist,Gate Pass Gazette #8,1,Medium,Undead,N/A,0,0,0,0,13,36,6,16,10,10,8,16,2,13,1,0
+Warhordling Orc Warrior,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,13,11,12,12,12,10,14,10,2,11,0,Warrior
+Warrior,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,13,11,12,12,12,10,14,10,2,11,3,0
+Awakened Tree,Monstrous Menagerie,2,Huge,Plant,N/A,0,0,0,0,13,51,18,6,14,10,10,8,2,14,1,0
+Berserker,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,13,45,14,10,16,10,10,12,2,12,1,0
+Fiendbloom Awakened Tree,Monstrous Menagerie,2,Huge,Fiend,N/A,0,0,0,0,13,51,18,6,14,10,10,8,2,14,0,Awakened Tree
+Ghast,Monstrous Menagerie,2,Medium,Undead,N/A,0,0,0,0,13,36,16,16,10,10,10,8,2,13,1,0
+Shadow Elf Warrior,To Save A Kingdom,0.25,Medium,Humanoid,N/A,0,0,0,0,13,11,12,12,12,10,14,10,2,11,0,0
+Spirit Soldier,To Save A Kingdom,0.25,Medium,Celestial,N/A,0,0,0,0,13,11,13,14,13,10,14,11,2,12,0,0
+Lacedon Ghast,Monstrous Menagerie,2,Medium,Undead,N/A,0,0,0,0,13,36,16,16,10,10,10,8,2,13,0,Ghast
+Orc Urk,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,13,45,14,10,16,10,10,12,2,12,0,Berserker
+Beast Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,13,36,14,14,10,9,13,11,2,12,0,0
+Kobold Cultist,To Save A Kingdom,1,Small,Humanoid,N/A,0,0,0,0,13,18,9,14,12,9,8,9,2,12,0,0
+Kobold Elite Guard,To Save A Kingdom,2,Small,Humanoid,N/A,0,0,0,0,13,58,17,12,16,9,11,8,2,13,0,0
+Kobold High Acolyte,To Save A Kingdom,3,Small,Humanoid,N/A,0,0,0,0,13,52,9,14,16,9,8,18,2,12,0,0
+Monstrous Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,13,36,14,11,10,9,12,18,2,12,0,0
+Sancho Panza,Mythological Figures & Maleficent Monsters ,1,Medium,Humanoid,N/A,0,0,1,1,13,13,13,16,14,9,11,15,2,13,0,0
+Bearded Devil,Monstrous Menagerie,3,Medium,Fiend,N/A,0,0,0,0,13,52,16,14,14,8,12,10,2,13,0,0
+Ettercap,Monstrous Menagerie,2,Medium,Monstrosity,N/A,0,0,0,0,13,44,14,16,13,8,12,8,2,13,0,0
+Horde Demon Band,Monstrous Menagerie,13,Large,Fiend,N/A,0,0,0,0,13,260,16,12,14,8,8,8,5,16,0,0
+Cyclops,Monstrous Menagerie,7,Huge,Giant,N/A,0,0,0,0,13,126,20,10,20,8,10,10,3,16,2,0
+Merclops,Monstrous Menagerie,7,Huge,Giant,N/A,0,0,0,0,13,126,20,10,20,8,10,10,3,16,0,Cyclops
+Horde Demon,Monstrous Menagerie,3,Medium,Fiend,N/A,0,0,0,0,13,52,16,12,14,8,8,8,2,13,0,0
+Giant Elk,Monstrous Menagerie,2,Huge,Beast,N/A,0,0,0,0,13,42,18,14,14,6,14,10,2,14,0,0
+Cloud Spider,Planestrider's Journal,2,Small,Elemental,N/A,0,0,0,0,13,66,12,16,14,6,13,7,2,13,0,0
+Ghasthopper,Gate Pass Gazette #24,2,Tiny,Undead,N/A,0,0,0,0,13,31,2,16,14,6,14,10,2,13,0,0
+Winter Wolf,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,13,67,18,12,14,6,12,8,2,14,0,0
+Dire Tyrannosaurus Rex,Monstrous Menagerie,8,Huge,Beast,N/A,1,0,0,0,13,253,22,10,20,6,16,5,3,17,0,Tyrannosaurus Rex
+Fogborn Skeleton,Monstrous Menagerie,0.25,Medium,Undead,N/A,0,0,0,0,13,13,10,14,14,6,8,5,2,12,0,Skeleton
+Grimalkin,Monstrous Menagerie,0.5,Medium,Monstrosity,N/A,0,0,0,0,13,22,14,16,12,6,14,10,2,13,0,0
+Hill Giant Chief,Monstrous Menagerie,8,Huge,Giant,N/A,0,0,0,0,13,126,20,8,18,6,10,6,3,16,0,Hill Giant
+Skeleton,Monstrous Menagerie,0.25,Medium,Undead,N/A,0,0,0,0,13,13,10,14,14,6,8,5,2,12,4,0
+Worg,Monstrous Menagerie,0.5,Large,Monstrosity,N/A,0,0,0,0,13,22,14,12,10,6,10,8,2,12,0,0
+Hill Giant,Monstrous Menagerie,6,Huge,Giant,N/A,0,0,0,0,13,105,20,8,18,6,10,6,3,16,1,0
+Burning Skeleton,Dungeon Delver's Guide,1,Medium,Undead,N/A,0,0,0,0,13,13,10,14,14,6,8,5,2,12,0,Skeleton
+Fogborn Skeleton Horde,Monstrous Menagerie,4,Large,Undead,N/A,0,0,0,0,13,65,10,14,14,6,8,5,2,12,0,Skeleton Horde
+Four-Armed Skeleton,Dungeon Delver's Guide,1,Medium,Undead,N/A,1,0,0,0,13,26,10,14,14,6,8,5,2,12,0,Skeleton
+Skeleton Horde,Monstrous Menagerie,4,Large,Undead,N/A,0,0,0,0,13,65,10,14,14,6,8,5,2,12,1,0
+Winged Skeleton,Dungeon Delver's Guide,1,Medium,Undead,N/A,0,0,0,0,13,13,10,14,14,6,8,5,2,12,0,Skeleton
+Gobletskull,Gate Pass Gazette #6,0.25,Tiny,Undead,N/A,0,0,0,0,13,14,11,15,12,5,10,8,2,12,0,0
+Phase Monster,Monstrous Menagerie,4,Large,Monstrosity,N/A,0,0,0,0,13,85,18,14,16,4,14,8,2,14,0,0
+Raptor,Monstrous Menagerie,1,Medium,Beast,N/A,0,0,0,0,13,32,16,14,12,4,12,5,2,13,1,0
+Mammoth,Monstrous Menagerie,6,Huge,Beast,N/A,0,0,0,0,13,115,24,8,20,4,10,6,3,18,0,0
+Assaultskull,Gate Pass Gazette #6,2,Small,Undead,N/A,0,0,0,0,13,45,13,16,17,3,15,8,2,13,0,0
+Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,5,0
+Faerie Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,0,Chimera
+Fiendish Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,0,Chimera
+Sea Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,0,Chimera
+Sewer Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,0,Chimera
+Tundra Chimera,Monstrous Menagerie,7,Large,Monstrosity,N/A,0,1,0,0,13,114,18,10,18,3,16,10,3,15,0,Chimera
+Owlbear,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,13,59,18,12,16,3,12,5,2,14,1,0
+Owlbear Recluse,Monstrous Menagerie,3,Large,Monstrosity,N/A,1,0,0,0,13,119,18,12,16,3,12,5,2,14,0,Owlbear
+Jersey Devil,Mythological Figures & Maleficent Monsters ,13,Huge,Dragon,N/A,0,0,1,1,13,85,21,14,16,3,15,14,5,18,0,0
+Maw Swarm,Dungeon Delver's Guide,4,Medium,Aberration,N/A,0,0,0,0,13,71,10,16,14,3,10,6,2,13,0,0
+Slitherwhite,Dungeon Delver's Guide,1,Medium,Aberration,N/A,0,0,0,0,13,33,14,12,12,3,10,6,2,12,0,0
+Dire Wolf,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,13,30,16,14,14,2,12,6,2,13,0,0
+Plesiosaurus,Monstrous Menagerie,7,Large,Beast,N/A,0,0,0,0,13,45,18,14,14,2,12,5,3,15,0,0
+Dire Fly,Planestrider's Journal,3,Huge,Beast,N/A,0,0,0,0,13,76,17,12,17,2,12,3,2,13,0,0
+Ankheg Spawn,Monstrous Menagerie,0.25,Medium,Monstrosity,N/A,0,0,0,0,13,11,14,12,12,2,14,8,2,12,0,0
+Deer,Monstrous Menagerie,0,Medium,Beast,N/A,0,0,0,0,13,4,10,16,10,2,14,4,2,13,0,0
+Flying Snake,Monstrous Menagerie,0.25,Tiny,Beast,N/A,0,0,0,0,13,7,4,16,12,2,12,4,2,13,0,0
+Gear Spider,Monstrous Menagerie,0.5,Tiny,Construct,N/A,0,0,0,0,13,28,6,15,12,2,6,1,2,12,0,0
+Giant Bat,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,13,16,14,16,10,2,12,4,2,13,0,0
+Giant Shark,Monstrous Menagerie,5,Huge,Beast,N/A,0,0,0,0,13,105,20,10,18,2,10,4,3,16,0,0
+Giant Poisonous Snake,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,13,11,10,16,12,2,12,4,2,13,0,0
+Stone Shark,Dungeon Delver's Guide,4,Large,Monstrosity,N/A,0,0,0,0,13,85,18,12,18,2,10,4,2,14,0,0
+Giant Seahorse,Monstrous Menagerie,0.5,Large,Beast,N/A,0,0,0,0,13,22,12,14,10,2,12,4,2,12,0,0
+Giant Wolf Spider,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,13,13,12,16,10,2,12,4,2,13,0,0
+Hawk,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,13,1,4,16,8,2,14,4,2,13,0,0
+Pteranodon,Monstrous Menagerie,0.5,Large,Beast,N/A,0,0,0,0,13,30,12,14,14,2,11,5,2,12,0,0
+Quipper,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,13,1,2,16,8,2,6,4,2,13,0,0
+Skeletal Tyrannosaurus Rex,Monstrous Menagerie,8,Huge,Undead,N/A,0,0,0,0,13,126,22,10,20,2,8,5,3,17,0,0
+Stirge,Monstrous Menagerie,0.25,Tiny,Beast,N/A,0,0,0,0,13,2,4,16,10,2,8,4,2,13,0,0
+Tyrannosaurus Rex,Monstrous Menagerie,8,Huge,Beast,N/A,0,0,0,0,13,126,22,10,20,2,12,5,3,17,1,0
+Weasel,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,13,1,2,16,8,2,12,4,2,13,0,0
+Swarm of Quippers,Monstrous Menagerie,1,Medium,Beast,N/A,0,0,0,0,13,28,12,16,8,2,6,4,2,13,0,0
+Dire Centipede,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,13,45,14,10,12,1,10,3,2,12,0,0
+Giant Fire Beetle,Monstrous Menagerie,0,Small,Beast,N/A,0,0,0,0,13,4,8,10,12,1,6,4,2,10,0,0
+Archmage,Monstrous Menagerie,11,Medium,Humanoid,N/A,0,0,1,0,12,117,10,14,14,20,16,14,4,14,0,0
+Forest Gnome Illusionist,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,12,67,10,14,16,16,12,10,3,13,0,Mage
+Mage,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,12,67,10,14,16,16,12,10,3,13,3,0
+Necromancer,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,12,67,10,14,16,16,12,10,3,13,0,Mage
+Oozefolk Oozemancer,Dungeon Delver's Guide,3,Small,Humanoid,N/A,0,0,1,0,12,52,10,14,16,16,12,10,2,12,0,0
+Shadow Elf Mage,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,1,0,12,67,10,14,16,16,12,10,3,13,0,Mage
+Flumph,Monstrous Menagerie,0.25,Small,Aberration,N/A,0,0,0,0,12,7,6,14,10,14,14,10,2,12,1,0
+Flumph Familiar,Monstrous Menagerie,0.25,Small,Aberration,N/A,0,0,0,0,12,7,6,14,10,14,14,10,2,12,0,Flumph
+Grimlock,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,0,0,12,13,14,14,14,14,10,8,2,12,2,0
+Grimlock Technical,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,12,13,14,14,14,14,10,8,2,12,0,Grimlock
+Fetid Witch,Dungeon Delver's Guide,2,Medium,Humanoid,N/A,0,0,1,0,12,39,14,14,14,14,14,6,2,12,0,0
+Last Raven Fetch,Adventures in Zeitgeist,0.25,Medium,Humanoid,N/A,0,0,1,0,12,9,8,14,10,14,11,12,2,12,0,0
+Mothman,Mythological Figures & Maleficent Monsters ,4,Medium,Aberration,N/A,0,0,1,1,12,42,13,15,18,14,17,12,2,12,0,0
+Shadow Symbiote,Dungeon Delver's Guide,2,Small,Ooze,N/A,0,0,0,0,12,36,8,14,12,14,12,16,2,12,0,0
+Revilock,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,0,0,12,39,14,14,14,14,10,8,2,12,0,Grimlock
+Police Officer,Adventures in Zeitgeist,0.25,Medium,Humanoid,N/A,0,0,1,0,12,11,13,10,12,13,11,10,2,11,0,0
+Trickster Priest,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,12,32,12,10,14,12,16,12,2,11,0,Priest
+Celestial Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,12,31,17,10,10,12,15,13,2,13,0,0
+Cutthroat,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,1,0,12,27,10,14,10,12,14,14,2,12,1,0
+Jackalwere,Monstrous Menagerie,0.5,Medium,Fiend,N/A,0,0,0,0,12,18,10,14,10,12,10,14,2,12,1,0
+Spy,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,1,0,12,27,10,14,10,12,14,14,2,12,0,Cutthroat
+Undead Illusion,Planestrider's Journal,1,Medium,Construct,N/A,0,0,0,0,12,45,10,15,14,12,11,8,2,12,0,0
+Jackalwere Pack Leader,Monstrous Menagerie,2,Medium,Fiend,N/A,0,0,0,0,12,36,10,14,10,12,10,14,2,12,0,Jackalwere
+Gibberling Brood Mother,The Haunting of Calrow Ruins,1,Medium,Aberration,N/A,0,0,0,0,12,52,14,14,14,11,12,8,2,12,0,0
+Cult Fanatic,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,12,39,10,14,14,10,14,14,2,12,1,0
+Dragon Cultist,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,12,39,10,14,14,10,14,14,2,12,0,Cult Fanatic
+Bandit,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,12,9,12,10,10,10,10,10,2,11,1,0
+Boggard,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,0,0,12,13,12,14,10,10,10,10,2,12,1,0
+Boggard Bravo,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,12,27,12,14,10,10,10,10,2,12,0,Boggard
+Cultist,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,12,9,10,14,10,10,10,10,2,12,0,0
+Family Bravura,Adventures in Zeitgeist,0.25,Medium,Humanoid,N/A,0,0,1,0,12,9,13,10,10,10,11,12,2,11,0,0
+Faun,To Save A Kingdom,0.25,Medium,Fey,N/A,0,0,0,0,12,6,10,12,14,10,8,14,2,11,0,0
+Bugbear,Monstrous Menagerie,1,Medium,Humanoid,N/A,0,0,0,0,12,30,14,14,14,10,12,10,2,12,1,0
+Kobold,Monstrous Menagerie,0.25,Small,Humanoid,N/A,0,0,0,0,12,7,6,14,8,10,8,10,2,12,1,0
+Kobold Dragon Servitor,Monstrous Menagerie,0.25,Small,Humanoid,N/A,0,0,0,0,12,7,6,14,8,10,8,10,2,12,0,Kobold
+Kobold Drakerider,Dungeon Delver's Guide,0.25,Small,Humanoid,N/A,0,0,0,0,12,14,12,14,10,10,12,8,2,12,0,0
+Kobold Artillerist,Dungeon Delver's Guide,1,Small,Humanoid,N/A,0,0,0,0,12,21,8,14,10,10,12,10,2,12,1,0
+Kobold Bully,Dungeon Delver's Guide,2,Small,Humanoid,N/A,0,0,0,0,12,44,16,14,14,10,12,10,2,13,0,0
+Kobold Firebomber,Dungeon Delver's Guide,1,Small,Humanoid,N/A,0,0,0,0,12,21,8,14,10,10,12,10,2,12,0,Kobold Artillerist
+Motley Warrior,Dungeon Delver's Guide,0.5,Medium,Humanoid,N/A,0,0,1,0,12,27,16,14,14,10,12,10,2,13,0,0
+Mycelial Traveler,Dungeon Delver's Guide,0.25,Small,Humanoid,N/A,0,0,1,0,12,13,8,14,12,10,12,10,2,12,0,0
+Kuchnost Strangler,Adventures in Zeitgeist,0.25,Medium,Humanoid,N/A,0,0,1,0,12,26,13,10,14,10,11,10,2,11,0,0
+Pirate,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,12,9,12,10,10,10,10,10,2,11,0,Bandit
+Ratling Scavenger,Dungeon Delver's Guide,0.5,Small,Humanoid,N/A,0,0,1,0,12,19,10,14,16,10,8,10,2,12,0,0
+Sahuagin,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,12,22,12,10,12,10,12,10,2,11,0,0
+Spark Mephit,Monstrous Menagerie,0.5,Small,Elemental,N/A,0,0,0,0,12,17,8,14,10,10,10,12,2,12,0,0
+Police Squad,Adventures in Zeitgeist,1,Large,Humanoid,N/A,0,0,1,0,12,50,13,10,12,10,11,10,2,11,0,0
+Poltergeist (TSaK),To Save A Kingdom,1,Medium,Undead,N/A,0,0,0,0,12,22,1,14,11,10,10,11,2,12,0,0
+Aboleth Thrall,Dungeon Delver's Guide,2,Medium,Humanoid,N/A,0,0,1,0,12,45,14,14,14,10,10,12,2,12,0,0
+Alpha Werewolf,Monstrous Menagerie,6,Medium,Humanoid,N/A,0,0,0,0,12,104,14,14,14,10,10,10,3,13,0,Werewolf
+Cave Ogre,Monstrous Menagerie,2,Large,Giant,N/A,1,0,0,0,12,119,19,8,16,10,10,8,2,14,0,Ogre
+Fungal Zombie,Dungeon Delver's Guide,1,Medium,Plant,N/A,0,0,0,0,12,37,18,8,16,10,10,8,2,14,0,0
+Shadow Pirate,Planestrider's Journal,1,Medium,Undead,N/A,0,0,0,0,12,9,12,10,10,10,10,10,2,11,0,0
+Kobold Sorcerer,Monstrous Menagerie,1,Small,Humanoid,N/A,0,0,0,0,12,27,6,14,14,10,10,14,2,12,1,0
+Kobold Sorcerer Dragon Servitor,Monstrous Menagerie,2,Small,Humanoid,N/A,0,0,0,0,12,27,6,14,14,10,10,14,2,12,0,Kobold Sorcerer
+Ogre,Monstrous Menagerie,2,Large,Giant,N/A,0,0,0,0,12,59,19,8,16,10,10,8,2,14,1,0
+Specter,Monstrous Menagerie,1,Medium,Undead,N/A,0,0,0,0,12,22,2,14,10,10,10,14,2,12,0,0
+Wereboar,Monstrous Menagerie,4,Medium,Humanoid,N/A,0,0,0,0,12,78,16,10,14,10,10,10,2,13,0,0
+Wererat,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,0,0,12,33,10,14,12,10,10,10,2,12,0,0
+Werewolf,Monstrous Menagerie,3,Medium,Humanoid,N/A,0,0,0,0,12,58,14,14,14,10,10,10,2,12,1,0
+Giant Eagle,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,12,26,14,14,12,8,14,10,2,12,0,0
+Abominable Snowman,Monstrous Menagerie,4,Large,Monstrosity,N/A,1,0,0,0,12,136,18,12,16,8,12,6,2,14,0,Yeti
+Yeti,Monstrous Menagerie,4,Large,Monstrosity,N/A,0,0,0,0,12,68,18,12,16,8,12,6,2,14,1,0
+Dust Mephit,Monstrous Menagerie,0.5,Small,Elemental,N/A,0,0,0,0,12,17,6,14,10,8,10,10,2,12,0,0
+Giant Owl,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,12,19,12,14,12,8,14,10,2,12,0,0
+Green Kobold Drake,Dungeon Delver's Guide,0.5,Medium,Dragon,N/A,0,0,0,0,12,27,14,12,12,8,10,8,2,12,0,0
+Ice Mephit,Monstrous Menagerie,0.5,Small,Elemental,N/A,0,0,0,0,12,21,8,14,10,8,10,10,2,12,0,0
+Ettin,Monstrous Menagerie,4,Large,Giant,N/A,0,0,0,0,12,85,20,8,16,8,10,8,2,15,0,0
+Horde of Shadows,Blog/A5e Tools,4,Large,Undead,N/A,0,0,0,0,12,90,6,14,10,8,10,14,2,12,0,0
+Shadow,Monstrous Menagerie,1,Medium,Undead,N/A,0,0,0,0,12,18,6,14,10,8,10,14,2,12,0,0
+Mimic,Monstrous Menagerie,2,Medium,Monstrosity,N/A,0,0,0,0,12,52,18,14,14,6,14,8,2,14,1,0
+Mirage Monster,Monstrous Menagerie,4,Huge,Monstrosity,N/A,0,1,0,0,12,76,18,14,14,6,14,8,2,14,0,Mimic
+Flayed Jaguar,Adventures in Zeitgeist,2,Medium,Monstrosity,N/A,0,0,0,0,12,60,15,14,16,6,12,7,2,12,0,0
+Giant Vulture,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,12,22,14,14,14,6,12,6,2,12,0,0
+Ape,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,19,16,14,14,6,12,6,2,13,0,0
+Ghoul,Monstrous Menagerie,1,Medium,Undead,N/A,0,0,0,0,12,22,12,14,10,6,10,6,2,12,1,0
+Lacedon Ghoul,Monstrous Menagerie,1,Medium,Undead,N/A,0,0,0,0,12,22,12,14,10,6,10,6,2,12,0,Ghoul
+Serpent-Maned Lion,Adventures in Zeitgeist,2,Large,Fey,N/A,0,0,0,0,12,60,15,15,14,6,12,7,2,12,0,0
+Sandling,Monstrous Menagerie,1,Medium,Construct,N/A,0,0,0,0,12,31,12,14,10,6,10,14,2,12,0,Scarecrow
+Scarecrow,Monstrous Menagerie,1,Medium,Construct,Undead,0,0,0,0,12,31,12,14,10,6,10,14,2,12,2,0
+Snowman,Monstrous Menagerie,1,Medium,Construct,Undead,0,0,0,0,12,31,12,14,10,6,10,14,2,12,0,Scarecrow
+Gibberling,The Haunting of Calrow Ruins,0.25,Small,Aberration,N/A,0,0,0,0,12,9,13,14,12,5,7,8,2,12,0,0
+Baboon,Monstrous Menagerie,0,Small,Beast,N/A,0,0,0,0,12,2,8,14,10,4,12,6,2,12,0,0
+Giant Weasel,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,9,10,14,10,4,12,4,2,12,0,0
+Elephant,Monstrous Menagerie,4,Huge,Beast,N/A,0,0,0,0,12,76,22,8,16,4,10,6,2,16,0,0
+Babe the Blue Ox,Mythological Figures & Maleficent Monsters ,4,Huge,Beast,N/A,0,0,1,1,12,76,21,9,17,3,11,6,2,15,0,0
+Celestial Sabre-Toothed Tiger,Planestrider's Journal,4,Large,Celestial,N/A,0,0,0,0,12,45,20,14,14,3,12,6,2,15,0,0
+Decoyskull,Gate Pass Gazette #6,1,Tiny,Undead,N/A,0,0,0,0,12,18,7,15,14,3,12,8,2,12,0,0
+Killer Whale,Monstrous Menagerie,3,Huge,Beast,N/A,0,0,0,0,12,75,18,10,12,3,14,6,2,14,0,0
+Lion,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,12,30,16,14,14,3,12,4,2,13,0,0
+Goatrilla,Planestrider's Journal,5,Large,Monstrosity,N/A,0,0,0,0,12,102,19,11,16,3,12,10,3,15,0,0
+Saber-Toothed Tiger,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,45,20,14,14,3,12,6,2,15,0,0
+Tiger,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,12,30,16,14,14,3,12,4,2,13,0,0
+Cat,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,2,2,14,10,3,12,6,2,12,0,0
+Laskian Sled Dog,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,9,12,14,10,3,12,6,2,12,0,Mastiff
+Mastiff,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,9,12,14,10,3,12,6,2,12,1,0
+Octopus,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,3,4,14,10,3,10,4,2,12,0,0
+Panther,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,13,14,14,10,3,14,6,2,12,0,0
+Serviceskull,Gate Pass Gazette #6,0.25,Tiny,Undead,N/A,0,0,0,0,12,9,9,13,12,3,10,8,2,11,0,0
+Wolf,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,11,12,14,12,3,12,6,2,12,0,0
+Flying Lion,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,12,57,18,14,18,2,16,8,2,14,0,Griffon
+Griffon,Monstrous Menagerie,3,Large,Monstrosity,N/A,0,0,0,0,12,57,18,14,18,2,16,8,2,14,2,0
+Thunderbird,Blog/A5e Tools,3,Large,Monstrosity,N/A,0,0,0,0,12,57,18,14,18,2,16,8,2,14,0,Griffon
+Cave Bear,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,42,20,10,16,2,12,4,2,15,1,0
+Death Dog,Monstrous Menagerie,1,Medium,Monstrosity,N/A,0,0,0,0,12,32,14,14,14,2,12,6,2,12,0,0
+Drop Bear,Monstrous Menagerie,3,Large,Beast,N/A,0,0,0,0,12,42,20,10,16,2,12,4,2,15,0,Polar Bear
+Giant Hyena,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,12,34,14,14,16,2,12,6,2,12,0,0
+Hippogriff,Monstrous Menagerie,1,Large,Monstrosity,N/A,0,0,0,0,12,39,16,13,12,2,12,8,2,13,0,0
+Polar Bear,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,42,20,10,16,2,12,4,2,15,1,Cave Bear
+Rhinoceros,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,45,20,8,14,2,12,4,2,15,0,0
+Bat,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,1,2,14,8,2,12,4,2,12,0,0
+Cockatrice,Monstrous Menagerie,0.5,Small,Monstrosity,N/A,0,0,0,0,12,27,6,14,12,2,12,5,2,12,1,0
+Coralfish,Monstrous Menagerie,0.5,Small,Monstrosity,N/A,0,0,0,0,12,27,6,14,12,2,12,5,2,12,0,Cockatrice
+Crocodile,Monstrous Menagerie,0.5,Large,Beast,N/A,0,0,0,0,12,19,14,10,12,2,10,4,2,12,0,0
+Diseased Giant Rat,Monstrous Menagerie,0.25,Small,Beast,N/A,0,0,0,0,12,7,6,14,10,2,10,4,2,12,0,Giant Rat
+Giant Constrictor Snake,Monstrous Menagerie,2,Huge,Beast,N/A,0,0,0,0,12,52,18,14,12,2,10,4,2,14,0,0
+Eagle,Monstrous Menagerie,0,Small,Beast,N/A,0,0,0,0,12,3,6,14,10,2,14,6,2,12,0,0
+Hunter Shark,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,45,18,12,14,2,10,4,2,14,0,0
+Giant Lizard,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,12,19,14,12,12,2,10,4,2,12,0,0
+Giant Rat,Monstrous Menagerie,0.25,Small,Beast,N/A,0,0,0,0,12,7,6,14,10,2,10,4,2,12,1,0
+Jackal,Monstrous Menagerie,0,Small,Beast,N/A,0,0,0,0,12,3,8,14,10,2,12,4,2,12,0,0
+Poisonous Snake,Monstrous Menagerie,0.25,Tiny,Beast,N/A,0,0,0,0,12,2,2,14,10,2,10,4,2,12,0,0
+Raven,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,1,2,14,8,2,12,4,2,12,0,0
+Reef Shark,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,14,12,12,2,10,4,2,12,0,0
+Swarm of Bats,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,18,4,14,10,2,12,4,2,12,1,0
+Swarm of Ravens,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,12,17,6,14,8,2,12,4,2,12,0,0
+Swarm of Sickle Bats,Gate Pass Gazette #15,0.5,Large,Beast,N/A,0,0,0,0,12,18,4,14,10,2,12,4,2,12,0,Swarm of Bats
+Giant Boar,Monstrous Menagerie,2,Large,Beast,N/A,0,0,0,0,12,47,16,10,18,2,8,4,2,13,0,0
+Walrus,Gate Pass Gazette #21,1,Large,Beast,N/A,0,0,0,0,12,34,15,9,17,2,11,6,2,12,0,0
+Blood Maggot,Gate Pass Gazette #4,0.25,Tiny,Monstrosity,N/A,0,0,0,0,12,3,3,14,12,1,8,6,2,12,0,0
+Crab,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,2,2,10,10,1,8,4,2,10,0,0
+Giant Centipede,Monstrous Menagerie,0.25,Small,Beast,N/A,0,0,0,0,12,9,4,14,12,1,6,3,2,12,0,0
+Giant Wasp,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,18,10,14,10,1,10,4,2,12,0,0
+Spider,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,12,1,2,14,8,1,10,2,2,12,0,0
+Swarm of Beetles,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,2,14,10,1,6,4,2,12,0,Swarm of Insects
+Swarm of Centipedes,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,2,14,10,1,6,4,2,12,0,Swarm of Insects
+Swarm of Insects,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,2,14,10,1,6,4,2,12,4,0
+Swarm of Spiders,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,2,14,10,1,6,4,2,12,0,Swarm of Insects
+Swarm of Wasps,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,12,22,2,14,10,1,6,4,2,12,0,Swarm of Insects
+Druid,Monstrous Menagerie,2,Medium,Humanoid,N/A,0,0,1,0,11,39,10,12,14,12,14,10,2,11,1,0
+Mustbairn Halfling Druid,Monstrous Menagerie,2,Small,Humanoid,N/A,0,0,1,0,11,39,10,12,14,12,14,10,2,11,0,Druid
+Ghost,Monstrous Menagerie,4,Medium,Undead,N/A,0,0,0,0,11,58,8,12,10,10,12,16,2,11,2,0
+Merfolk,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,0,0,11,11,10,12,12,10,10,10,2,11,0,0
+Werebear,Monstrous Menagerie,5,Medium,Humanoid,N/A,0,0,0,0,11,135,18,10,16,10,12,12,3,15,0,0
+Lost Prospector,Gate Pass Gazette #12,4,Medium,Undead,N/A,0,0,0,0,11,58,8,12,10,10,12,16,2,11,0,Ghost
+Posse Member,Adventures in Zeitgeist,N/A,Medium,Humanoid,N/A,0,0,1,0,11,16,12,8,12,10,8,12,2,11,0,0
+Troglodyte,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,0,0,11,19,14,12,14,10,12,10,2,12,0,0
+Vengeful Ghost,Monstrous Menagerie,8,Medium,Undead,N/A,0,0,0,0,11,58,8,12,10,10,12,16,3,12,0,Ghost
+Harpy,Monstrous Menagerie,1,Medium,Monstrosity,N/A,0,0,0,0,11,38,12,12,12,10,10,14,2,11,1,0
+Mummy,Monstrous Menagerie,3,Medium,Undead,N/A,0,0,0,0,11,67,16,8,16,10,10,12,2,13,0,0
+Ogrekin,Monstrous Menagerie,1,Medium,Humanoid,Giant,0,0,0,0,11,32,16,12,14,10,10,10,2,13,0,0
+Siren,Monstrous Menagerie,1,Medium,Monstrosity,N/A,0,0,0,0,11,38,12,12,12,10,10,14,2,11,0,Harpy
+Magma Mephit,Monstrous Menagerie,0.5,Small,Elemental,N/A,0,0,0,0,11,21,8,12,10,8,10,10,2,11,0,0
+Giant Octopus,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,11,32,16,12,12,4,12,4,2,13,0,0
+Bonespawn,Dungeon Delver's Guide,0.25,Medium,Undead,N/A,0,0,0,0,11,1,10,12,4,4,6,5,2,11,0,0
+Giant Goat,Monstrous Menagerie,0.5,Large,Beast,N/A,0,0,0,0,11,22,16,10,14,3,12,6,2,13,0,0
+Root,Planestrider's Journal,0,Tiny,Plant,N/A,0,0,0,0,11,7,5,9,12,3,12,8,2,10,0,0
+Skeletal Warhorse,Monstrous Menagerie,0.5,Large,Undead,N/A,0,0,0,0,11,30,18,12,14,3,8,5,2,14,0,0
+Warhorse,Monstrous Menagerie,0.5,Large,Beast,N/A,0,0,0,0,11,30,18,12,14,3,12,6,2,14,0,0
+Ogre Flesh Heap,Monstrous Menagerie,4,Large,Undead,N/A,0,0,0,0,11,59,18,6,18,3,8,4,2,14,0,Ogre Zombie
+Ogre Zombie,Monstrous Menagerie,2,Large,Undead,N/A,0,0,0,0,11,59,18,6,18,3,8,4,2,14,1,0
+Brown Bear,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,11,34,18,10,16,2,12,4,2,14,0,0
+Axe Beak,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,11,16,14,12,10,2,10,4,2,12,0,0
+Black Bear,Monstrous Menagerie,0.5,Medium,Beast,N/A,0,0,0,0,11,19,14,10,14,2,12,6,2,12,0,0
+Blood Hawk,Monstrous Menagerie,0.25,Small,Beast,N/A,0,0,0,0,11,7,6,12,10,2,14,4,2,11,0,0
+Boar,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,11,11,12,10,12,2,10,4,2,11,0,0
+Constrictor Snake,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,11,13,14,12,12,2,10,4,2,12,0,0
+Darkmantle,Monstrous Menagerie,0.5,Small,Monstrosity,N/A,0,0,0,0,11,22,16,12,12,2,10,5,2,13,0,0
+Frog,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,11,1,1,12,8,2,12,4,2,11,0,0
+Giant Toad,Monstrous Menagerie,1,Large,Beast,N/A,0,0,0,0,11,33,14,12,10,2,10,4,2,12,0,0
+Giant Frog,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,11,18,12,12,10,2,10,4,2,11,0,0
+Hyena,Monstrous Menagerie,0,Medium,Beast,N/A,0,0,0,0,11,4,10,12,10,2,12,4,2,11,0,0
+Owl,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,11,1,2,12,8,2,12,6,2,11,0,0
+Rat,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,11,1,2,12,8,2,10,4,2,11,0,0
+Seahorse,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,11,1,1,12,8,2,10,4,2,11,0,0
+Swarm of Rats,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,11,17,10,12,8,2,10,4,2,11,0,0
+Swarm of Woodland Creatures,Mama Bear's Revenge,0.25,Medium,Beast,N/A,0,0,0,0,11,17,10,12,8,2,10,4,2,11,0,0
+Scorpion,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,11,1,2,10,8,1,8,4,2,10,0,0
+Apprentice Mage,Monstrous Menagerie,0.5,Medium,Humanoid,N/A,0,0,1,0,10,11,10,10,12,14,10,10,2,10,0,0
+Acolyte,Monstrous Menagerie,0.25,Medium,Humanoid,N/A,0,0,1,0,10,11,10,10,12,10,14,10,2,10,0,0
+Commoner,Monstrous Menagerie,0,Medium,Humanoid,N/A,0,0,1,0,10,4,10,10,10,10,10,10,2,10,0,0
+Commoner Mob,Monstrous Menagerie,0,Huge,Humanoid,N/A,0,0,1,0,10,45,10,10,10,10,10,10,2,10,0,0
+Steam Mephit,Monstrous Menagerie,0.25,Small,Elemental,N/A,0,0,0,0,10,21,6,10,10,10,10,10,2,10,0,0
+Dretch,Monstrous Menagerie,0.25,Small,Fiend,N/A,0,0,0,0,10,18,12,10,12,5,8,3,2,11,0,0
+Bright Orb,Dungeon Delver's Guide,2,Tiny,Plant,N/A,0,0,0,0,10,30,2,10,10,3,10,3,2,10,0,0
+Badger,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,10,3,4,10,12,2,12,4,2,10,0,0
+Camel,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,10,15,16,10,14,2,8,4,2,13,0,0
+Draft Horse,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,10,22,18,10,14,2,10,6,2,14,0,0
+Elk,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,10,15,14,10,14,2,10,4,2,12,0,0
+Giant Badger,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,10,19,12,10,14,2,12,4,2,11,0,0
+Goat,Monstrous Menagerie,0,Medium,Beast,N/A,0,0,0,0,10,4,10,10,10,2,10,4,2,10,0,0
+Lizard,Monstrous Menagerie,0,Tiny,Beast,N/A,0,0,0,0,10,2,2,10,10,2,10,4,2,10,0,0
+Mule,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,10,11,12,10,12,2,10,4,2,11,0,0
+Pony,Monstrous Menagerie,0.25,Medium,Beast,N/A,0,0,0,0,10,11,14,10,12,2,10,6,2,12,0,0
+Riding Horse,Monstrous Menagerie,0.25,Large,Beast,N/A,0,0,0,0,10,19,16,12,12,2,10,6,2,13,0,0
+Vulture,Monstrous Menagerie,0,Medium,Beast,N/A,0,0,0,0,10,4,6,10,10,2,12,6,2,10,0,0
+Awakened Shrub,Monstrous Menagerie,0,Small,Plant,N/A,0,0,0,0,9,7,2,8,10,10,10,6,2,9,0,0
+Flesh Guardian,Monstrous Menagerie,5,Medium,Construct,N/A,0,0,0,0,9,93,18,8,18,6,10,5,3,15,0,0
+Slime Mold,Dungeon Delver's Guide,6,Large,Ooze,N/A,0,0,0,0,9,104,16,8,18,3,10,4,3,14,0,0
+Gibbering Mouther,Monstrous Menagerie,2,Medium,Aberration,N/A,0,0,0,0,9,67,10,8,16,2,10,6,2,10,0,0
+Dreamer's Morel,Dungeon Delver's Guide,0.5,Small,Plant,N/A,0,0,0,0,8,21,3,1,10,14,12,13,2,7,0,0
+Gorger Zombie,Gate Pass Gazette #4,0.25,Medium,Undead,N/A,0,0,0,0,8,15,12,6,16,3,6,4,2,11,0,Zombie
+Gorger Zombie Horde,Gate Pass Gazette #4,4,Large,Undead,N/A,0,0,0,0,8,75,12,6,16,3,6,4,2,11,0,Zombie Horde
+Fogborn Zombie,Monstrous Menagerie,0.25,Medium,Undead,N/A,0,0,0,0,8,15,12,6,16,3,6,4,2,11,0,Zombie
+Spore Thrall,Gate Pass Gazette #15,0.25,Medium,Plant,N/A,0,0,0,0,8,15,12,6,16,3,6,4,2,11,0,Zombie
+Zombie,Monstrous Menagerie,0.25,Medium,Undead,N/A,0,0,0,0,8,15,12,6,16,3,6,4,2,11,3,0
+Fogborn Zombie Horde,Monstrous Menagerie,4,Large,Undead,N/A,0,0,0,0,8,75,12,6,16,3,6,4,2,11,0,Zombie Horde
+Zombie Horde,Monstrous Menagerie,4,Large,Undead,N/A,0,0,0,0,8,75,12,6,16,3,6,4,2,11,2,0
+Gray Ooze,Monstrous Menagerie,0.5,Medium,Ooze,N/A,0,0,0,0,8,22,12,6,16,1,6,1,2,11,0,0
+Flash Jelly,Dungeon Delver's Guide,3,Large,Ooze,N/A,0,0,0,0,8,45,14,6,14,1,6,1,2,12,0,Ochre Jelly
+Ochre Jelly,Monstrous Menagerie,2,Large,Ooze,N/A,0,0,0,0,8,45,14,6,14,1,6,1,2,12,1,0
+Lemure Band,Monstrous Menagerie,2,Large,Fiend,N/A,0,0,0,0,7,67,10,4,10,1,10,2,2,10,0,0
+Elder Black Pudding,Monstrous Menagerie,8,Huge,Ooze,N/A,0,0,0,0,7,171,16,4,16,1,6,1,3,14,0,Black Pudding
+Black Pudding,Monstrous Menagerie,4,Large,Ooze,N/A,0,0,0,0,7,85,16,4,16,1,6,1,2,13,2,0
+Blazing Black Pudding,Dungeon Delver's Guide,4,Large,Ooze,N/A,0,0,0,0,7,85,16,4,16,1,6,1,2,13,0,Black Pudding
+Lemure,Monstrous Menagerie,0.25,Medium,Fiend,N/A,0,0,0,0,7,13,10,4,10,1,10,2,2,10,0,0
+Euphoria Cube,Dungeon Delver's Guide,3,Large,Ooze,N/A,0,0,0,0,6,76,16,2,18,1,6,1,2,13,0,Gelatinous Cube
+Gelatinous Cube,Monstrous Menagerie,2,Large,Ooze,N/A,0,0,0,0,6,76,16,2,18,1,6,1,2,13,2,0
+Gelatinous Wall,Monstrous Menagerie,7,Huge,Ooze,N/A,0,0,0,0,6,136,16,2,18,1,6,1,3,14,0,Gelatinous Cube
+Shrieker,Monstrous Menagerie,0,Medium,Plant,N/A,0,0,0,0,5,13,1,1,10,1,2,1,2,6,0,0
+Spell Shrieker,Dungeon Delver's Guide,0.5,Small,Plant,N/A,0,0,0,0,5,35,1,1,10,1,2,1,2,6,0,0
+Violet Fungus,Monstrous Menagerie,0.25,Medium,Plant,N/A,0,0,0,0,5,18,1,1,10,1,2,1,2,6,0,0
+Fogborn Zombie Knight,To Save A Kingdom,3,Medium,Undead,N/A,0,0,0,0,0,0,0,0,0,0,0,0,2,5,0,Zombie Knight
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
+,,,,,N/A,0,0,0,0,,,,,,,,,2,5,0,0
